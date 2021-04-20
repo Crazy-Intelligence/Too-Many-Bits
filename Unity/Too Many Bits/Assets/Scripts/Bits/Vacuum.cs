@@ -9,9 +9,12 @@ namespace CrazyIntelligence.Bits
 
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
-			OnBitDeleted?.Invoke();
+			if (collision.CompareTag("Bit"))
+			{
+				OnBitDeleted?.Invoke();
 
-			Destroy(collision.gameObject);
+				Destroy(collision.gameObject);
+			}
 		}
 	}
 }

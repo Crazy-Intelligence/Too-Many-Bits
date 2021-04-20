@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bit
   layers:
   - Default
   - TransparentFX
@@ -38,14 +39,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 3068352703
     locked: 0
   - name: Cable
     uniqueID: 148465657
     locked: 0
   - name: Stage
     uniqueID: 4168879141
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Key
     uniqueID: 1590948005

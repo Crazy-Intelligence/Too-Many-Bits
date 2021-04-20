@@ -9,12 +9,10 @@ namespace CrazyIntelligence.Bits
 		[SerializeField] private float minSpawnTime;
 		[SerializeField] private float maxSpawnTime;
 		[Space]
-		[SerializeField] private float minSpawnRange;
-		[SerializeField] private float maxSpawnRange;
-		[Space]
 		[SerializeField] [Range(1f, 25f)] private float spawnForce;
-		[SerializeField] private Vector2 spawnForceVector;
-
+		[SerializeField] [Range(-179f, 179f)] private float spawnDirection;
+		[SerializeField] [Range(0f, 89f)] private float spawnRange;
+		
 		private float _spawnTime;
 		private float _passedTime;
 
@@ -28,25 +26,48 @@ namespace CrazyIntelligence.Bits
 
 			if (_passedTime >= _spawnTime)
 			{
-				var spawnPos = transform.position + new Vector3(Random.Range(minSpawnRange, maxSpawnRange), 0f);
+				var spawnPos = transform.position;
 
 				var newObject = Instantiate(prefab, spawnPos, Quaternion.identity);
 
 				var rb = newObject.GetComponent<Rigidbody2D>();
 
-				rb.AddForce(spawnForceVector.normalized * spawnForce, ForceMode2D.Impulse);
+				var spawnAngel = Random.Range(spawnDirection - spawnRange, spawnDirection + spawnRange);
+				var spawnForceVector = Rotate(Vector2.down, spawnAngel);
+
+				rb.AddForce(spawnForceVector * spawnForce, ForceMode2D.Impulse);
 
 				_spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
 				_passedTime = 0f;
 			}
 		}
 
+		private Vector3 Rotate(Vector3 vector, float angel)
+		{
+			var q = Quaternion.Euler(0f, 0f, angel);
+
+			var vectorPartOfQ = new Vector3(q.x, q.y, q.z);
+			var scalerPartOfQ = q.w;
+
+			var newVector = 2f * Vector3.Dot(vectorPartOfQ, vector) * vectorPartOfQ
+							+ ((scalerPartOfQ * scalerPartOfQ) - Vector3.Dot(vectorPartOfQ, vectorPartOfQ)) * vector
+							+ 2f * scalerPartOfQ * Vector3.Cross(vectorPartOfQ, vector);
+
+			return newVector;
+		}
+
 		private void OnDrawGizmosSelected()
 		{
+			var minSpawnAngel = spawnDirection - spawnRange;
+			var maxSpawnAngel = spawnDirection + spawnRange;
+
+			Vector3 leftVector = transform.position + Rotate(Vector3.down, minSpawnAngel) * spawnForce / 2f;
+			Vector3 rightVector = transform.position + Rotate(Vector3.down, maxSpawnAngel) * spawnForce / 2f;
+
 			Gizmos.color = Color.yellow;
-			Gizmos.DrawLine(transform.position + new Vector3(minSpawnRange, 0f), transform.position + new Vector3(maxSpawnRange, 0f));
-			Gizmos.color = Color.red;
-			Gizmos.DrawLine(transform.position, transform.position + new Vector3(spawnForceVector.normalized.x, spawnForceVector.normalized.y) * spawnForce / 2);
+			Gizmos.DrawLine(transform.position, leftVector);
+			Gizmos.DrawLine(transform.position, rightVector);
+			Gizmos.DrawLine(leftVector, rightVector);
 		}
 	}
 }

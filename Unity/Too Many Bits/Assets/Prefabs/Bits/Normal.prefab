@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6505306201618745683}
   - component: {fileID: 2002455993729549247}
   m_Layer: 0
-  m_Name: Bit
-  m_TagString: Untagged
+  m_Name: Normal
+  m_TagString: Bit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1505382499
-  m_SortingLayer: 4
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1401874176895988017, guid: a770b2c7886c6454396e18ad547b23b7, type: 3}
   m_Color: {r: 0.035300493, g: 1, b: 0, a: 1}
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: a6a071f8aa3692542b92f0df4fdd6f5d, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
