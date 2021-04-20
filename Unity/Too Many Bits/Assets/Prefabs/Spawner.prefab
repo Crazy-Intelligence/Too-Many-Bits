@@ -43,8 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0efd587eaf1fa43ae13c1a6e2455d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bitPrefab: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
+  prefab: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
   minSpawnTime: 0.1
   maxSpawnTime: 0.5
   minSpawnRange: -5
   maxSpawnRange: 5
+  spawnForce: 1
+  spawnForceVector: {x: 0, y: 0}

@@ -47,6 +47,9 @@ TagManager:
   - name: Stage
     uniqueID: 4168879141
     locked: 0
+  - name: Key
+    uniqueID: 1590948005
+    locked: 0
   - name: Bits
     uniqueID: 2789584797
     locked: 0
