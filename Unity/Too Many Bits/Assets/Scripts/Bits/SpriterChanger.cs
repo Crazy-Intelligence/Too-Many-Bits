@@ -3,10 +3,10 @@ using UnityEngine;
 namespace CrazyIntelligence.Bits
 {
 	[RequireComponent(typeof(SpriteRenderer))]
-	public class BitFlipper : MonoBehaviour
+	public class SpriterChanger : MonoBehaviour
 	{
-		[SerializeField] private Sprite zero;
-		[SerializeField] private Sprite one;
+		[SerializeField] private Sprite spriteA;
+		[SerializeField] private Sprite spriteB;
 		[Space]
 		[SerializeField] private float minIntervall;
 		[SerializeField] private float maxIntervall;
@@ -31,13 +31,13 @@ namespace CrazyIntelligence.Bits
 
 			if (_passedTime >= _flipIntervall)
 			{
-				if (_spriteRenderer.sprite == zero)
+				if (_spriteRenderer.sprite == spriteA)
 				{
-					_spriteRenderer.sprite = one;
+					_spriteRenderer.sprite = spriteB;
 				}
 				else
 				{
-					_spriteRenderer.sprite = zero;
+					_spriteRenderer.sprite = spriteA;
 				}
 
 				_flipIntervall = Random.Range(minIntervall, maxIntervall);
