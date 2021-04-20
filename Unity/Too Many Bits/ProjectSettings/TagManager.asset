@@ -60,3 +60,6 @@ TagManager:
   - name: Pipe
     uniqueID: 789355103
     locked: 0
+  - name: Boss
+    uniqueID: 763156581
+    locked: 0

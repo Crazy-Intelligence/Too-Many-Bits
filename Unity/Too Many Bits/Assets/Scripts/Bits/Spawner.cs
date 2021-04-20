@@ -6,8 +6,7 @@ namespace CrazyIntelligence.Bits
 	{
 		[SerializeField] private GameObject prefab;
 		[Space]
-		[SerializeField] private float minSpawnTime;
-		[SerializeField] private float maxSpawnTime;
+		[SerializeField] private float spawnRate;
 		[Space]
 		[SerializeField] [Range(1f, 25f)] private float spawnForce;
 		[SerializeField] [Range(-179f, 179f)] private float spawnDirection;
@@ -18,7 +17,12 @@ namespace CrazyIntelligence.Bits
 
 		private void Start()
 		{
-			_spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
+			if (spawnRate == 0f)
+			{
+				enabled = false;
+			}
+
+			ResetSpawnTime();
 		}
 		private void Update()
 		{
@@ -26,20 +30,35 @@ namespace CrazyIntelligence.Bits
 
 			if (_passedTime >= _spawnTime)
 			{
-				var spawnPos = transform.position;
+				var overflowCount = _passedTime / _spawnTime;
+				
+				for (int i = 1; i < overflowCount; i++)
+				{
+					SpawnObject();
+				}
 
-				var newObject = Instantiate(prefab, spawnPos, Quaternion.identity);
-
-				var rb = newObject.GetComponent<Rigidbody2D>();
-
-				var spawnAngel = Random.Range(spawnDirection - spawnRange, spawnDirection + spawnRange);
-				var spawnForceVector = Rotate(Vector2.down, spawnAngel);
-
-				rb.AddForce(spawnForceVector * spawnForce, ForceMode2D.Impulse);
-
-				_spawnTime = Random.Range(minSpawnTime, maxSpawnTime);
+				ResetSpawnTime();
 				_passedTime = 0f;
 			}
+		}
+
+		private void SpawnObject()
+		{
+			var spawnPos = transform.position;
+
+			var newObject = Instantiate(prefab, spawnPos, Quaternion.identity);
+
+			var rb = newObject.GetComponent<Rigidbody2D>();
+
+			var spawnAngel = Random.Range(spawnDirection - spawnRange, spawnDirection + spawnRange);
+			var spawnForceVector = Rotate(Vector2.down, spawnAngel);
+
+			rb.AddForce(spawnForceVector * spawnForce, ForceMode2D.Impulse);
+		}
+
+		private void ResetSpawnTime()
+		{
+			_spawnTime = 1f / spawnRate;
 		}
 
 		private Vector3 Rotate(Vector3 vector, float angel)
