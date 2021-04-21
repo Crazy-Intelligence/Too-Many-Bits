@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CrazyIntelligence.Bits
@@ -5,8 +6,7 @@ namespace CrazyIntelligence.Bits
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class SpriterChanger : MonoBehaviour
 	{
-		[SerializeField] private Sprite spriteA;
-		[SerializeField] private Sprite spriteB;
+		[SerializeField] private SpriteCollection spriteCollection;
 		[Space]
 		[SerializeField] private float minIntervall;
 		[SerializeField] private float maxIntervall;
@@ -24,6 +24,7 @@ namespace CrazyIntelligence.Bits
 		private void Start()
 		{
 			_flipIntervall = Random.Range(minIntervall, maxIntervall);
+			ChangeSpriteToRandom();
 		}
 		private void Update()
 		{
@@ -31,18 +32,17 @@ namespace CrazyIntelligence.Bits
 
 			if (_passedTime >= _flipIntervall)
 			{
-				if (_spriteRenderer.sprite == spriteA)
-				{
-					_spriteRenderer.sprite = spriteB;
-				}
-				else
-				{
-					_spriteRenderer.sprite = spriteA;
-				}
+				ChangeSpriteToRandom();
 
 				_flipIntervall = Random.Range(minIntervall, maxIntervall);
 				_passedTime = 0f;
 			}
 		}
+
+		private void ChangeSpriteToRandom()
+		{
+			_spriteRenderer.sprite = spriteCollection.GetRandomSprite();
+		}
+
 	}
 }

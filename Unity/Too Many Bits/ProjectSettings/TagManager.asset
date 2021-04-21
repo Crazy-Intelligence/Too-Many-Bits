@@ -51,8 +51,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Key
-    uniqueID: 1590948005
+  - name: Upgrades
+    uniqueID: 746652397
     locked: 0
   - name: Bits
     uniqueID: 2789584797
@@ -62,4 +62,7 @@ TagManager:
     locked: 0
   - name: Boss
     uniqueID: 763156581
+    locked: 0
+  - name: Key
+    uniqueID: 1590948005
     locked: 0
