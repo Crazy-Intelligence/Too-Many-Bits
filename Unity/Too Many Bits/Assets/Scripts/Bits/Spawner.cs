@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CrazyIntelligence.Bits
 {
 	public class Spawner : MonoBehaviour
 	{
-		[SerializeField] private GameObject prefab;
+		[SerializeField] private List<ObjectWithChance<BitData>> Bits = new List<ObjectWithChance<BitData>>();
+		[SerializeField] private GameObject bitPrefab;
 		[Space]
 		[SerializeField] private float spawnRate;
 		[Space]
@@ -46,12 +48,17 @@ namespace CrazyIntelligence.Bits
 		{
 			var spawnPos = transform.position;
 
-			var newObject = Instantiate(prefab, spawnPos, Quaternion.identity);
+			var newObject = Instantiate(bitPrefab, spawnPos, Quaternion.identity) ;
+
+			var bit = newObject.GetComponent<Bit>();
+			bit.Data = GetRandomBitData();
 
 			var rb = newObject.GetComponent<Rigidbody2D>();
 
 			var spawnAngel = Random.Range(spawnDirection - spawnRange, spawnDirection + spawnRange);
 			var spawnForceVector = Rotate(Vector2.down, spawnAngel);
+
+			newObject.SetActive(true);
 
 			rb.AddForce(spawnForceVector * spawnForce, ForceMode2D.Impulse);
 		}
@@ -73,6 +80,23 @@ namespace CrazyIntelligence.Bits
 							+ 2f * scalerPartOfQ * Vector3.Cross(vectorPartOfQ, vector);
 
 			return newVector;
+		}
+
+		private BitData GetRandomBitData()
+		{
+			var objects = new List<BitData>();
+
+			foreach (var obj in Bits)
+			{
+				for (int i = 0; i < obj.Weight; i++)
+				{
+					objects.Add(obj.Object);
+				}
+			}
+
+			var randomIndex = Random.Range(0, objects.Count - 1);
+
+			return objects[randomIndex];
 		}
 
 		private void OnDrawGizmosSelected()

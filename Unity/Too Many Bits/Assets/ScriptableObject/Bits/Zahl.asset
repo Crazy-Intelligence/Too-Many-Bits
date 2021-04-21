@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ae73b9e7d557f4b9b6b35f72a760ce, type: 3}
+  m_Name: Zahl
+  m_EditorClassIdentifier: 
+  SpriteCollection: {fileID: 11400000, guid: 13467f2667e5e394aa8891e07c77a904, type: 2}
+  Color: {r: 0, g: 1, b: 0.69803923, a: 1}
+  Scale: 2
+  ColliderOffset: {x: 0, y: 0}
+  ColliderSize: {x: 0.24, y: 0.35}
+  BaseValue: 10

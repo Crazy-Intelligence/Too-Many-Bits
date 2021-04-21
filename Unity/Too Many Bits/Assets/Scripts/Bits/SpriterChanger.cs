@@ -6,7 +6,7 @@ namespace CrazyIntelligence.Bits
 	[RequireComponent(typeof(SpriteRenderer))]
 	public class SpriterChanger : MonoBehaviour
 	{
-		[SerializeField] private SpriteCollection spriteCollection;
+		public SpriteCollection spriteCollection;
 		[Space]
 		[SerializeField] private float minIntervall;
 		[SerializeField] private float maxIntervall;

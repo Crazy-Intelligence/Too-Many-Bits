@@ -11,7 +11,6 @@ namespace CrazyIntelligence.Bits
 
 		private SpriteRenderer _spriteRenderer;
 
-		private bool _isActive;
 		private float _passedTime;
 
 		private void Awake()

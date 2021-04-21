@@ -5,16 +5,17 @@ namespace CrazyIntelligence.Bits
 {
 	public class Vacuum : MonoBehaviour
 	{
-		[SerializeField] private UnityEvent OnBitDeleted;
-		
+		[SerializeField] private int scoreMultiplier;
+
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
-			if (collision.CompareTag("Bit"))
-			{
-				OnBitDeleted?.Invoke();
+			var bit = collision.GetComponent<Bit>();
 
-				Destroy(collision.gameObject);
-			}
+			if (bit is null) return;
+
+			ScoreCounter.IncrementScore(bit.Data.BaseValue * scoreMultiplier);
+
+			Destroy(collision.gameObject);
 		}
 
 		private void OnDrawGizmos()

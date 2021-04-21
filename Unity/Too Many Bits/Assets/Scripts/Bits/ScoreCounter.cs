@@ -5,7 +5,7 @@ namespace CrazyIntelligence.Bits
 {
 	public class ScoreCounter : MonoBehaviour
 	{
-		public int Score;
+		public static int Score { get; private set; }
 
 		private Text _text;
 
@@ -14,15 +14,14 @@ namespace CrazyIntelligence.Bits
 			_text = GetComponent<Text>();
 		}
 
-		private void Start()
+		private void Update()
 		{
 			_text.text = Score.ToString();
 		}
 
-		public void IncrementScore()
+		public static void IncrementScore(int amount)
 		{
-			Score++;
-			_text.text = Score.ToString();
+			Score += amount;
 		}
 	}
 }

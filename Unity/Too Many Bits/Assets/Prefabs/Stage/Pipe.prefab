@@ -91,6 +91,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 5490678196267720985}
     m_Modifications:
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: spawnRate
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: spawnForce
       value: 5
       objectReference: {fileID: 0}
@@ -114,6 +118,70 @@ PrefabInstance:
       propertyPath: spawnDirection
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: Bits.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: Bits.Array.data[0].Object
+      value: 
+      objectReference: {fileID: 11400000, guid: 226b1ecc4d19c2e44af70eef525004bf, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: Bits.Array.data[0].Weight
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: Bits.Array.data[1].Object
+      value: 
+      objectReference: {fileID: 11400000, guid: 4aa805f200acea448b2abb0937104bd3, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: Bits.Array.data[1].Weight
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: Bits.Array.data[2].Object
+      value: 
+      objectReference: {fileID: 11400000, guid: f2522eb3cce7b3e4288461f76c105d2b, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: Bits.Array.data[2].Weight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.data[0].Chance
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.data[0].Weight
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.data[1].Chance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.data[1].Weight
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.data[2].Chance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.data[2].Weight
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.data[1].GameObject
+      value: 
+      objectReference: {fileID: 5142541770011555780, guid: ce70e8f32e6b67240bd1ca0a14f2e8fa, type: 3}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: randomizer.Objects.Array.data[2].GameObject
+      value: 
+      objectReference: {fileID: 5142541770011555780, guid: 8401ba908ac36bc4e827e4bea404f9d4, type: 3}
     - target: {fileID: 1595997733935270101, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: m_Name
       value: Spawner
