@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -58038629726550484}
   - component: {fileID: 2002455993729549247}
   - component: {fileID: -1943732433369285867}
+  - component: {fileID: 4289149743832512946}
   m_Layer: 0
   m_Name: Bit
   m_TagString: Untagged
@@ -103,7 +104,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: a6a071f8aa3692542b92f0df4fdd6f5d, type: 2}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
@@ -136,8 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteCollection: {fileID: 11400000, guid: d14d434a2ec34c941b3abb24e1b336d2, type: 2}
-  minIntervall: 0.2
-  maxIntervall: 2
+  timeUntilChange: 0
 --- !u!114 &-1943732433369285867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,3 +151,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 226b1ecc4d19c2e44af70eef525004bf, type: 2}
+--- !u!114 &4289149743832512946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142541770011555780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcce9343e6a98df43b0750c41dcc5403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 0

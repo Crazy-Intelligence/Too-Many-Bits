@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CrazyIntelligence.Bits
 {
-	[RequireComponent(typeof(SpriterChanger))]
+	[RequireComponent(typeof(SpriterChanger), typeof(Sticky))]
 	public class Bit : MonoBehaviour
 	{
 		public BitData Data;
@@ -10,6 +10,7 @@ namespace CrazyIntelligence.Bits
 		private SpriteRenderer _spriteRenderer;
 		private CapsuleCollider2D _collider;
 		private SpriterChanger _spriteChanger;
+		private Sticky _sticky;
 
 		private void Awake()
 		{
@@ -28,17 +29,20 @@ namespace CrazyIntelligence.Bits
 			_spriteRenderer.color = Data.Color;
 			_spriteRenderer.sortingLayerName = "Bits";
 
-			_spriteChanger.spriteCollection = Data.SpriteCollection;
-
 			_collider.offset = Data.ColliderOffset;
 			_collider.size = Data.ColliderSize;
+
+			_spriteChanger.spriteCollection = Data.SpriteCollection;
+
+			_sticky.Active = Data.isSticky;
 		}
 
 		private void GetReferences()
 		{
 			_spriteRenderer = GetComponent<SpriteRenderer>();
-			_spriteChanger = GetComponent<SpriterChanger>();
 			_collider = GetComponent<CapsuleCollider2D>();
+			_spriteChanger = GetComponent<SpriterChanger>();
+			_sticky = GetComponent<Sticky>();
 		}
 
 		[ContextMenu("Setup")]

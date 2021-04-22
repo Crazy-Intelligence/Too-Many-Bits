@@ -14,5 +14,7 @@ namespace CrazyIntelligence.Bits
 		public Vector2 ColliderSize;
 		[Space]
 		public int BaseValue;
+		[Space]
+		public bool isSticky;
 	}
 }

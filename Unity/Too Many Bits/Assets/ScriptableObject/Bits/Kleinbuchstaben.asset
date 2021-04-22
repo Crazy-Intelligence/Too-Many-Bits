@@ -18,3 +18,4 @@ MonoBehaviour:
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.3}
   BaseValue: 5
+  isSticky: 0
