@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteCollection: {fileID: 11400000, guid: d14d434a2ec34c941b3abb24e1b336d2, type: 2}
-  timeUntilChange: 0
+  timeUntilChange: 1
 --- !u!114 &-1943732433369285867
 MonoBehaviour:
   m_ObjectHideFlags: 0

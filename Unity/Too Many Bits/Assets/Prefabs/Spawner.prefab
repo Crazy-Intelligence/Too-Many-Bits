@@ -43,11 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0efd587eaf1fa43ae13c1a6e2455d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bits:
-  - Object: {fileID: 11400000, guid: 226b1ecc4d19c2e44af70eef525004bf, type: 2}
-    Weight: 1
-  bitPrefab: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
+  info: {fileID: 11400000, guid: a483699cc144d9648b359664ab42c3ee, type: 2}
+  objectInfo: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}
   spawnRate: 10
-  spawnForce: 3
-  spawnDirection: 0
-  spawnRange: 25

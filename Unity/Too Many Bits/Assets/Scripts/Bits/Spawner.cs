@@ -5,14 +5,10 @@ namespace CrazyIntelligence.Bits
 {
 	public class Spawner : MonoBehaviour
 	{
-		[SerializeField] private List<ObjectWithWeight<BitData>> Bits = new List<ObjectWithWeight<BitData>>();
-		[SerializeField] private GameObject bitPrefab;
-		[Space]
-		[SerializeField] private float spawnRate;
-		[Space]
-		[SerializeField] [Range(1f, 25f)] private float spawnForce;
-		[SerializeField] [Range(-179f, 179f)] private float spawnDirection;
-		[SerializeField] [Range(0f, 89f)] private float spawnRange;
+		[SerializeField] private SpawnerInfo info;
+		public SpawnerObjectInfo objectInfo;
+
+		[SerializeField] [Range(0, 100)] private int spawnRate;
 
 		private Timer _timer;
 
@@ -50,19 +46,19 @@ namespace CrazyIntelligence.Bits
 		{
 			var spawnPos = transform.position;
 
-			var newObject = Instantiate(bitPrefab, spawnPos, Quaternion.identity) ;
+			var newObject = Instantiate(objectInfo.Prefab, spawnPos, Quaternion.identity) ;
 
 			var bit = newObject.GetComponent<Bit>();
 			bit.Data = GetRandomBitData();
 
 			var rb = newObject.GetComponent<Rigidbody2D>();
 
-			var spawnAngel = Random.Range(spawnDirection - spawnRange, spawnDirection + spawnRange);
+			var spawnAngel = Random.Range(info.SpawnDirection - info.SpawnRange, info.SpawnDirection + info.SpawnRange);
 			var spawnForceVector = Rotate(Vector2.down, spawnAngel);
 
 			newObject.SetActive(true);
 
-			rb.AddForce(spawnForceVector * spawnForce, ForceMode2D.Impulse);
+			rb.AddForce(spawnForceVector * info.SpawnForce, ForceMode2D.Impulse);
 		}
 
 		private Vector3 Rotate(Vector3 vector, float angel)
@@ -83,7 +79,7 @@ namespace CrazyIntelligence.Bits
 		{
 			var objects = new List<BitData>();
 
-			foreach (var obj in Bits)
+			foreach (var obj in objectInfo.Distribution)
 			{
 				for (int i = 0; i < obj.Weight; i++)
 				{
@@ -98,11 +94,13 @@ namespace CrazyIntelligence.Bits
 
 		private void OnDrawGizmosSelected()
 		{
-			var minSpawnAngel = spawnDirection - spawnRange;
-			var maxSpawnAngel = spawnDirection + spawnRange;
+			if (info is null) return;
 
-			Vector3 leftVector = transform.position + Rotate(Vector3.down, minSpawnAngel) * spawnForce / 2f;
-			Vector3 rightVector = transform.position + Rotate(Vector3.down, maxSpawnAngel) * spawnForce / 2f;
+			var minSpawnAngel = info.SpawnDirection - info.SpawnRange;
+			var maxSpawnAngel = info.SpawnDirection + info.SpawnRange;
+
+			Vector3 leftVector = transform.position + Rotate(Vector3.down, minSpawnAngel) * info.SpawnForce / 2f;
+			Vector3 rightVector = transform.position + Rotate(Vector3.down, maxSpawnAngel) * info.SpawnForce / 2f;
 
 			Gizmos.color = Color.yellow;
 			Gizmos.DrawLine(transform.position, leftVector);

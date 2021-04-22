@@ -12,7 +12,7 @@ namespace CrazyIntelligence.Bits
 
 			if (bit is null) return;
 
-			ScoreCounter.IncrementScore(bit.Data.BaseValue * scoreMultiplier);
+			ScoreCounter.Add(bit.Data.BaseValue * scoreMultiplier);
 
 			Destroy(collision.gameObject);
 		}

@@ -15,6 +15,8 @@ MonoBehaviour:
   SpriteCollection: {fileID: 11400000, guid: 940b2c3b890b135479a565ba3d0bdbfb, type: 2}
   Color: {r: 1, g: 0, b: 0.7882353, a: 1}
   Scale: 5
+  Weight: 10
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.31, y: 0.35}
   BaseValue: 50
+  isSticky: 0

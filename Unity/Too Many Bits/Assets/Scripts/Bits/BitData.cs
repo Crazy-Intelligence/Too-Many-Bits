@@ -5,16 +5,18 @@ namespace CrazyIntelligence.Bits
 	[CreateAssetMenu(fileName = "Bit", menuName = "Bits/BitData")]
 	public class BitData : ScriptableObject
 	{
+		[Header("Visuals")]
 		public SpriteCollection SpriteCollection;
 		public Color Color;
-		[Space]
+		[Header("Size")]
 		public float Scale;
-		[Space]
+		public int Weight;
+		[Header("Hitbox")]
 		public Vector2 ColliderOffset;
 		public Vector2 ColliderSize;
-		[Space]
+		[Header("Score")]
 		public int BaseValue;
-		[Space]
+		[Header("Attributes")]
 		public bool isSticky;
 	}
 }

@@ -95,6 +95,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4759694631345475937}
     m_Modifications:
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 11400000, guid: b1104961589cdae4cbf20442e91f16ea, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: spawnRate
       value: 50
       objectReference: {fileID: 0}
@@ -259,6 +263,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4759694631345475937}
     m_Modifications:
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 11400000, guid: b545ce0989054424d8ba41067a1cef8e, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: spawnRate
       value: 50
       objectReference: {fileID: 0}
@@ -345,6 +353,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4759694631345475937}
     m_Modifications:
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 11400000, guid: 1242c074becf2e5409a6e783955a9f88, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: spawnRate
       value: 50
       objectReference: {fileID: 0}
@@ -430,6 +442,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4759694631345475937}
     m_Modifications:
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: info
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cdc8b56fb33fbc47872dedd5bfd0bc8, type: 2}
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: spawnRate
       value: 50

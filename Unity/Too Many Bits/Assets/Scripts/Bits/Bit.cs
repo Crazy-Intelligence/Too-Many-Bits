@@ -20,6 +20,12 @@ namespace CrazyIntelligence.Bits
 		private void OnEnable()
 		{
 			SetupObject();
+
+			WeightCounter.Add(Data.Weight);
+		}
+		private void OnDisable()
+		{
+			WeightCounter.Remove(Data.Weight);
 		}
 
 		private void SetupObject()
