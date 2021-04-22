@@ -5,7 +5,7 @@ namespace CrazyIntelligence.Bits
 {
 	public class Spawner : MonoBehaviour
 	{
-		[SerializeField] private List<ObjectWithChance<BitData>> Bits = new List<ObjectWithChance<BitData>>();
+		[SerializeField] private List<ObjectWithWeight<BitData>> Bits = new List<ObjectWithWeight<BitData>>();
 		[SerializeField] private GameObject bitPrefab;
 		[Space]
 		[SerializeField] private float spawnRate;
@@ -13,10 +13,13 @@ namespace CrazyIntelligence.Bits
 		[SerializeField] [Range(1f, 25f)] private float spawnForce;
 		[SerializeField] [Range(-179f, 179f)] private float spawnDirection;
 		[SerializeField] [Range(0f, 89f)] private float spawnRange;
-		
-		private float _spawnTime;
-		private float _passedTime;
 
+		private Timer _timer;
+
+		private void Awake()
+		{
+			_timer = new Timer(1f / spawnRate, true);
+		}
 		private void Start()
 		{
 			if (spawnRate == 0f)
@@ -24,23 +27,22 @@ namespace CrazyIntelligence.Bits
 				enabled = false;
 			}
 
-			ResetSpawnTime();
+			_timer.OnTimerEnd += OnTimerEnd;
 		}
 		private void Update()
 		{
-			_passedTime += Time.deltaTime;
+			_timer.Tick(Time.deltaTime);
+		}
 
-			if (_passedTime >= _spawnTime)
+		private void OnTimerEnd()
+		{
+			var spawnTime = 1f / spawnRate;
+
+			var overflow = _timer.CountedSeconds / spawnTime;
+
+			for (int i = 1; i < overflow; i++)
 			{
-				var overflowCount = _passedTime / _spawnTime;
-				
-				for (int i = 1; i < overflowCount; i++)
-				{
-					SpawnObject();
-				}
-
-				ResetSpawnTime();
-				_passedTime = 0f;
+				SpawnObject();
 			}
 		}
 
@@ -61,11 +63,6 @@ namespace CrazyIntelligence.Bits
 			newObject.SetActive(true);
 
 			rb.AddForce(spawnForceVector * spawnForce, ForceMode2D.Impulse);
-		}
-
-		private void ResetSpawnTime()
-		{
-			_spawnTime = 1f / spawnRate;
 		}
 
 		private Vector3 Rotate(Vector3 vector, float angel)

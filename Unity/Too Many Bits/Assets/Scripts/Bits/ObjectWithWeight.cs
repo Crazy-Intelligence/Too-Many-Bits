@@ -3,7 +3,7 @@
 namespace CrazyIntelligence.Bits
 {
 	[System.Serializable]
-	public class ObjectWithChance<T>
+	public class ObjectWithWeight<T>
 	{
 		public T Object;
 		public int Weight;

@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CrazyIntelligence.Bits
@@ -8,35 +7,31 @@ namespace CrazyIntelligence.Bits
 	{
 		public SpriteCollection spriteCollection;
 		[Space]
-		[SerializeField] private float minIntervall;
-		[SerializeField] private float maxIntervall;
+		[SerializeField] private float timeUntilChange;
 
-		private float _flipIntervall;
+		private Timer _timer;
 
 		private SpriteRenderer _spriteRenderer;
-
-		private float _passedTime;
 
 		private void Awake()
 		{
 			_spriteRenderer = GetComponent<SpriteRenderer>();
+			_timer = new Timer(timeUntilChange, true);
 		}
 		private void Start()
 		{
-			_flipIntervall = Random.Range(minIntervall, maxIntervall);
 			ChangeSpriteToRandom();
+			_timer.OnTimerEnd += OnTimerEnd;
 		}
+
 		private void Update()
 		{
-			_passedTime += Time.deltaTime;
+			_timer.Tick(Time.deltaTime);
+		}
 
-			if (_passedTime >= _flipIntervall)
-			{
-				ChangeSpriteToRandom();
-
-				_flipIntervall = Random.Range(minIntervall, maxIntervall);
-				_passedTime = 0f;
-			}
+		private void OnTimerEnd()
+		{
+			ChangeSpriteToRandom();
 		}
 
 		private void ChangeSpriteToRandom()

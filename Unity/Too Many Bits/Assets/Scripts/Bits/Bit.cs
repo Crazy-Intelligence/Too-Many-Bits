@@ -13,11 +13,15 @@ namespace CrazyIntelligence.Bits
 
 		private void Awake()
 		{
-			_spriteRenderer = GetComponent<SpriteRenderer>();
-			_spriteChanger = GetComponent<SpriterChanger>();
-			_collider = GetComponent<CapsuleCollider2D>();
+			GetReferences();
 		}
+
 		private void OnEnable()
+		{
+			SetupObject();
+		}
+
+		private void SetupObject()
 		{
 			transform.localScale = new Vector3(Data.Scale, Data.Scale, 1f);
 
@@ -25,9 +29,23 @@ namespace CrazyIntelligence.Bits
 			_spriteRenderer.sortingLayerName = "Bits";
 
 			_spriteChanger.spriteCollection = Data.SpriteCollection;
-			
+
 			_collider.offset = Data.ColliderOffset;
 			_collider.size = Data.ColliderSize;
+		}
+
+		private void GetReferences()
+		{
+			_spriteRenderer = GetComponent<SpriteRenderer>();
+			_spriteChanger = GetComponent<SpriterChanger>();
+			_collider = GetComponent<CapsuleCollider2D>();
+		}
+
+		[ContextMenu("Setup")]
+		private void InspectorSetup()
+		{
+			GetReferences();
+			SetupObject();
 		}
 	}
 }

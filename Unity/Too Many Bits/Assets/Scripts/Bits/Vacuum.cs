@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CrazyIntelligence.Bits
 {
@@ -29,7 +28,7 @@ namespace CrazyIntelligence.Bits
 			var offset = new Vector3(collider.offset.x, collider.offset.y);
 
 			Gizmos.color = new Color(r, g, b);
-			Gizmos.DrawWireCube(transform.position + offset, collider.size);
+			Gizmos.DrawWireCube(transform.position + offset, collider.size * collider.transform.lossyScale);
 		}
 	}
 }
