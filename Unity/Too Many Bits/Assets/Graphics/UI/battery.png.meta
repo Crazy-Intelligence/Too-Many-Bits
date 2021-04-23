@@ -7,7 +7,19 @@ TextureImporter:
     second: battery_empty
   - first:
       213: -3194016953159716939
-    second: battery_full
+    second: battery_empty
+  - first:
+      213: -5115381973473030399
+    second: battery_fill_1
+  - first:
+      213: 2710491815294354099
+    second: battery_fill_2
+  - first:
+      213: 24244824113722713
+    second: battery_fill_3
+  - first:
+      213: -7364004317099968102
+    second: battery_fill_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,15 +109,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: battery_empty
+      name: battery_full
       rect:
         serializedVersion: 2
-        x: 10
+        x: 147
         y: 10
         width: 107
         height: 131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -118,15 +130,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: battery_full
+      name: battery_empty
       rect:
         serializedVersion: 2
-        x: 161
-        y: 8
+        x: 10
+        y: 9
         width: 107
         height: 131
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,6 +146,69 @@ TextureImporter:
       bones: []
       spriteID: 5bfe654f0829ca3d0800000000000000
       internalID: -3194016953159716939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: battery_fill_1
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 9
+        width: 107
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10f04b492338209b0800000000000000
+      internalID: -5115381973473030399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: battery_fill_2
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 9
+        width: 107
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b24939f1f99d9520800000000000000
+      internalID: 2710491815294354099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: battery_fill_3
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 9
+        width: 107
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955b0f00a82265000800000000000000
+      internalID: 24244824113722713
       vertices: []
       indices: 
       edges: []

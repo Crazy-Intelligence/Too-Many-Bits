@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CrazyIntelligence.Bits
 {
@@ -7,14 +8,13 @@ namespace CrazyIntelligence.Bits
 		[Header("Trigger")]
 		[SerializeField] private int[] triggers = new int[4];
 		[Header("Display")]
-		[SerializeField] private Transform mask;
-		[SerializeField] private Vector2[] steps = new Vector2[4];
-
-		private Vector3 _defaultPos;
+		[SerializeField] private Image image;
+		[SerializeField] private Sprite empty;
+		[SerializeField] private Sprite[] fillStates = new Sprite[4];
 
 		private void Start()
 		{
-			_defaultPos = mask.localPosition;
+			image.sprite = empty;
 		}
 		private void Update()
 		{
@@ -22,11 +22,11 @@ namespace CrazyIntelligence.Bits
 
 			if (i == -1)
 			{
-				mask.localPosition = _defaultPos;
+				image.sprite = empty;
 			}
 			else
 			{
-				mask.localPosition = new Vector3(steps[i].x, steps[i].y);
+				image.sprite = fillStates[i];
 			}
 		}
 
