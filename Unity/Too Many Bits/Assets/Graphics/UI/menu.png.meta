@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 59e8a1fa6424c8847bea20ffc9db9acd
+guid: 42448a5bcd0187a4d86ad6f312998b44
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5856981904466133357
-    second: battery_empty
+      213: 7042847911465117151
+    second: menu_background
   - first:
-      213: -3194016953159716939
-    second: battery_full
+      213: 6984307464289580096
+    second: menu_arm_1
+  - first:
+      213: -1438552683215292887
+    second: menu_arm_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,43 +100,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: battery_empty
+      name: menu_background
       rect:
         serializedVersion: 2
-        x: 10
-        y: 10
-        width: 107
-        height: 131
+        x: 152
+        y: 4
+        width: 144
+        height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 41, y: 32, z: 39, w: 46}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d61489fa20e284150800000000000000
-      internalID: 5856981904466133357
+      spriteID: fd5eaf16cd83db160800000000000000
+      internalID: 7042847911465117151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: battery_full
+      name: menu_arm_1
       rect:
         serializedVersion: 2
-        x: 161
-        y: 8
-        width: 107
-        height: 131
+        x: 16
+        y: 33
+        width: 136
+        height: 55
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bfe654f0829ca3d0800000000000000
-      internalID: -3194016953159716939
+      spriteID: 044f61362ae3de060800000000000000
+      internalID: 6984307464289580096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu_arm_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 123
+        width: 136
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9267446d4fb390ce0800000000000000
+      internalID: -1438552683215292887
       vertices: []
       indices: 
       edges: []

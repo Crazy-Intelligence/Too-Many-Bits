@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace CrazyIntelligence.Bits
 {
-	public class DisplayScore : MonoBehaviour
+	public class MoneyDisplay : MonoBehaviour
 	{
 		private Text _text;
 
@@ -11,10 +11,9 @@ namespace CrazyIntelligence.Bits
 		{
 			_text = GetComponent<Text>();
 		}
-
 		private void Update()
 		{
-			_text.text = ScoreCounter.Score.ToString();
+			_text.text = MoneyCounter.Money.ToString();
 		}
 	}
 }

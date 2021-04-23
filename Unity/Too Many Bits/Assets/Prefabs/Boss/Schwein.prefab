@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4759694631345475937}
   - component: {fileID: 4759694631345475938}
+  - component: {fileID: 3161639058735878246}
   m_Layer: 0
   m_Name: Schwein
   m_TagString: Untagged
@@ -87,6 +88,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &3161639058735878246
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4759694631345475939}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.45, y: 4.77}
+    newSize: {x: 6.45, y: 4.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -2.4912033, y: 0.5242562}
+      - {x: -1.3850036, y: -1.2249868}
+      - {x: 1.5725133, y: -1.2724882}
+      - {x: 2.3750207, y: 0.56003594}
+      - {x: 0.4928894, y: 1.8396816}
+      - {x: -0.3750205, y: 1.8975505}
 --- !u!1001 &26572349321463564
 PrefabInstance:
   m_ObjectHideFlags: 0

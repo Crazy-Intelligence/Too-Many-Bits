@@ -8,7 +8,7 @@ namespace CrazyIntelligence.Bits
 		[SerializeField] private SpawnerInfo info;
 		public SpawnerObjectInfo objectInfo;
 
-		[SerializeField] [Range(0, 100)] private int spawnRate;
+		[Range(0, 100)] public float spawnRate;
 
 		private Timer _timer;
 

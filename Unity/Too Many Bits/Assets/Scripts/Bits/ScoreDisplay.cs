@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace CrazyIntelligence.Bits
 {
-	public class DisplayWeight : MonoBehaviour
+	public class ScoreDisplay : MonoBehaviour
 	{
 		private Text _text;
 
@@ -14,7 +14,7 @@ namespace CrazyIntelligence.Bits
 
 		private void Update()
 		{
-			_text.text = WeightCounter.Weight.ToString();
+			_text.text = ScoreCounter.Score.ToString();
 		}
 	}
 }

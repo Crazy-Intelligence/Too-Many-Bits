@@ -4,7 +4,8 @@ namespace CrazyIntelligence.Bits
 {
 	public class Vacuum : MonoBehaviour
 	{
-		[SerializeField] private int scoreMultiplier;
+		public int ScoreMultiplier;
+		[SerializeField] private bool _alwaysShowGizmo;
 
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
@@ -12,12 +13,24 @@ namespace CrazyIntelligence.Bits
 
 			if (bit is null) return;
 
-			ScoreCounter.Add(bit.Data.BaseValue * scoreMultiplier);
+			int value = bit.Data.BaseValue * ScoreMultiplier;
+			ScoreCounter.Add(value);
+			MoneyCounter.Add(value);
 
 			Destroy(collision.gameObject);
 		}
 
 		private void OnDrawGizmos()
+		{
+			if (!_alwaysShowGizmo) return;
+			OnDrawGizmosSelected();
+		}
+		private void OnDrawGizmosSelected()
+		{
+			DrawCollider();
+		}
+
+		private void DrawCollider()
 		{
 			var r = 252f / 255f;
 			var g = 165f / 255f;
