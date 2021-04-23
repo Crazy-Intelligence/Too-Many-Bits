@@ -3,12 +3,14 @@ using UnityEngine;
 
 namespace CrazyIntelligence.Bits
 {
-	public class Spawner : MonoBehaviour
+	public class Spawner : MonoBehaviour, ICanBeDisabled
 	{
 		[SerializeField] private SpawnerInfo info;
 		public SpawnerObjectInfo objectInfo;
 
 		[Range(0, 100)] public float spawnRate;
+
+		private float _lastSpawnRate;
 
 		private Timer _timer;
 
@@ -28,6 +30,17 @@ namespace CrazyIntelligence.Bits
 		private void Update()
 		{
 			_timer.Tick(Time.deltaTime);
+		}
+
+		public void Disable()
+		{
+			_lastSpawnRate = spawnRate;
+			spawnRate = 0f;
+		}
+
+		public void Enable()
+		{
+			spawnRate = _lastSpawnRate;
 		}
 
 		private void OnTimerEnd()

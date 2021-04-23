@@ -14,8 +14,9 @@ namespace CrazyIntelligence.Bits
 		[Header("Hitbox")]
 		public Vector2 ColliderOffset;
 		public Vector2 ColliderSize;
-		[Header("Score")]
-		public int BaseValue;
+		[Header("Value")]
+		public int ScoreValue;
+		public int MoneyValue;
 		[Header("Attributes")]
 		public bool isSticky;
 	}

@@ -21,11 +21,11 @@ namespace CrazyIntelligence.Bits
 		{
 			SetupObject();
 
-			WeightCounter.Add(Data.Weight);
+			Counter.AddWeight(Data.Weight);
 		}
 		private void OnDisable()
 		{
-			WeightCounter.Remove(Data.Weight);
+			Counter.RemoveWeight(Data.Weight);
 		}
 
 		private void SetupObject()

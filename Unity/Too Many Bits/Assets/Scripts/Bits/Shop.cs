@@ -17,9 +17,9 @@ namespace CrazyIntelligence.Bits
 
 		public void TryBuy()
 		{
-			if (MoneyCounter.Money >= price)
+			if (Counter.Money >= price)
 			{
-				MoneyCounter.Remove(price);
+				Counter.RemoveMoney(price);
 
 				OnBuy?.Invoke();
 			}

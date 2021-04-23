@@ -18,5 +18,6 @@ MonoBehaviour:
   Weight: 1
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.35}
-  BaseValue: 1
+  ScoreValue: 1
+  MoneyValue: 1
   isSticky: 0

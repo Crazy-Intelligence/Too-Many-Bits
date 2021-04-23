@@ -14,7 +14,7 @@ namespace CrazyIntelligence.Bits
 
 		private void Update()
 		{
-			_text.text = ScoreCounter.Score.ToString();
+			_text.text = Counter.Score.ToString();
 		}
 	}
 }

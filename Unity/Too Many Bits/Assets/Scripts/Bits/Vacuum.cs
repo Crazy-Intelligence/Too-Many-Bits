@@ -2,22 +2,42 @@ using UnityEngine;
 
 namespace CrazyIntelligence.Bits
 {
-	public class Vacuum : MonoBehaviour
+	public class Vacuum : MonoBehaviour, ICanBeDisabled
 	{
 		public int ScoreMultiplier;
+		public int MoneyMultiplier;
+		[SerializeField] private bool doNotDisable;
+		[Space]
 		[SerializeField] private bool _alwaysShowGizmo;
 
+		private Collider2D _collider;
+
+		private void Awake()
+		{
+			_collider = GetComponent<Collider2D>();
+		}
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
 			var bit = collision.GetComponent<Bit>();
 
 			if (bit is null) return;
 
-			int value = bit.Data.BaseValue * ScoreMultiplier;
-			ScoreCounter.Add(value);
-			MoneyCounter.Add(value);
+			Counter.AddScore(bit.Data.ScoreValue * ScoreMultiplier);
+			Counter.AddMoney(bit.Data.MoneyValue * MoneyMultiplier);
 
 			Destroy(collision.gameObject);
+		}
+
+		public void Disable()
+		{
+			if (doNotDisable) return;
+
+			_collider.enabled = false;
+		}
+
+		public void Enable()
+		{
+			_collider.enabled = true;
 		}
 
 		private void OnDrawGizmos()

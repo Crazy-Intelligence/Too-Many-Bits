@@ -13,7 +13,7 @@ namespace CrazyIntelligence.Bits
 		}
 		private void Update()
 		{
-			_text.text = MoneyCounter.Money.ToString();
+			_text.text = Counter.Money.ToString();
 		}
 	}
 }

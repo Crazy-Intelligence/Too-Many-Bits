@@ -35,7 +35,7 @@ namespace CrazyIntelligence.Bits
 			for (int i = 4 - 1; i >= 0; i--)
 			{
 				int trigger = triggers[i];
-				if (WeightCounter.Weight >= trigger)
+				if (Counter.Weight >= trigger)
 				{
 					return i;
 				}
