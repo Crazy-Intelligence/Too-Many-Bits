@@ -17,6 +17,8 @@ namespace CrazyIntelligence.Bits
 			_currentEnvoirment = FindObjectOfType<Envoirment>().gameObject;
 
 			GameManager.WeightUntilGameOver = weightUntilGameOver;
+
+			GameManager.StartApp();
 		}
 
 		private void OnEnable()

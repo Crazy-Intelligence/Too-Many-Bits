@@ -19,6 +19,7 @@ namespace CrazyIntelligence.Bits
 
 		public static event Action OnGameOver;
 
+		public static event Action OnAppStart;
 		public static event Action OnAppExit;
 
 		public static bool IsPlaying;
@@ -52,6 +53,11 @@ namespace CrazyIntelligence.Bits
 		{
 			IsPaused = false;
 			OnContinue?.Invoke();
+
+		}
+		public static void StartApp()
+		{
+			OnAppStart?.Invoke();
 		}
 		public static void ExitApp()
 		{
