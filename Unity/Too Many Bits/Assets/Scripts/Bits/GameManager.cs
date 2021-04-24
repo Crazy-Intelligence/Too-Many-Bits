@@ -1,7 +1,9 @@
 using System;
 using UnityEngine;
 
-using Object = UnityEngine.Object;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace CrazyIntelligence.Bits
 {
@@ -9,40 +11,56 @@ namespace CrazyIntelligence.Bits
 	{
 		public static int WeightUntilGameOver { get; set; }
 
-		public static event Action OnGameStart;
-		public static event Action OnGamePause;
-		public static event Action OnGameContinue;
+		public static event Action OnStart;
+		public static event Action OnReset;
+
+		public static event Action OnPause;
+		public static event Action OnContinue;
+
 		public static event Action OnGameOver;
 
 		public static event Action OnAppExit;
 
-		public static void StartGame()
-		{
-			foreach (var bit in Object.FindObjectsOfType<Bit>())
-			{
-				Object.Destroy(bit.gameObject);
-			}
+		public static bool IsPlaying;
+		public static bool IsPaused;
 
+		public static void Start()
+		{
 			Counter.ResetAll();
 
-			OnGameStart?.Invoke();
+			IsPlaying = true;
+
+			OnStart?.Invoke();
 		}
-		public static void PauseGame()
+		public static void Restart()
 		{
-			OnGamePause?.Invoke();
+			if (IsPaused)
+			{
+				Continue();
+			}
+
+			OnReset?.Invoke();
+
+			Start();
 		}
-		public static void ContinueGame()
+		public static void Pause()
 		{
-			OnGameContinue?.Invoke();
+			IsPaused = true;
+			OnPause?.Invoke();
 		}
-		public static void ExitGame()
+		public static void Continue()
+		{
+			IsPaused = false;
+			OnContinue?.Invoke();
+		}
+		public static void ExitApp()
 		{
 			OnAppExit?.Invoke();
 
 			Application.Quit();
 
 #if UNITY_EDITOR
-			Debug.Log("Game Exit");
+			EditorApplication.isPlaying = false;
 #endif
 		}
 
@@ -50,6 +68,7 @@ namespace CrazyIntelligence.Bits
 		{
 			if (Counter.Weight >= WeightUntilGameOver)
 			{
+				IsPlaying = false;
 				OnGameOver?.Invoke();
 				return true;
 			}

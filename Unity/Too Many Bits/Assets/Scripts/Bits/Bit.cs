@@ -21,10 +21,12 @@ namespace CrazyIntelligence.Bits
 		{
 			SetupObject();
 
+			GameManager.OnReset += OnReset;
 			Counter.AddWeight(Data.Weight);
 		}
 		private void OnDisable()
 		{
+			GameManager.OnReset -= OnReset;
 			Counter.RemoveWeight(Data.Weight);
 		}
 
@@ -49,6 +51,11 @@ namespace CrazyIntelligence.Bits
 			_collider = GetComponent<CapsuleCollider2D>();
 			_spriteChanger = GetComponent<SpriterChanger>();
 			_sticky = GetComponent<Sticky>();
+		}
+
+		private void OnReset()
+		{
+			Destroy(gameObject);
 		}
 
 		[ContextMenu("Setup")]

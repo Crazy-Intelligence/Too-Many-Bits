@@ -2,65 +2,54 @@ using UnityEngine;
 
 namespace CrazyIntelligence.Bits
 {
+	[RequireComponent(typeof(Animator))]
 	public class UI : MonoBehaviour
 	{
 		[SerializeField] private GameObject StartMenu;
 		[SerializeField] private GameObject PauseMenu;
 
-		private float _timeScale;
+		private Animator _animator;
 
 		private void Awake()
 		{
-			ShowStartMenu();
+			_animator = GetComponent<Animator>();
 		}
 		private void OnEnable()
 		{
-			GameManager.OnGamePause += Pause;
+			GameManager.OnStart += OnStart;
+			GameManager.OnGameOver += OnGameOver;
 		}
 		private void OnDisable()
 		{
-			GameManager.OnGamePause -= Pause;
+			GameManager.OnStart -= OnStart;
+			GameManager.OnGameOver -= OnGameOver;
 		}
-
-		public void Play()
-		{
-			GameManager.StartGame();
-			HideStartMenu();
-		}
-		public void Restart()
-		{
-			Play();
-		}
-		public void Resume()
-		{
-			GameManager.ContinueGame();
-			HidePauseMenu();
-		}
-		public void Pause()
-		{
-			ShowPauseMenu();
-		}
-
-		public void Exit()
-		{
-			GameManager.ExitGame();
-		}
-
-		private void ShowStartMenu()
-		{
-			StartMenu.SetActive(true);
-		}
-		private void HideStartMenu()
+		private void Start()
 		{
 			StartMenu.SetActive(false);
-		}
-		private void ShowPauseMenu()
-		{
-			PauseMenu.SetActive(true);
-		}
-		private void HidePauseMenu()
-		{
 			PauseMenu.SetActive(false);
+		}
+
+		private void Update()
+		{
+			_animator.SetBool("IsPlaying", GameManager.IsPlaying);
+			_animator.SetBool("IsPaused", GameManager.IsPaused);
+		}
+
+		public void Play() => GameManager.Start();
+		public void Restart() => GameManager.Restart();
+		public void Resume() => GameManager.Continue();
+		public void Pause() => GameManager.Pause();
+		public void Exit() => GameManager.ExitApp();
+
+		private void OnStart()
+		{
+			_animator.SetTrigger("StartPlaying");
+			_animator.SetBool("ShopUnlocked", true);
+		}
+		private void OnGameOver()
+		{
+			_animator.SetTrigger("GameOver");
 		}
 	}
 }

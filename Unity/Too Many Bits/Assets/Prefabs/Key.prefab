@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5738954625524394382}
   - component: {fileID: 712150176862356855}
   - component: {fileID: 712150176862356848}
+  - component: {fileID: 6226440045918845710}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1590948005
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4381997053881171086, guid: 3234bb09e2fa19e4f8a5c4ed5eea0f17, type: 3}
   m_Color: {r: 0.58080864, g: 0.5943396, b: 0.5747152, a: 1}
@@ -146,6 +147,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 10}
+--- !u!114 &6226440045918845710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712150176862356849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62df89ade8a84bd4ea727189233c1142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6234048870344472155
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +228,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1590948005
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 5674017421615257816, guid: a770b2c7886c6454396e18ad547b23b7, type: 3}
   m_Color: {r: 0.34456897, g: 0.9245283, b: 0.23985407, a: 1}

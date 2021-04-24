@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CrazyIntelligence.Bits
 {
-	public class Vacuum : MonoBehaviour, ICanBeDisabled
+	public class Vacuum : MonoBehaviour
 	{
 		public int ScoreMultiplier;
 		public int MoneyMultiplier;
@@ -16,6 +16,18 @@ namespace CrazyIntelligence.Bits
 		{
 			_collider = GetComponent<Collider2D>();
 		}
+
+		private void OnEnable()
+		{
+			GameManager.OnReset += Enable;
+			GameManager.OnGameOver += Disable;
+		}
+		private void OnDisable()
+		{
+			GameManager.OnReset -= Enable;
+			GameManager.OnGameOver -= Disable;
+		}
+
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
 			var bit = collision.GetComponent<Bit>();
@@ -28,14 +40,14 @@ namespace CrazyIntelligence.Bits
 			Destroy(collision.gameObject);
 		}
 
-		public void Disable()
+		private void Disable()
 		{
 			if (doNotDisable) return;
 
 			_collider.enabled = false;
 		}
 
-		public void Enable()
+		private void Enable()
 		{
 			_collider.enabled = true;
 		}

@@ -3,21 +3,34 @@ using UnityEngine;
 
 namespace CrazyIntelligence.Bits
 {
-	public class Spawner : MonoBehaviour, ICanBeDisabled
+	public class Spawner : MonoBehaviour
 	{
 		[SerializeField] private SpawnerInfo info;
 		public SpawnerObjectInfo objectInfo;
 
 		[Range(0, 100)] public float spawnRate;
-
-		private float _lastSpawnRate;
-
+		
 		private Timer _timer;
+
+		private bool disabled;
 
 		private void Awake()
 		{
-			_timer = new Timer(1f / spawnRate, true);
+			Disable();
 		}
+		private void OnEnable()
+		{
+			GameManager.OnStart += Enable;
+			GameManager.OnReset += Enable;
+			GameManager.OnGameOver += Disable;
+		}
+		private void OnDisable()
+		{
+			GameManager.OnStart -= Enable;
+			GameManager.OnReset -= Enable;
+			GameManager.OnGameOver -= Disable;
+		}
+
 		private void Start()
 		{
 			if (spawnRate == 0f)
@@ -25,23 +38,18 @@ namespace CrazyIntelligence.Bits
 				enabled = false;
 			}
 
+			_timer = new Timer(1f / spawnRate, true);
 			_timer.OnTimerEnd += OnTimerEnd;
 		}
 		private void Update()
 		{
+			if (disabled) return;
+
 			_timer.Tick(Time.deltaTime);
 		}
 
-		public void Disable()
-		{
-			_lastSpawnRate = spawnRate;
-			spawnRate = 0f;
-		}
-
-		public void Enable()
-		{
-			spawnRate = _lastSpawnRate;
-		}
+		private void Disable() => disabled = true;
+		private void Enable() => disabled = false;
 
 		private void OnTimerEnd()
 		{

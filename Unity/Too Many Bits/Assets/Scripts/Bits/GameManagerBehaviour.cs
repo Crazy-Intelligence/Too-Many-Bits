@@ -5,25 +5,27 @@ namespace CrazyIntelligence.Bits
 {
 	public class GameManagerBehaviour : MonoBehaviour
 	{
+		[SerializeField] private GameObject envoirmentPrefab;
+		[SerializeField] private UnityEvent OnResetEvent;
 		[SerializeField] private int weightUntilGameOver;
 		[SerializeField] private UnityEvent OnGameOverEvent;
 
-		private float _timeScaleBeforePause;
+		private GameObject _currentEnvoirment;
 
 		private void Awake()
 		{
+			_currentEnvoirment = FindObjectOfType<Envoirment>().gameObject;
+
 			GameManager.WeightUntilGameOver = weightUntilGameOver;
 		}
 
 		private void OnEnable()
 		{
-			GameManager.OnGamePause -= OnGamePause;
-			GameManager.OnGameContinue -= OnGameContinue;
+			GameManager.OnReset += OnReset;
 		}
 		private void OnDisable()
 		{
-			GameManager.OnGamePause -= OnGamePause;
-			GameManager.OnGameContinue -= OnGameContinue;
+			GameManager.OnReset -= OnReset;
 		}
 
 		private void Update()
@@ -35,18 +37,18 @@ namespace CrazyIntelligence.Bits
 
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
-				GameManager.PauseGame();
+				GameManager.Pause();
 			}
+
+			Cursor.visible = !GameManager.IsPlaying;
 		}
 
-		private void OnGamePause()
+		private void OnReset()
 		{
-			_timeScaleBeforePause = Time.timeScale;
-			TimeManager.SetTimeScale(0);
-		}
-		private void OnGameContinue()
-		{
-			TimeManager.SetTimeScale(_timeScaleBeforePause);
+			OnResetEvent?.Invoke();
+
+			Destroy(_currentEnvoirment);
+			Instantiate(envoirmentPrefab);
 		}
 	}
 }
