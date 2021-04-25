@@ -42,8 +42,7 @@ namespace CrazyIntelligence.Bits
 				enabled = false;
 			}
 
-			_timer = new Timer(1f / spawnRate, true);
-			_timer.OnTimerEnd += OnTimerEnd;
+			SetSpawnRate(spawnRate);
 		}
 		private void Update()
 		{

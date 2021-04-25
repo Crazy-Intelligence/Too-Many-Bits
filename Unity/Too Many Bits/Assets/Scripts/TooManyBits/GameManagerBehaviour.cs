@@ -51,6 +51,7 @@ namespace CrazyIntelligence.Bits
 				}
 			}
 
+			Cursor.lockState = CursorLockMode.Confined;
 			Cursor.visible = !GameManager.IsPlaying;
 		}
 

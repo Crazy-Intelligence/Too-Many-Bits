@@ -22,11 +22,11 @@ namespace CrazyIntelligence.Bits
 
 		private void OnEnable()
 		{
-			GameManager.OnReset += ResetSpawnRates;
+			GameManager.OnStart += ResetSpawnRates;
 		}
 		private void OnDisable()
 		{
-			GameManager.OnReset -= ResetSpawnRates;
+			GameManager.OnStart -= ResetSpawnRates;
 		}
 
 		private void Update()
