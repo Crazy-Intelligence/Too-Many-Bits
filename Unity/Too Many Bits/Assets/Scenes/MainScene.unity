@@ -1927,7 +1927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpawnRate: 5
   spawnRateIncreaseStepSize: 5
-  timeUntilStepup: 5
+  timeUntilStepup: 7.5
 --- !u!114 &729949749
 MonoBehaviour:
   m_ObjectHideFlags: 0
