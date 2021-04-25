@@ -2,15 +2,17 @@ using UnityEngine;
 
 namespace CrazyIntelligence.Bits
 {
-	[RequireComponent(typeof(SpriterChanger), typeof(Sticky))]
 	public class Bit : MonoBehaviour
 	{
 		public BitData Data;
 
-		private SpriteRenderer _spriteRenderer;
 		private CapsuleCollider2D _collider;
+		private SpriteRenderer _spriteRenderer;
 		private SpriterChanger _spriteChanger;
-		private Sticky _sticky;
+		private Animator _animator;
+
+		private bool _animating;
+		private Timer _timer;
 
 		private void Awake()
 		{
@@ -21,39 +23,69 @@ namespace CrazyIntelligence.Bits
 		{
 			SetupObject();
 
-			GameManager.OnReset += OnReset;
+			GameManager.OnReset += DestroyThisObject;
 			Counter.AddWeight(Data.Weight);
 		}
 		private void OnDisable()
 		{
-			GameManager.OnReset -= OnReset;
+			GameManager.OnReset -= DestroyThisObject;
 			Counter.RemoveWeight(Data.Weight);
 		}
 
-		private void SetupObject()
+		private void Update()
 		{
-			transform.localScale = new Vector3(Data.Scale, Data.Scale, 1f);
+			if (!_animating) return;
 
-			_spriteRenderer.color = Data.Color;
-			_spriteRenderer.sortingLayerName = "Bits";
+			_timer.Tick(Time.deltaTime);
+		}
 
-			_collider.offset = Data.ColliderOffset;
-			_collider.size = Data.ColliderSize;
+		public void Destroy()
+		{
+			PlayAnimation(Data.DestroyAnimation);
+			_timer.OnTimerEnd += DestroyThisObject;
+		}
 
-			_spriteChanger.spriteCollection = Data.SpriteCollection;
-
-			_sticky.Active = Data.isSticky;
+		public void Collect()
+		{
+			PlayAnimation(Data.CollectAnimation);
 		}
 
 		private void GetReferences()
 		{
-			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_collider = GetComponent<CapsuleCollider2D>();
+			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_spriteChanger = GetComponent<SpriterChanger>();
-			_sticky = GetComponent<Sticky>();
+			_animator = GetComponent<Animator>();
+		}
+		private void SetupObject()
+		{
+			transform.localScale = new Vector3(Data.Scale, Data.Scale, 1f);
+
+			_collider.offset = Data.ColliderOffset;
+			_collider.size = Data.ColliderSize;
+
+			_spriteRenderer.color = Data.Color;
+			_spriteRenderer.sortingLayerName = "Bits";
+
+			_spriteChanger.spriteCollection = Data.SpriteCollection;
+
+			_animator.runtimeAnimatorController = Data.AnimatioController;
 		}
 
-		private void OnReset()
+		private void PlayAnimation(AnimationClip clip)
+		{
+			_timer = new Timer(clip.length);
+			_timer.OnTimerEnd += OnAnimationEnd;
+			_animating = true;
+			_animator.Play(clip.name);
+		}
+
+		private void OnAnimationEnd()
+		{
+			_animating = false;
+		}
+
+		private void DestroyThisObject()
 		{
 			Destroy(gameObject);
 		}

@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace CrazyIntelligence.Bits
 {
-	public class GameEventSystem : MonoBehaviour
+	public class GameEventListener : MonoBehaviour
 	{
 		[SerializeField] private UnityEvent OnStartEvent;
 		[SerializeField] private UnityEvent OnResetEvent;

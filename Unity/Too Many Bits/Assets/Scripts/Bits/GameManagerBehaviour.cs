@@ -6,8 +6,7 @@ namespace CrazyIntelligence.Bits
 	public class GameManagerBehaviour : MonoBehaviour
 	{
 		[SerializeField] private GameObject envoirmentPrefab;
-		[SerializeField] private UnityEvent OnResetEvent;
-		[SerializeField] private int weightUntilGameOver;
+		[SerializeField] [Range(500, 1500)] private int weightUntilGameOver;
 		[SerializeField] private UnityEvent OnGameOverEvent;
 
 		private GameObject _currentEnvoirment;
@@ -17,8 +16,6 @@ namespace CrazyIntelligence.Bits
 			_currentEnvoirment = FindObjectOfType<Envoirment>().gameObject;
 
 			GameManager.WeightUntilGameOver = weightUntilGameOver;
-
-			GameManager.StartApp();
 		}
 
 		private void OnEnable()
@@ -30,6 +27,11 @@ namespace CrazyIntelligence.Bits
 			GameManager.OnReset -= OnReset;
 		}
 
+		private void Start()
+		{
+			GameManager.StartApp();
+		}
+
 		private void Update()
 		{
 			if (GameManager.CheckGameOver())
@@ -39,7 +41,14 @@ namespace CrazyIntelligence.Bits
 
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
-				GameManager.Pause();
+				if (GameManager.IsPlaying)
+				{
+					GameManager.Pause();
+				}
+				else
+				{
+					GameManager.Continue();
+				}
 			}
 
 			Cursor.visible = !GameManager.IsPlaying;
@@ -47,8 +56,6 @@ namespace CrazyIntelligence.Bits
 
 		private void OnReset()
 		{
-			OnResetEvent?.Invoke();
-
 			Destroy(_currentEnvoirment);
 			Instantiate(envoirmentPrefab);
 		}

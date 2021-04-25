@@ -70,4 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd166bd0ea204af498b16fd8bee85efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreMultiplier: 0
+  ScoreMultiplier: 0
+  MoneyMultiplier: 0
+  doNotDisable: 0
+  destroyBits: 1
+  disableColliderOnContact: 0

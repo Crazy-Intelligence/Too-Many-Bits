@@ -485,6 +485,14 @@ PrefabInstance:
       propertyPath: _alwaysShowGizmo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3000317913974703967, guid: 70e705e66c9c931478f904e1d0a4ca61, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.361
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000317913974703967, guid: 70e705e66c9c931478f904e1d0a4ca61, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.019
+      objectReference: {fileID: 0}
     - target: {fileID: 3251290353146947834, guid: 70e705e66c9c931478f904e1d0a4ca61, type: 3}
       propertyPath: m_Name
       value: OutLeft
@@ -748,9 +756,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CableMiddle
       objectReference: {fileID: 0}
+    - target: {fileID: 1121868294247651065, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
+      propertyPath: m_ForceMagnitude
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 5695813890881775264, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5695813890881775264, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1427,7 +1439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2491907667521257206, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2491907667521257206, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1492,7 +1504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935161134182732489, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6935161134182732489, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1549,7 +1561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2491907667521257206, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2491907667521257206, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1713,7 +1725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6935161134182732489, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6935161134182732489, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1764,13 +1776,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3554849126931532768}
     m_Modifications:
+    - target: {fileID: 1249903225052590906, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: m_ForceMagnitude
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 3294865612102834107, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_Name
       value: CableL (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: destroyBits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: MoneyMultiplier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: ScoreMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6935161134182732489, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6935161134182732489, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1821,13 +1849,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 276884634505121546}
     m_Modifications:
+    - target: {fileID: 1249903225052590906, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: m_ForceMagnitude
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3294865612102834107, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_Name
       value: CableL (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: MoneyMultiplier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: ScoreMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6935161134182732489, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6935161134182732489, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1981,9 +2021,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CableMiddle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1121868294247651065, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
+      propertyPath: m_ForceMagnitude
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5695813890881775264, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5695813890881775264, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_LocalPosition.x

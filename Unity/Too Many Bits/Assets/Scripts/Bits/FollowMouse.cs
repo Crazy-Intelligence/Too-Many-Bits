@@ -6,6 +6,9 @@ namespace CrazyIntelligence.Bits
 	public class FollowMouse : MonoBehaviour
 	{
 		[SerializeField] private Vector3 offset;
+		[SerializeField] [Range(-179f, 179f)] private float rotationOffset;
+		[SerializeField] [Range(1f, 50f)] private float rotationSpeed;
+		[SerializeField] [Range(0f, 0.1f)] private float minMagnitudeToRotate;
 
 		private Rigidbody2D _rigidbody;
 
@@ -15,12 +18,6 @@ namespace CrazyIntelligence.Bits
 		{
 			_rigidbody = GetComponent<Rigidbody2D>();
 		}
-		private void Start()
-		{
-			transform.position = GetMousePos();
-			ResetOffset();
-		}
-
 		private void OnEnable()
 		{
 			GameManager.OnPause += OnGamePause;
@@ -33,12 +30,43 @@ namespace CrazyIntelligence.Bits
 			GameManager.OnContinue -= OnGameContinue;
 			GameManager.OnReset -= OnGameReset;
 		}
-
+		private void Start()
+		{
+			_lastMousePosition = GetMousePos();
+		}
 		private void FixedUpdate()
 		{
-			MoveToMouse();
+			//MoveToMouse();
 
-			_lastMousePosition = GetMousePos();
+			var mousePos = GetMousePos();
+
+
+			_rigidbody.MovePosition(mousePos);
+
+			var deltaPos = _lastMousePosition - mousePos;
+
+			if (deltaPos.magnitude >= minMagnitudeToRotate)
+			{
+				RotateTowards(mousePos);
+			}
+
+			_lastMousePosition = mousePos;
+		}
+
+		private void RotateTowards(Vector2 targetPosition)
+		{
+			var targetRotation = GetTargetRotation(targetPosition);
+
+			_rigidbody.SetRotation(Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed));
+		}
+		private Quaternion GetTargetRotation(Vector2 targetPosition)
+		{
+			Vector2 difference = new Vector3(targetPosition.x, targetPosition.y) - transform.position;
+			float rotationAngel = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+			Quaternion targetRotation = Quaternion.Euler(0f, 0f, rotationAngel + rotationOffset);
+
+			return targetRotation;
 		}
 		private void OnGamePause()
 		{
@@ -47,31 +75,10 @@ namespace CrazyIntelligence.Bits
 		private void OnGameContinue()
 		{
 			_rigidbody.simulated = true;
-			OnGameReset();
 		}
 		private void OnGameReset()
 		{
-			_lastMousePosition = Vector3.zero;
-			ResetOffset();
-		}
-
-		private void MoveToMouse()
-		{
-			if (_lastMousePosition == Vector3.zero) return;
-
-			var mousePosDelta = GetMousePos() - _lastMousePosition;
-
-			_rigidbody.MovePosition(transform.position + mousePosDelta);
-		}
-		private void ResetOffset()
-		{
-			var mousePos = GetMousePos();
-			offset = new Vector3()
-			{
-				x = offset.x + mousePos.x,
-				y = offset.y + mousePos.y,
-				z = offset.z
-			};
+			_rigidbody.simulated = true;
 		}
 
 		private Vector3 GetMousePos() => Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;

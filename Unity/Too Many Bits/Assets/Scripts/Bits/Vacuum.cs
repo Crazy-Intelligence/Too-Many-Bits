@@ -7,8 +7,8 @@ namespace CrazyIntelligence.Bits
 		public int ScoreMultiplier;
 		public int MoneyMultiplier;
 		[SerializeField] private bool doNotDisable;
-		[Space]
-		[SerializeField] private bool _alwaysShowGizmo;
+		[SerializeField] private bool destroyBits;
+		[SerializeField] private bool disableColliderOnContact;
 
 		private Collider2D _collider;
 
@@ -34,10 +34,23 @@ namespace CrazyIntelligence.Bits
 
 			if (bit is null) return;
 
-			Counter.AddScore(bit.Data.ScoreValue * ScoreMultiplier);
+			var score = bit.Data.ScoreValue * ScoreMultiplier;
+			Counter.AddScore(score);
 			Counter.AddMoney(bit.Data.MoneyValue * MoneyMultiplier);
 
-			Destroy(collision.gameObject);
+			if (destroyBits)
+			{
+				bit.Destroy();
+			}
+			else
+			{
+				bit.Collect();
+			}
+
+			if (disableColliderOnContact)
+			{
+				collision.GetComponent<Collider2D>().enabled = false;
+			}
 		}
 
 		private void Disable()
@@ -50,30 +63,6 @@ namespace CrazyIntelligence.Bits
 		private void Enable()
 		{
 			_collider.enabled = true;
-		}
-
-		private void OnDrawGizmos()
-		{
-			if (!_alwaysShowGizmo) return;
-			OnDrawGizmosSelected();
-		}
-		private void OnDrawGizmosSelected()
-		{
-			DrawCollider();
-		}
-
-		private void DrawCollider()
-		{
-			var r = 252f / 255f;
-			var g = 165f / 255f;
-			var b = 3f / 255f;
-
-			var collider = GetComponent<BoxCollider2D>();
-
-			var offset = new Vector3(collider.offset.x, collider.offset.y);
-
-			Gizmos.color = new Color(r, g, b);
-			Gizmos.DrawWireCube(transform.position + offset, collider.size * collider.transform.lossyScale);
 		}
 	}
 }

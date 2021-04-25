@@ -9,8 +9,6 @@ namespace CrazyIntelligence.Bits
 {
 	public static class GameManager
 	{
-		public static int WeightUntilGameOver { get; set; }
-
 		public static event Action OnStart;
 		public static event Action OnReset;
 
@@ -21,42 +19,41 @@ namespace CrazyIntelligence.Bits
 
 		public static event Action OnAppStart;
 		public static event Action OnAppExit;
+		
+		public static int WeightUntilGameOver { get; set; }
 
-		public static bool IsPlaying;
-		public static bool IsPaused;
+		public static bool IsPlaying { get; private set; }
 
 		public static void Start()
 		{
-			Counter.ResetAll();
-
 			IsPlaying = true;
 
 			OnStart?.Invoke();
 		}
-		public static void Restart()
+		public static void Reset()
 		{
-			if (IsPaused)
-			{
-				Continue();
-			}
+			IsPlaying = false;
+
+			Counter.ResetAll();
 
 			OnReset?.Invoke();
-
-			Start();
 		}
 		public static void Pause()
 		{
-			IsPaused = true;
+			IsPlaying = false;
+
 			OnPause?.Invoke();
 		}
 		public static void Continue()
 		{
-			IsPaused = false;
-			OnContinue?.Invoke();
+			IsPlaying = true;
 
+			OnContinue?.Invoke();
 		}
 		public static void StartApp()
 		{
+			IsPlaying = false;
+
 			OnAppStart?.Invoke();
 		}
 		public static void ExitApp()
@@ -72,6 +69,8 @@ namespace CrazyIntelligence.Bits
 
 		public static bool CheckGameOver()
 		{
+			if (!IsPlaying) return false;
+
 			if (Counter.Weight >= WeightUntilGameOver)
 			{
 				IsPlaying = false;

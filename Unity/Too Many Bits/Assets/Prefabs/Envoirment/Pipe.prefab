@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b03f7743d0bf27d4c842e54a07ee7701, type: 2}
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: spawnRate
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: objectInfo

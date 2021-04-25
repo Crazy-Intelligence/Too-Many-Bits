@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpriteCollection: {fileID: 11400000, guid: 13467f2667e5e394aa8891e07c77a904, type: 2}
   Color: {r: 0, g: 1, b: 0.69803923, a: 1}
+  AnimatioController: {fileID: 9100000, guid: 54120e03c9647754aa6871378b203b6d, type: 2}
+  DestroyAnimation: {fileID: 7400000, guid: 312babbe112aa1b40b89428c519fca40, type: 2}
+  CollectAnimation: {fileID: 7400000, guid: ce9c850f068abc545ac39372125dc776, type: 2}
   Scale: 2
   Weight: 3
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.35}
   ScoreValue: 5
   MoneyValue: 5
-  isSticky: 0

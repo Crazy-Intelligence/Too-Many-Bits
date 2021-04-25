@@ -21,14 +21,18 @@ namespace CrazyIntelligence.Bits
 		private void OnEnable()
 		{
 			GameManager.OnStart += Enable;
-			GameManager.OnReset += Enable;
+			GameManager.OnReset += Disable;
 			GameManager.OnGameOver += Disable;
+
+			LevelManager.Spawner.Add(this);
 		}
 		private void OnDisable()
 		{
 			GameManager.OnStart -= Enable;
-			GameManager.OnReset -= Enable;
+			GameManager.OnReset -= Disable;
 			GameManager.OnGameOver -= Disable;
+
+			LevelManager.Spawner.Remove(this);
 		}
 
 		private void Start()
@@ -46,6 +50,13 @@ namespace CrazyIntelligence.Bits
 			if (disabled) return;
 
 			_timer.Tick(Time.deltaTime);
+		}
+
+		public void SetSpawnRate(float newSpawnRate)
+		{
+			spawnRate = newSpawnRate;
+			_timer = new Timer(1f / spawnRate, true);
+			_timer.OnTimerEnd += OnTimerEnd;
 		}
 
 		private void Disable() => disabled = true;
