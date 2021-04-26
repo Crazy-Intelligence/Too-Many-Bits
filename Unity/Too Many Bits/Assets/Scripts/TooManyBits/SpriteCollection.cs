@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace CrazyIntelligence.Bits
+namespace CrazyIntelligence.TooManyBits
 {
-	[CreateAssetMenu(fileName = "Sprites", menuName = "Bits/SpriteCollection")]
+	[CreateAssetMenu(fileName = "Sprites", menuName = "TooManyBits/SpriteCollection")]
 	public class SpriteCollection : ScriptableObject
 	{
 		[SerializeField] private List<Sprite> sprites = new List<Sprite>();

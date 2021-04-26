@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace CrazyIntelligence.Bits
+namespace CrazyIntelligence.TooManyBits
 {
 	public class Shop : MonoBehaviour
 	{
+		[SerializeField] private Counter money;
 		[SerializeField] private Text priceTag;
 		[SerializeField] private int price;
 		[SerializeField] private UnityEvent OnBuy;
@@ -17,9 +18,9 @@ namespace CrazyIntelligence.Bits
 
 		public void TryBuy()
 		{
-			if (Counter.Money >= price)
+			if (money.Count >= price)
 			{
-				Counter.RemoveMoney(price);
+				money.Remove(price);
 
 				OnBuy?.Invoke();
 			}

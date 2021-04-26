@@ -1,13 +1,13 @@
 using System;
 
-namespace CrazyIntelligence.Bits
+namespace CrazyIntelligence.TooManyBits
 {
 	public class Timer
 	{
 		public float RemainingSeconds { get; private set; }
 		public float CountedSeconds { get; private set; }
 
-		public event Action OnTimerEnd;
+		public event System.Action OnTimerEnd;
 
 		private float _duration;
 		private bool _loop;

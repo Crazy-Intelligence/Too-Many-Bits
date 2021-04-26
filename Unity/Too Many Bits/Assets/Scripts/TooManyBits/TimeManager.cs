@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrazyIntelligence.Bits
+namespace CrazyIntelligence.TooManyBits
 {
 	public class TimeManager : MonoBehaviour
 	{

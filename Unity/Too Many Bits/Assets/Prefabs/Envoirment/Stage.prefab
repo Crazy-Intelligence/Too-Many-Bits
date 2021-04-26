@@ -989,6 +989,14 @@ PrefabInstance:
       propertyPath: m_ForceMagnitude
       value: -20
       objectReference: {fileID: 0}
+    - target: {fileID: 1933638310222602488, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933638310222602495, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 29d458a472455b446a4c0c0a8c9ea4a7, type: 2}
     - target: {fileID: 5695813890881775264, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_RootOrder
       value: 0

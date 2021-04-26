@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace CrazyIntelligence.Bits
+namespace CrazyIntelligence.TooManyBits
 {
 	public static class GameManager
 	{
@@ -20,8 +20,6 @@ namespace CrazyIntelligence.Bits
 		public static event Action OnAppStart;
 		public static event Action OnAppExit;
 		
-		public static int WeightUntilGameOver { get; set; }
-
 		public static bool IsPlaying { get; private set; }
 
 		public static void Start()
@@ -34,10 +32,9 @@ namespace CrazyIntelligence.Bits
 		{
 			IsPlaying = false;
 
-			Counter.ResetAll();
-
 			OnReset?.Invoke();
 		}
+
 		public static void Pause()
 		{
 			IsPlaying = false;
@@ -50,6 +47,13 @@ namespace CrazyIntelligence.Bits
 
 			OnContinue?.Invoke();
 		}
+
+		public static void DoGameOver()
+		{
+			IsPlaying = false;
+			OnGameOver?.Invoke();
+		}
+
 		public static void StartApp()
 		{
 			IsPlaying = false;
@@ -67,18 +71,5 @@ namespace CrazyIntelligence.Bits
 #endif
 		}
 
-		public static bool CheckGameOver()
-		{
-			if (!IsPlaying) return false;
-
-			if (Counter.Weight >= WeightUntilGameOver)
-			{
-				IsPlaying = false;
-				OnGameOver?.Invoke();
-				return true;
-			}
-
-			return false;
-		}
 	}
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrazyIntelligence.Bits
+namespace CrazyIntelligence.TooManyBits
 {
 	[RequireComponent(typeof(Rigidbody2D))]
 	public class FollowMouse : MonoBehaviour

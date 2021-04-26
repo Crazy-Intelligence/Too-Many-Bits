@@ -1,31 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace CrazyIntelligence.Bits
+namespace CrazyIntelligence.TooManyBits
 {
 	public class GameManagerBehaviour : MonoBehaviour
 	{
-		[SerializeField] private GameObject envoirmentPrefab;
-		[SerializeField] [Range(500, 1500)] private int weightUntilGameOver;
-		[SerializeField] private UnityEvent OnGameOverEvent;
-
-		private GameObject _currentEnvoirment;
-
-		private void Awake()
-		{
-			_currentEnvoirment = FindObjectOfType<Envoirment>().gameObject;
-
-			GameManager.WeightUntilGameOver = weightUntilGameOver;
-		}
-
-		private void OnEnable()
-		{
-			GameManager.OnReset += OnReset;
-		}
-		private void OnDisable()
-		{
-			GameManager.OnReset -= OnReset;
-		}
+		[SerializeField] private Counter gameOverTrigger;
+		[SerializeField] [Range(500, 1500)] private int countUntilGameOver;
 
 		private void Start()
 		{
@@ -34,11 +15,11 @@ namespace CrazyIntelligence.Bits
 
 		private void Update()
 		{
-			if (GameManager.CheckGameOver())
+			if (gameOverTrigger.Count >= countUntilGameOver)
 			{
-				OnGameOverEvent?.Invoke();
+				GameManager.DoGameOver();
 			}
-
+			
 			if (Input.GetKeyDown(KeyCode.Escape))
 			{
 				if (GameManager.IsPlaying)
@@ -53,12 +34,6 @@ namespace CrazyIntelligence.Bits
 
 			Cursor.lockState = CursorLockMode.Confined;
 			Cursor.visible = !GameManager.IsPlaying;
-		}
-
-		private void OnReset()
-		{
-			Destroy(_currentEnvoirment);
-			Instantiate(envoirmentPrefab);
 		}
 	}
 }
