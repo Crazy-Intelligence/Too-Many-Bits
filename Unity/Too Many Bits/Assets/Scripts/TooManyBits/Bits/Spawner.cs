@@ -30,12 +30,12 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void Start()
 		{
-			if (config.spawnRate == 0f)
+			if (config.SpawnRate == 0f)
 			{
 				enabled = false;
 			}
 
-			SetSpawnRate(config.spawnRate);
+			SetSpawnRate(config.SpawnRate);
 		}
 		private void Update()
 		{
@@ -46,8 +46,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		public void SetSpawnRate(float newSpawnRate)
 		{
-			config.spawnRate = newSpawnRate;
-			_timer = new Timer(1f / config.spawnRate, true);
+			config.SpawnRate = newSpawnRate;
+			_timer = new Timer(1f / config.SpawnRate, true);
 			_timer.OnTimerEnd += OnTimerEnd;
 		}
 
@@ -56,7 +56,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void OnTimerEnd()
 		{
-			var spawnTime = 1f / config.spawnRate;
+			var spawnTime = 1f / config.SpawnRate;
 
 			var overflow = _timer.CountedSeconds / spawnTime;
 
@@ -77,7 +77,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 			var rb = newObject.GetComponent<Rigidbody2D>();
 
-			var spawnAngel = Random.Range(config.SpawnDirection - config.SpawnRange, config.SpawnDirection + config.SpawnRange);
+			var spawnAngel = Random.Range(config.SpawnDirectionOffset - config.SpawnRange, config.SpawnDirectionOffset + config.SpawnRange);
 			var spawnForceVector = Rotate(Vector2.down, spawnAngel);
 
 			newObject.SetActive(true);
@@ -105,8 +105,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		{
 			if (config is null) return;
 
-			var minSpawnAngel = config.SpawnDirection - config.SpawnRange;
-			var maxSpawnAngel = config.SpawnDirection + config.SpawnRange;
+			var minSpawnAngel = config.SpawnDirectionOffset - config.SpawnRange;
+			var maxSpawnAngel = config.SpawnDirectionOffset + config.SpawnRange;
 
 			Vector3 leftVector = transform.position + Rotate(Vector3.down, minSpawnAngel) * config.SpawnForce / 2f;
 			Vector3 rightVector = transform.position + Rotate(Vector3.down, maxSpawnAngel) * config.SpawnForce / 2f;
