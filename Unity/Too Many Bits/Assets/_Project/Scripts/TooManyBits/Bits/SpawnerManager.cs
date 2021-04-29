@@ -5,11 +5,9 @@ namespace CrazyIntelligence.TooManyBits.Bits
 {
 	public class SpawnerManager : MonoBehaviour
 	{
-		public List<SpawnerLayout> Layouts = new List<SpawnerLayout>();
+		[SerializeField] private WaveLayout WaveLayout;
 
 		[SerializeField] private float timeUntilStepup;
-
-		private int _currentIndex;
 
 		private Timer _timer;
 
@@ -26,7 +24,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void NextLayout()
 		{
-			_currentIndex++;
+			
 		}
 		private void UpdateLayout()
 		{

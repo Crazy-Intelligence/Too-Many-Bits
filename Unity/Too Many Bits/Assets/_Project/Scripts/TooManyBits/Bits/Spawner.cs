@@ -29,33 +29,33 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void Start()
 		{
-			if (config.SpawnRate == 0f)
+			if (config.WaveInfo.SpawnRate == 0f)
 			{
 				enabled = false;
 			}
 
-			SetSpawnRate(config.SpawnRate);
+			SetSpawnRate(config.WaveInfo.SpawnRate);
 		}
 		private void Update()
 		{
-			if (config.disabled) return;
+			if (config.WaveInfo.disabled) return;
 
 			_timer.Tick(Time.deltaTime);
 		}
 
 		public void SetSpawnRate(float newSpawnRate)
 		{
-			config.SpawnRate = newSpawnRate;
-			_timer = new Timer(1f / config.SpawnRate, true);
+			config.WaveInfo.SpawnRate = newSpawnRate;
+			_timer = new Timer(1f / config.WaveInfo.SpawnRate, true);
 			_timer.OnTimerEnd += OnTimerEnd;
 		}
 
-		private void Disable() => config.disabled = true;
-		private void Enable() => config.disabled = false;
+		private void Disable() => config.WaveInfo.disabled = true;
+		private void Enable() => config.WaveInfo.disabled = false;
 
 		private void OnTimerEnd()
 		{
-			var spawnTime = 1f / config.SpawnRate;
+			var spawnTime = 1f / config.WaveInfo.SpawnRate;
 
 			var overflow = _timer.CountedSeconds / spawnTime;
 
@@ -69,10 +69,10 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		{
 			var spawnPos = transform.position;
 
-			var newObject = Instantiate(config.objectInfo.Prefab, spawnPos, Quaternion.identity) ;
+			var newObject = Instantiate(config.WaveInfo.objectInfo.Prefab, spawnPos, Quaternion.identity) ;
 
 			var bit = newObject.GetComponent<Bit>();
-			bit.Info = config.objectInfo.GetRandomConfig();
+			bit.Info = config.WaveInfo.objectInfo.GetRandomConfig();
 
 			var rb = newObject.GetComponent<Rigidbody2D>();
 

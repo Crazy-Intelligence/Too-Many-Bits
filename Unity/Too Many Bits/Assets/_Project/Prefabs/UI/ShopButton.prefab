@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: {fileID: 11400000, guid: 21852c7a791c3054db7072eb5796d950, type: 2}
-  priceTag: {fileID: 0}
+  priceTag: {fileID: 7462604103369194019}
   price: 0
   OnBuy:
     m_PersistentCalls:
