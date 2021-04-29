@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace CrazyIntelligence.TooManyBits
+﻿namespace CrazyIntelligence.TooManyBits
 {
 	[System.Serializable]
 	public class ObjectWithWeight<T>
