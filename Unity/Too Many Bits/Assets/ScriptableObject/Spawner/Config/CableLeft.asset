@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
   m_Name: CableLeft
   m_EditorClassIdentifier: 
+  disabled: 1
+  SpawnRate: 0
   SpawnForce: 5
-  SpawnDirection: 50
   SpawnRange: 20
+  objectInfo: {fileID: 0}

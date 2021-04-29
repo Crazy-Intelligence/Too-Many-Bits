@@ -846,11 +846,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
+--- !u!1 &1483458879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7578723221765083101, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
+  m_PrefabInstance: {fileID: 7578723221178498939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1483458880 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4539420029193251350, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
+  m_PrefabInstance: {fileID: 7578723221178498939}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483458879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2574ce8ba0d3cd41a9e95a369234cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1483458881 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7578723221765083090, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
+  m_PrefabInstance: {fileID: 7578723221178498939}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1483458883 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
   m_PrefabInstance: {fileID: 7578723221178498939}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1483458885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483458879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492a56fb2f9576a479249a34abf1a239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnSpit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1483458881}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Spit
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1483458880}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
+          Audio
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f8d96b227627cbb4f8b7f6b1e94a7514, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
+            Audio
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1589644128
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,8 +1213,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2028603545}
   - component: {fileID: 2028603546}
+  - component: {fileID: 2028603547}
   m_Layer: 0
-  m_Name: Sound
+  m_Name: BackgroundMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1268,6 +1331,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2028603547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028603544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2574ce8ba0d3cd41a9e95a369234cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &3161639060467226368
 PolygonCollider2D:
   m_ObjectHideFlags: 0

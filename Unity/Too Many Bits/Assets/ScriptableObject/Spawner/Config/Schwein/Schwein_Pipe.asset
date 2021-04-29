@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
-  m_Name: Default
+  m_Name: Schwein_Pipe
   m_EditorClassIdentifier: 
-  SpawnForce: 1
-  SpawnDirection: 0
-  SpawnRange: 0
+  disabled: 1
+  SpawnRate: 15
+  SpawnForce: 50
+  SpawnRange: 28.1
+  objectInfo: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}

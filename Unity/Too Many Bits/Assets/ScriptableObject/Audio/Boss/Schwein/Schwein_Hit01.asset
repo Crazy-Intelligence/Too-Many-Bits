@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 493a7d08a9d1aad4a831f2d14798cf31, type: 3}
-  m_Name: Spit
+  m_Name: Schwein_Hit01
   m_EditorClassIdentifier: 
-  clip: {fileID: 0}
-  volume: 0
-  pitch: 0
+  clip: {fileID: 8300000, guid: d82c1f7ef27cf9344802a00218f5baf9, type: 3}
+  volume: 1
+  pitch: 0.85

@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 7578723221765083090}
   - component: {fileID: 7578723221765083089}
   - component: {fileID: 4254058528515940840}
+  - component: {fileID: 4539420029193251350}
   m_Layer: 0
   m_Name: Schwein
   m_TagString: Untagged
@@ -404,6 +405,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4539420029193251350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578723221765083101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2574ce8ba0d3cd41a9e95a369234cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7578723221998864374
 GameObject:
   m_ObjectHideFlags: 0
