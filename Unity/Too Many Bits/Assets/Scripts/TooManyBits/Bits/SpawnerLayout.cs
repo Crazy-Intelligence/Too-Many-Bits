@@ -6,6 +6,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	[CreateAssetMenu(fileName = "SpawnerLayout", menuName = "TooManyBits/Spawner/Layout")]
 	public class SpawnerLayout : ScriptableObject
 	{
-		public List<SpawnerInfo> spawners = new List<SpawnerInfo>();
+		public List<SpawnerConfig> spawners = new List<SpawnerConfig>();
 	}
 }

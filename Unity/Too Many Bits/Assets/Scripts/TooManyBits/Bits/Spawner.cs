@@ -5,11 +5,10 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	public class Spawner : MonoBehaviour
 	{
 		public SpawnerConfig config;
-		public BitCollection objectInfo;
-		
-		private Timer _timer;
 
-		private bool disabled;
+		[SerializeField] [Range(-179f, 179f)] private float spawnDirectionOffset;
+
+		private Timer _timer;
 
 		private void Awake()
 		{
@@ -39,7 +38,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		}
 		private void Update()
 		{
-			if (disabled) return;
+			if (config.disabled) return;
 
 			_timer.Tick(Time.deltaTime);
 		}
@@ -51,8 +50,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_timer.OnTimerEnd += OnTimerEnd;
 		}
 
-		private void Disable() => disabled = true;
-		private void Enable() => disabled = false;
+		private void Disable() => config.disabled = true;
+		private void Enable() => config.disabled = false;
 
 		private void OnTimerEnd()
 		{
@@ -70,14 +69,14 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		{
 			var spawnPos = transform.position;
 
-			var newObject = Instantiate(objectInfo.BitPrefab, spawnPos, Quaternion.identity) ;
+			var newObject = Instantiate(config.objectInfo.Prefab, spawnPos, Quaternion.identity) ;
 
 			var bit = newObject.GetComponent<Bit>();
-			bit.Info = objectInfo.GetRandomConfig();
+			bit.Info = config.objectInfo.GetRandomConfig();
 
 			var rb = newObject.GetComponent<Rigidbody2D>();
 
-			var spawnAngel = Random.Range(config.SpawnDirectionOffset - config.SpawnRange, config.SpawnDirectionOffset + config.SpawnRange);
+			var spawnAngel = Random.Range(GetSpawnDirection() - config.SpawnRange, GetSpawnDirection() + config.SpawnRange);
 			var spawnForceVector = Rotate(Vector2.down, spawnAngel);
 
 			newObject.SetActive(true);
@@ -99,17 +98,20 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			return newVector;
 		}
 
-		
+		private float GetSpawnDirection()
+		{
+			return transform.rotation.eulerAngles.z + spawnDirectionOffset;
+		}
 
 		private void OnDrawGizmosSelected()
 		{
 			if (config is null) return;
 
-			var minSpawnAngel = config.SpawnDirectionOffset - config.SpawnRange;
-			var maxSpawnAngel = config.SpawnDirectionOffset + config.SpawnRange;
+			var minSpawnAngel = GetSpawnDirection() - config.SpawnRange;
+			var maxSpawnAngel = GetSpawnDirection() + config.SpawnRange;
 
-			Vector3 leftVector = transform.position + Rotate(Vector3.down, minSpawnAngel) * config.SpawnForce / 2f;
-			Vector3 rightVector = transform.position + Rotate(Vector3.down, maxSpawnAngel) * config.SpawnForce / 2f;
+			Vector3 leftVector = transform.position + Rotate(Vector3.down, minSpawnAngel) * config.SpawnForce / 10f;
+			Vector3 rightVector = transform.position + Rotate(Vector3.down, maxSpawnAngel) * config.SpawnForce / 10f;
 
 			Gizmos.color = Color.yellow;
 			Gizmos.DrawLine(transform.position, leftVector);

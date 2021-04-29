@@ -6,7 +6,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	[CreateAssetMenu(fileName = "SpawnerObjectInfo", menuName = "TooManyBits/Bits/Collection")]
 	public class BitCollection : ScriptableObject
 	{
-		public GameObject BitPrefab;
+		public GameObject Prefab;
 		[SerializeField] private List<ObjectWithWeight<BitConfig>> BitConfigs = new List<ObjectWithWeight<BitConfig>>();
 
 		public BitConfig GetRandomConfig()

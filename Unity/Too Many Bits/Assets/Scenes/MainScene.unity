@@ -1525,6 +1525,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1c19f3b2311a54f41b594570ee334be2, type: 2}
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c19f3b2311a54f41b594570ee334be2, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: prefab
       value: 
       objectReference: {fileID: 5142541770011555780, guid: 8401ba908ac36bc4e827e4bea404f9d4, type: 3}
@@ -1969,8 +1973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a185cd0f21138c8449d3e9e371b622c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startSpawnRate: 5
-  spawnRateIncreaseStepSize: 5
+  Layouts: []
   timeUntilStepup: 7.5
 --- !u!114 &729949749
 MonoBehaviour:
@@ -2328,6 +2331,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: info
+      value: 
+      objectReference: {fileID: 11400000, guid: ed263f84636f7604981b091cce8edf9a, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: config
       value: 
       objectReference: {fileID: 11400000, guid: ed263f84636f7604981b091cce8edf9a, type: 2}
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
@@ -5380,6 +5387,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1c19f3b2311a54f41b594570ee334be2, type: 2}
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c19f3b2311a54f41b594570ee334be2, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: prefab
       value: 
       objectReference: {fileID: 5142541770011555780, guid: 8401ba908ac36bc4e827e4bea404f9d4, type: 3}
@@ -5905,6 +5916,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
       propertyPath: info
+      value: 
+      objectReference: {fileID: 11400000, guid: ed263f84636f7604981b091cce8edf9a, type: 2}
+    - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
+      propertyPath: config
       value: 
       objectReference: {fileID: 11400000, guid: ed263f84636f7604981b091cce8edf9a, type: 2}
     - target: {fileID: 1595997733935270100, guid: cc401454a51dbb84888d6ee34245dc35, type: 3}
