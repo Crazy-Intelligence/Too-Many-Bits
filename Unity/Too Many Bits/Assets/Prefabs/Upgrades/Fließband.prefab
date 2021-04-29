@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 141246731825891940}
   - component: {fileID: 141246731825891936}
   - component: {fileID: 141246731825891943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "Flie\xDFband"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

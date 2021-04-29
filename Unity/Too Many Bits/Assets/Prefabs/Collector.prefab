@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2491907667521257206}
   - component: {fileID: 3061825371976629990}
   - component: {fileID: 2491907667521257207}
-  m_Layer: 0
-  m_Name: Vacuum
+  m_Layer: 6
+  m_Name: Collector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

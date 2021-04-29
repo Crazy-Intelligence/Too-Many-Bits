@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4587837704519376684}
   - component: {fileID: 4587837704519376723}
   - component: {fileID: 4587837704519376722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Muzzleflash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4587837705246857093}
   - component: {fileID: 4587837705246857094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4587837705483028488}
   - component: {fileID: 4587837705483028495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
