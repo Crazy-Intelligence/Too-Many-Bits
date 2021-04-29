@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CrazyIntelligence.TooManyBits
+namespace CrazyIntelligence.TooManyBits.UI
 {
 	public class WeightDisplay : MonoBehaviour
 	{

@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
+using TMPro;
 
-namespace CrazyIntelligence.TooManyBits
+namespace CrazyIntelligence.TooManyBits.UI
 {
 	public class Shop : MonoBehaviour
 	{
 		[SerializeField] private Counter money;
-		[SerializeField] private Text priceTag;
+		[SerializeField] private TMP_Text priceTag;
 		[SerializeField] private int price;
 		[SerializeField] private UnityEvent OnBuy;
 

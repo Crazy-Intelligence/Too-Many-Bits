@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrazyIntelligence.TooManyBits
+namespace CrazyIntelligence.TooManyBits.UI
 {
 	public class UI : MonoBehaviour
 	{

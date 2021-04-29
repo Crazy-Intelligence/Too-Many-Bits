@@ -1,17 +1,17 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-namespace CrazyIntelligence.TooManyBits
+namespace CrazyIntelligence.TooManyBits.UI
 {
 	public class CounterDisplay : MonoBehaviour
 	{
 		[SerializeField] private Counter counter;
 
-		private Text _text;
+		private TMP_Text _text;
 
 		private void Awake()
 		{
-			_text = GetComponent<Text>();
+			_text = GetComponent<TMP_Text>();
 		}
 
 		private void Update()

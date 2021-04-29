@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CrazyIntelligence.TooManyBits
+namespace CrazyIntelligence.TooManyBits.UI
 {
 	[RequireComponent(typeof(Animator))]
 	public class UIElement : MonoBehaviour
