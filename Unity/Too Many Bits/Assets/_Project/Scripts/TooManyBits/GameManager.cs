@@ -60,8 +60,6 @@ namespace CrazyIntelligence.TooManyBits
 		{
 			IsPlaying = false;
 
-			ResetEvents();
-
 			OnAppStart?.Invoke();
 		}
 
@@ -74,23 +72,6 @@ namespace CrazyIntelligence.TooManyBits
 #if UNITY_EDITOR
 			EditorApplication.isPlaying = false;
 #endif
-		}
-
-		private static void ResetEvents()
-		{
-			var events = new Action[] { OnStart, OnReset, OnPause, OnContinue, OnGameOver, OnAppStart, OnAppExit };
-
-			for (int i = 0; i < events.Length; i++)
-			{
-				var @event = events[i];
-				var delegates = @event.GetInvocationList();
-
-				for (int j = 0; j < delegates.Length; j++)
-				{
-					var @delegate = delegates[j];
-					@event -= (Action)@delegate;
-				}
-			}
 		}
 	}
 }

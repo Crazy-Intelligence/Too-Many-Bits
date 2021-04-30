@@ -711,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141246731825891739, guid: 034ff361f6d45024daa83a5b9b61cd71, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 141246731825891941, guid: 034ff361f6d45024daa83a5b9b61cd71, type: 3}
       propertyPath: m_SortingLayer
@@ -3450,19 +3450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnStartEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
   OnResetEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3491,18 +3479,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CrazyIntelligence.Bits.UIElement, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6687,7 +6663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141246731825891739, guid: 034ff361f6d45024daa83a5b9b61cd71, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 141246731825891941, guid: 034ff361f6d45024daa83a5b9b61cd71, type: 3}
       propertyPath: m_SortingLayer
@@ -6766,7 +6742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &712150178675031267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7395,7 +7371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4587837705246857095, guid: 528eed9265a1e7d49b43f83414d245f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4587837705483028488, guid: 528eed9265a1e7d49b43f83414d245f4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7526,6 +7502,10 @@ PrefabInstance:
     - target: {fileID: 1318683710621858755, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318683710621858755, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3392414090282168945, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer

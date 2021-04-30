@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5738954625524394382}
   - component: {fileID: 712150176862356855}
   - component: {fileID: 712150176862356848}
-  - component: {fileID: 4203156537003717908}
   m_Layer: 3
   m_Name: Key
   m_TagString: Untagged
@@ -150,27 +149,6 @@ MonoBehaviour:
   rotationOffset: -90
   rotationSpeed: 10
   minMagnitudeToRotate: 0.01
---- !u!114 &4203156537003717908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712150176862356849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d30974bf68d61043b1572197db94cdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SimulationType: 2
-  m_Gravity:
-    x: -0
-    y: -9.81
-    z: -0
-  m_SolverIterationCount: 1
-  m_EnableSolverStabilizationHeuristic: 0
-  m_MultiThreaded: 1
-  m_SynchronizeCollisionWorld: 0
 --- !u!1 &6234048870344472155
 GameObject:
   m_ObjectHideFlags: 0

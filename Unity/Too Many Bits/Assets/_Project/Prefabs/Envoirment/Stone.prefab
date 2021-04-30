@@ -194,10 +194,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vacuum
       objectReference: {fileID: 0}
-    - target: {fileID: 2491907667521257200, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2491907667521257206, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
       propertyPath: m_RootOrder
       value: 0

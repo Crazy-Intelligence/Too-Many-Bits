@@ -8,7 +8,7 @@ namespace CrazyIntelligence.TooManyBits
 		[SerializeField] private Counter gameOverTrigger;
 		[SerializeField] [Range(500, 1500)] private int countUntilGameOver;
 
-		private void Start()
+		private void Awake()
 		{
 			GameManager.StartApp();
 		}
