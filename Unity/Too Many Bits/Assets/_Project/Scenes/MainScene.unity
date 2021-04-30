@@ -2046,7 +2046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a185cd0f21138c8449d3e9e371b622c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Layouts: []
+  WaveLayout: {fileID: 0}
   timeUntilStepup: 7.5
 --- !u!114 &729949749
 MonoBehaviour:
@@ -6402,7 +6402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5050213071879787545, guid: 2764c30364b04a144ba3d6fd931e0bd8, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5050213071879787545, guid: 2764c30364b04a144ba3d6fd931e0bd8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6830,7 +6830,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4203156537003717908, guid: 370fd1be613d8d84c9bf0421b59f03eb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 370fd1be613d8d84c9bf0421b59f03eb, type: 3}
 --- !u!1001 &1022752513758522508
 PrefabInstance:
@@ -7681,10 +7682,6 @@ PrefabInstance:
     - target: {fileID: 7919279948922355247, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[14].y
       value: 1.1352528
-      objectReference: {fileID: 0}
-    - target: {fileID: 7919279949456015369, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.97
       objectReference: {fileID: 0}
     - target: {fileID: 7919279949456015478, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer

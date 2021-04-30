@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
-  m_Name: CableLeft
+  m_Script: {fileID: 11500000, guid: 03845c043bbd34d4d92f24ff2b4dff19, type: 3}
+  m_Name: DEV
   m_EditorClassIdentifier: 
-  SpawnForce: 5
-  SpawnRange: 20
-  WaveInfo: {fileID: 11400000, guid: 8d897c569c93ba741ac4c0c850d1d765, type: 2}
+  disabled: 0
+  SpawnRate: 56.2
+  objectInfo: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}

@@ -10,23 +10,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private Timer _timer;
 
-		private void Awake()
-		{
-			Disable();
-		}
-		private void OnEnable()
-		{
-			GameManager.OnStart += Enable;
-			GameManager.OnReset += Disable;
-			GameManager.OnGameOver += Disable;
-		}
-		private void OnDisable()
-		{
-			GameManager.OnStart -= Enable;
-			GameManager.OnReset -= Disable;
-			GameManager.OnGameOver -= Disable;
-		}
-
 		private void Start()
 		{
 			if (config.WaveInfo.SpawnRate == 0f)
@@ -49,9 +32,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_timer = new Timer(1f / config.WaveInfo.SpawnRate, true);
 			_timer.OnTimerEnd += OnTimerEnd;
 		}
-
-		private void Disable() => config.WaveInfo.disabled = true;
-		private void Enable() => config.WaveInfo.disabled = false;
 
 		private void OnTimerEnd()
 		{

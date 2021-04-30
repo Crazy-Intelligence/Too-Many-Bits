@@ -38,7 +38,13 @@ namespace CrazyIntelligence.TooManyBits
 		private void OnReset() => OnResetEvent?.Invoke();
 		private void OnPause() => OnPauseEvent?.Invoke();
 		private void OnContinue() => OnContinueEvent?.Invoke();
-		private void OnGameOver() => OnGameOverEvent?.Invoke();
+		private void OnGameOver()
+		{
+			OnGameOverEvent?.Invoke();
+			Debug.Log("OnGameOver" + name, this);
+		}
+
+		
 		private void OnAppStart() => OnAppStartEvent?.Invoke();
 		private void OnAppExit() => OnAppExitEvent?.Invoke();
 	}

@@ -50,6 +50,8 @@ namespace CrazyIntelligence.TooManyBits
 
 		public static void DoGameOver()
 		{
+			if (!IsPlaying) return;
+
 			IsPlaying = false;
 			OnGameOver?.Invoke();
 		}

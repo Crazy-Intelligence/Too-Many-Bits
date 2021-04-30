@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
   m_Name: Pipe
   m_EditorClassIdentifier: 
-  disabled: 0
-  SpawnRate: 30.2
   SpawnForce: 62.2
   SpawnRange: 35.5
-  objectInfo: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}
+  WaveInfo: {fileID: 11400000, guid: 38c445d23b547b24585329c960c55000, type: 2}
