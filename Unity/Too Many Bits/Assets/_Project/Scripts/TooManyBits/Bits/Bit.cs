@@ -4,7 +4,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 {
 	public class Bit : MonoBehaviour
 	{
-		public BitConfig Info;
+		public BitConfig Config;
 
 		[SerializeField] private Counter weight;
 
@@ -26,12 +26,12 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			SetupObject();
 
 			GameManager.OnReset += DestroyThisObject;
-			weight.Add(Info.Weight);
+			weight.Add(Config.Weight);
 		}
 		private void OnDisable()
 		{
 			GameManager.OnReset -= DestroyThisObject;
-			weight.Remove(Info.Weight);
+			weight.Remove(Config.Weight);
 		}
 
 		private void Update()
@@ -43,13 +43,13 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		public void Destroy()
 		{
-			PlayAnimation(Info.DestroyAnimation);
+			PlayAnimation(Config.DestroyAnimation);
 			_timer.OnTimerEnd += DestroyThisObject;
 		}
 
 		public void Shrink()
 		{
-			PlayAnimation(Info.CollectAnimation);
+			PlayAnimation(Config.CollectAnimation);
 		}
 
 		private void GetReferences()
@@ -61,17 +61,17 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		}
 		private void SetupObject()
 		{
-			transform.localScale = new Vector3(Info.Scale, Info.Scale, 1f);
+			transform.localScale = new Vector3(Config.Scale, Config.Scale, 1f);
 
-			_collider.offset = Info.ColliderOffset;
-			_collider.size = Info.ColliderSize;
+			_collider.offset = Config.ColliderOffset;
+			_collider.size = Config.ColliderSize;
 
-			_spriteRenderer.color = Info.Color;
+			_spriteRenderer.color = Config.Color;
 			_spriteRenderer.sortingLayerName = "Bits";
 
-			_spriteChanger.spriteCollection = Info.SpriteCollection;
+			_spriteChanger.spriteCollection = Config.SpriteCollection;
 
-			_animator.runtimeAnimatorController = Info.AnimatioController;
+			_animator.runtimeAnimatorController = Config.AnimatioController;
 		}
 
 		private void PlayAnimation(AnimationClip clip)

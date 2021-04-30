@@ -1,17 +1,15 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
-	[CreateAssetMenu(fileName = "Wave", menuName = "TooManyBits/Spawner/Wave")]
+	[CreateAssetMenu(fileName = "SimpleWave", menuName = "TooManyBits/Wave/Simple")]
 	public class Wave : ScriptableObject
 	{
-		[SerializeField] private List<WaveConfig> waveConfigs = new List<WaveConfig>();
+		public WaveInfo[] configuration;
 
-		[ContextMenu("Apply")]
 		public void Apply()
 		{
-			foreach (var config in waveConfigs)
+			foreach (var config in configuration)
 			{
 				config.Apply();
 			}

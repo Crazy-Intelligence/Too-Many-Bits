@@ -18,7 +18,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		public void Invoke(Bit bit)
 		{
-			var info = bit.Info;
+			var info = bit.Config;
 
 			score.Add(info.ScoreValue * scoreMultiplier);
 			money.Add(info.MoneyValue * moneyMultiplier);

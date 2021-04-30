@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Bits
@@ -6,8 +7,14 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	public class SpawnerConfig : ScriptableObject
 	{
 		[Range(50f, 150f)] public float SpawnForce;
-		[Range(0f, 89f)] public float SpawnRange;
 		[Space]
-		public WaveInfo WaveInfo;
+		[Range(0f, 89f)] public float SpawnAngelRange;
+		[Range(0, 179f)] public float SpawnAngelOffset;
+		[Space]
+		public float SpawnRate;
+		public BitCollection Bits;
+
+		public float SpawnTime => 1f / SpawnRate;
+		public bool Disabled => SpawnRate == 0;
 	}
 }

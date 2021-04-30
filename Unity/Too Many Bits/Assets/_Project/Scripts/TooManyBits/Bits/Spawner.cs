@@ -4,38 +4,28 @@ namespace CrazyIntelligence.TooManyBits.Bits
 {
 	public class Spawner : MonoBehaviour
 	{
-		public SpawnerConfig config;
+		public SpawnerConfig Config;
 
-		[SerializeField] [Range(-179f, 179f)] private float spawnDirectionOffset;
+		
 
 		private Timer _timer;
 
 		private void Start()
 		{
-			if (config.WaveInfo.SpawnRate == 0f)
-			{
-				enabled = false;
-			}
-
-			SetSpawnRate(config.WaveInfo.SpawnRate);
+			_timer = new Timer(Config.SpawnTime);
+			_timer.OnTimerEnd += OnTimerEnd;
+			ResetTimer();
 		}
 		private void Update()
 		{
-			if (config.WaveInfo.disabled) return;
+			if (Config.Disabled) return;
 
 			_timer.Tick(Time.deltaTime);
 		}
 
-		public void SetSpawnRate(float newSpawnRate)
-		{
-			config.WaveInfo.SpawnRate = newSpawnRate;
-			_timer = new Timer(1f / config.WaveInfo.SpawnRate, true);
-			_timer.OnTimerEnd += OnTimerEnd;
-		}
-
 		private void OnTimerEnd()
 		{
-			var spawnTime = 1f / config.WaveInfo.SpawnRate;
+			var spawnTime = Config.SpawnTime;
 
 			var overflow = _timer.CountedSeconds / spawnTime;
 
@@ -43,26 +33,32 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			{
 				SpawnObject();
 			}
+
+			ResetTimer();
 		}
 
 		private void SpawnObject()
 		{
-			var spawnPos = transform.position;
-
-			var newObject = Instantiate(config.WaveInfo.objectInfo.Prefab, spawnPos, Quaternion.identity) ;
+			var newObject = Instantiate(Config.Bits.Prefab, transform.position, Quaternion.identity);
 
 			var bit = newObject.GetComponent<Bit>();
-			bit.Info = config.WaveInfo.objectInfo.GetRandomConfig();
-
-			var rb = newObject.GetComponent<Rigidbody2D>();
-
-			var spawnAngel = Random.Range(GetSpawnDirection() - config.SpawnRange, GetSpawnDirection() + config.SpawnRange);
-			var spawnForceVector = Rotate(Vector2.down, spawnAngel);
-
+			bit.Config = Config.Bits.GetRandomConfig();
+			
 			newObject.SetActive(true);
 
-			rb.AddForce(spawnForceVector * config.SpawnForce, ForceMode2D.Impulse);
+			var rb = newObject.GetComponent<Rigidbody2D>();
+			ApplySpawnForce(rb);
 		}
+
+		private void ApplySpawnForce(Rigidbody2D rb)
+		{
+			var spawnAngel = Random.Range(GetSpawnAngel() - Config.SpawnAngelRange, GetSpawnAngel() + Config.SpawnAngelRange);
+			var spawnForceVector = Rotate(Vector2.down, spawnAngel);
+
+			rb.AddForce(spawnForceVector * Config.SpawnForce, ForceMode2D.Impulse);
+		}
+
+		private void ResetTimer() => _timer.Reset(Config.SpawnTime);
 
 		private Vector3 Rotate(Vector3 vector, float angel)
 		{
@@ -78,20 +74,22 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			return newVector;
 		}
 
-		private float GetSpawnDirection()
+		private float GetSpawnAngel()
 		{
-			return transform.rotation.eulerAngles.z + spawnDirectionOffset;
+			float offset = Config.SpawnAngelOffset;
+			float angel = transform.rotation.eulerAngles.z + offset;
+			return angel + offset;
 		}
 
 		private void OnDrawGizmosSelected()
 		{
-			if (config is null) return;
+			if (Config is null) return;
 
-			var minSpawnAngel = GetSpawnDirection() - config.SpawnRange;
-			var maxSpawnAngel = GetSpawnDirection() + config.SpawnRange;
+			var minSpawnAngel = GetSpawnAngel() - Config.SpawnAngelRange;
+			var maxSpawnAngel = GetSpawnAngel() + Config.SpawnAngelRange;
 
-			Vector3 leftVector = transform.position + Rotate(Vector3.down, minSpawnAngel) * config.SpawnForce / 10f;
-			Vector3 rightVector = transform.position + Rotate(Vector3.down, maxSpawnAngel) * config.SpawnForce / 10f;
+			Vector3 leftVector = transform.position + Rotate(Vector3.down, minSpawnAngel) * Config.SpawnForce / 10f;
+			Vector3 rightVector = transform.position + Rotate(Vector3.down, maxSpawnAngel) * Config.SpawnForce / 10f;
 
 			Gizmos.color = Color.yellow;
 			Gizmos.DrawLine(transform.position, leftVector);

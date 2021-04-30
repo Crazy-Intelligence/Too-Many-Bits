@@ -2,11 +2,20 @@ using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
-	[CreateAssetMenu(fileName = "WaveInfo", menuName = "TooManyBits/Spawner/WaveInfo")]
-	public class WaveInfo : ScriptableObject
+	[System.Serializable]
+	public class WaveInfo
 	{
-		public bool disabled;
-		[Range(0, 100)] public float SpawnRate;
-		public BitCollection objectInfo;
+		public SpawnerConfig[] Spawners;
+		[SerializeField] [Range(0f, 100f)] private float SpawnRate;
+		public BitCollection Bits;
+
+		public void Apply()
+		{
+			foreach (var spawner in Spawners)
+			{
+				spawner.SpawnRate = SpawnRate;
+				spawner.Bits = Bits;
+			}
+		}
 	}
 }

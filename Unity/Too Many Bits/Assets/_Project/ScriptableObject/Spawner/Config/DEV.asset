@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnForce: 0
   SpawnRange: 0
-  WaveInfo: {fileID: 11400000, guid: 38c445d23b547b24585329c960c55000, type: 2}
+  Behaviour: {fileID: 11400000, guid: 38c445d23b547b24585329c960c55000, type: 2}
+  Bits: {fileID: 0}

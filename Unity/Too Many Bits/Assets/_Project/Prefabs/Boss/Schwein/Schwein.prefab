@@ -43,8 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c0efd587eaf1fa43ae13c1a6e2455d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 446481d06b2f28d41996b299bd951e97, type: 2}
-  spawnDirectionOffset: 0
+  Config: {fileID: 0}
 --- !u!1 &7578723221055783812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1086,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7786612105838582877, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
+      propertyPath: Config
+      value: 
+      objectReference: {fileID: 11400000, guid: 879a15524800bed4db9daaa7963c20ff, type: 2}
+    - target: {fileID: 7786612105838582877, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: spawnDirectionOffset
       value: -98
       objectReference: {fileID: 0}
@@ -1264,6 +1267,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7786612105838582877, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
+      propertyPath: Config
+      value: 
+      objectReference: {fileID: 11400000, guid: 879a15524800bed4db9daaa7963c20ff, type: 2}
     - target: {fileID: 7786612105838582877, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: spawnDirectionOffset
       value: -91

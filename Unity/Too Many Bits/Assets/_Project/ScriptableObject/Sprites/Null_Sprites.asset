@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
-  m_Name: Schwein_Pipe
+  m_Script: {fileID: 11500000, guid: 400ee05d52098cd4daa223b99b8c48bd, type: 3}
+  m_Name: Null_Sprites
   m_EditorClassIdentifier: 
-  SpawnForce: 50
-  SpawnAngelRange: 30
-  SpawnAngelOffset: 46.2
-  SpawnRate: 0
-  Bits: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: d09909c5cfa52b84aaa01f6aa0cc8453, type: 3}

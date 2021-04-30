@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe31b761db7566047bffe02750eec699, type: 3}
-  m_Name: DisableEnvoirmentSpawner
+  m_Name: DisableEnvoirment
   m_EditorClassIdentifier: 
-  waveConfigs:
-  - Spawner:
+  configuration:
+  - Spawners:
     - {fileID: 11400000, guid: ed263f84636f7604981b091cce8edf9a, type: 2}
     - {fileID: 11400000, guid: 1c19f3b2311a54f41b594570ee334be2, type: 2}
     - {fileID: 11400000, guid: b03f7743d0bf27d4c842e54a07ee7701, type: 2}
-    WaveInfo: {fileID: 11400000, guid: 8d897c569c93ba741ac4c0c850d1d765, type: 2}
+    Behaviour: {fileID: 11400000, guid: 8d897c569c93ba741ac4c0c850d1d765, type: 2}
+    Bits: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}

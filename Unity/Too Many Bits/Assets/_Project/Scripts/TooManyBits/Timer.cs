@@ -7,7 +7,7 @@ namespace CrazyIntelligence.TooManyBits
 		public float RemainingSeconds { get; private set; }
 		public float CountedSeconds { get; private set; }
 
-		public event System.Action OnTimerEnd;
+		public event Action OnTimerEnd;
 
 		private float _duration;
 		private bool _loop;
@@ -27,17 +27,18 @@ namespace CrazyIntelligence.TooManyBits
 			CheckTimerEnd();
 		}
 
-		public void Reset()
+		public void Reset(float newDuration)
 		{
+			_duration = newDuration;
+
 			RemainingSeconds = _duration;
 			CountedSeconds = 0f;
 		}
+		public void Reset() => Reset(_duration);
 
 		private void Initialize(float duration, bool loop)
 		{
-			RemainingSeconds = duration;
-			_duration = duration;
-
+			Reset(duration);
 			_loop = loop;
 		}
 

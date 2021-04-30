@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03845c043bbd34d4d92f24ff2b4dff19, type: 3}
-  m_Name: Disabled
+  m_Script: {fileID: 11500000, guid: a380cead46c728e4da61acae635ebd54, type: 3}
+  m_Name: Envoirment
   m_EditorClassIdentifier: 
-  disabled: 1
-  SpawnRate: 0
-  objectInfo: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}
+  waves:
+  - {fileID: 11400000, guid: e3d7aa50414c4ad49be2963b90e1e1ae, type: 2}

@@ -2,10 +2,27 @@ using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
-	public abstract class WaveLayout : ScriptableObject
+	[CreateAssetMenu(fileName = "Waves", menuName = "TooManyBits/Wave/Layout")]
+	public class WaveLayout : ScriptableObject
 	{
-		public abstract void Apply(int wave);
-		public abstract void ApplyDefaultWave();
-		public abstract void ApplyNextWave();
+		[SerializeField] private Wave[] waves;
+
+		int _currentIndex;
+
+		public void ApplyNextWave()
+		{
+			if (_currentIndex >= waves.Length) return;
+
+			waves[_currentIndex].Apply();
+			_currentIndex++;
+		}
+
+		public void ApplyPreviousWave()
+		{
+			if (_currentIndex <= 0) return;
+
+			_currentIndex--;
+			waves[_currentIndex].Apply();
+		}
 	}
 }
