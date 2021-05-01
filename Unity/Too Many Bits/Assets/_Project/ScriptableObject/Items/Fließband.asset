@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee47b7eee5565c24882738994dc2136e, type: 3}
-  m_Name: Money
+  m_Script: {fileID: 11500000, guid: 7df7c10958eb8af4b9ebb178800606d6, type: 3}
+  m_Name: "Flie\xDFband"
   m_EditorClassIdentifier: 
-  Count: 1061
-  CanBeNegative: 0
+  Icon: {fileID: 21300000, guid: f3d82049f9322144b839893953a2a5d3, type: 3}
+  Price: 0

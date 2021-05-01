@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee47b7eee5565c24882738994dc2136e, type: 3}
-  m_Name: Money
+  m_Script: {fileID: 11500000, guid: 7df7c10958eb8af4b9ebb178800606d6, type: 3}
+  m_Name: Zeitlupe
   m_EditorClassIdentifier: 
-  Count: 1061
-  CanBeNegative: 0
+  Icon: {fileID: 21300000, guid: 00d8b7f3679c80e47b5caca6759b6de4, type: 3}
+  Price: 1000

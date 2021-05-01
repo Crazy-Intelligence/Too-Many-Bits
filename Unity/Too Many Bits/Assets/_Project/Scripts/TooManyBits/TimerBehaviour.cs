@@ -7,8 +7,10 @@ namespace CrazyIntelligence.TooManyBits
 	{
 		[SerializeField] private float duration;
 		[SerializeField] private bool loop;
-
+		[SerializeField] private bool useUnscaledTime;
 		[SerializeField] private UnityEvent OnTimerEnd;
+
+		private bool _enabled;
 
 		private Timer _timer;
 
@@ -16,12 +18,26 @@ namespace CrazyIntelligence.TooManyBits
 		{
 			_timer = new Timer(duration, loop);
 			_timer.OnTimerEnd += InvokeOnTimerEnd;
-
+			_enabled = false;
 		}
 
 		private void Update()
 		{
-			_timer.Tick(Time.deltaTime);
+			if (!_enabled) return;
+
+			if (useUnscaledTime)
+			{
+				_timer.Tick(Time.unscaledDeltaTime);
+			}
+			else
+			{
+				_timer.Tick(Time.deltaTime);
+			}
+		}
+
+		public void StartTimer()
+		{
+			_enabled = true;
 		}
 
 		private void InvokeOnTimerEnd() => OnTimerEnd?.Invoke();

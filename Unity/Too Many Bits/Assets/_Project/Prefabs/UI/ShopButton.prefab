@@ -325,9 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dfd2d35765c88459ec3d5d36604c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: {fileID: 11400000, guid: 21852c7a791c3054db7072eb5796d950, type: 2}
   priceTag: {fileID: 7462604103369194019}
-  price: 0
-  OnBuy:
-    m_PersistentCalls:
-      m_Calls: []
+  image: {fileID: 5185141915659216610}
+  money: {fileID: 11400000, guid: 21852c7a791c3054db7072eb5796d950, type: 2}
+  item: {fileID: 0}

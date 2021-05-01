@@ -3,7 +3,7 @@ using UnityEngine;
 namespace CrazyIntelligence.TooManyBits.Bits
 {
 	[CreateAssetMenu(fileName = "SimpleWave", menuName = "TooManyBits/Wave/Simple")]
-	public class Wave : ScriptableObject
+	public class SimpleWave : WaveLayout
 	{
 		public WaveInfo[] configuration;
 

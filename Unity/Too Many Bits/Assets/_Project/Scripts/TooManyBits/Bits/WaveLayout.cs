@@ -5,7 +5,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	[CreateAssetMenu(fileName = "Waves", menuName = "TooManyBits/Wave/Layout")]
 	public class WaveLayout : ScriptableObject
 	{
-		[SerializeField] private Wave[] waves;
+		[SerializeField] private SimpleWave[] waves;
 
 		int _currentIndex;
 

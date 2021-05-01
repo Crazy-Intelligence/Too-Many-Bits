@@ -5,9 +5,8 @@ namespace CrazyIntelligence.TooManyBits
 	[CreateAssetMenu(fileName = "Counter", menuName = "TooManyBits/Counter")]
 	public class Counter : ScriptableObject
 	{
+		public int Count;
 		[SerializeField] private bool CanBeNegative;
-
-		public int Count { get; private set; }
 
 		public void Add(int amount) => Count += amount;
 		public void Remove(int amount)

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CrazyIntelligence.TooManyBits
 {
@@ -8,7 +7,7 @@ namespace CrazyIntelligence.TooManyBits
 		[SerializeField] private Counter gameOverTrigger;
 		[SerializeField] [Range(500, 1500)] private int countUntilGameOver;
 
-		private void Awake()
+		private void Start()
 		{
 			GameManager.StartApp();
 		}
