@@ -16,4 +16,4 @@ MonoBehaviour:
   SpawnAngelRange: 43
   SpawnAngelOffset: 0
   SpawnRate: 0
-  Bits: {fileID: 0}
+  Bits: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}

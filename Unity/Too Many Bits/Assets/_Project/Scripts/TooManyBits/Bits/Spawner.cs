@@ -8,6 +8,15 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private Timer _timer;
 
+		private void OnEnable()
+		{
+			SpawnerConfig.OnConfigsUpdated += OnConfigsUpdated;
+		}
+		private void OnDisable()
+		{
+			SpawnerConfig.OnConfigsUpdated -= OnConfigsUpdated;
+		}
+
 		private void Start()
 		{
 			_timer = new Timer(Config.SpawnTime);
@@ -19,6 +28,10 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			if (Config.Disabled) return;
 
 			_timer.Tick(Time.deltaTime);
+		}
+		private void OnConfigsUpdated()
+		{
+			ResetTimer();
 		}
 
 		private void OnTimerEnd()
@@ -56,7 +69,11 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			rb.AddForce(spawnForceVector * Config.SpawnForce, ForceMode2D.Impulse);
 		}
 
-		private void ResetTimer() => _timer.Reset(Config.SpawnTime);
+		private void ResetTimer()
+		{
+			if (_timer is null) return;
+			_timer.Reset(Config.SpawnTime);
+		}
 
 		private Vector3 Rotate(Vector3 vector, float angel)
 		{

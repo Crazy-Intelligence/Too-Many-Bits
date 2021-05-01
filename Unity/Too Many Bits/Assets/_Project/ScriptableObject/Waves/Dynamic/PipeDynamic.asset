@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: PipeDynamic
   m_EditorClassIdentifier: 
   baseWave: {fileID: 11400000, guid: e3d7aa50414c4ad49be2963b90e1e1ae, type: 2}
-  spawnRateIncrease: 5
-  maxSpawnRate: 25
+  spawnRateIncrease: 10
+  maxSpawnRate: 70
+  origionalSpawnRates:
+  - 10

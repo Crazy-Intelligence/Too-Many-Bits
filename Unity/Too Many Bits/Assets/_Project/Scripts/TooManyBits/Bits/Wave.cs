@@ -4,10 +4,10 @@ namespace CrazyIntelligence.TooManyBits.Bits
 {
 	public abstract class Wave : ScriptableObject
 	{
-		[ContextMenu("Apply Next")]
-		public abstract void ApplyNextWave();
+		public abstract void ApplyBase();
 
-		[ContextMenu("Apply Previous")]
-		public abstract void ApplyPreviousWave();
+		public abstract void ApplyNext();
+
+		public abstract void ApplyPrevious();
 	}
 }

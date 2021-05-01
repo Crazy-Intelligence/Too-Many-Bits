@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe31b761db7566047bffe02750eec699, type: 3}
   m_Name: PipeStandard
   m_EditorClassIdentifier: 
-  configuration:
+  Configurations:
   - Spawners:
     - {fileID: 11400000, guid: b03f7743d0bf27d4c842e54a07ee7701, type: 2}
-    SpawnRate: 10
+    SpawnRate: 30
     Bits: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}

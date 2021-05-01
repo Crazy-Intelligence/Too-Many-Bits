@@ -6,7 +6,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	public class WaveInfo
 	{
 		public SpawnerConfig[] Spawners;
-		[SerializeField] [Range(0f, 100f)] private float SpawnRate;
+		[Range(0f, 100f)] public float SpawnRate;
 		public BitCollection Bits;
 
 		public void Apply()

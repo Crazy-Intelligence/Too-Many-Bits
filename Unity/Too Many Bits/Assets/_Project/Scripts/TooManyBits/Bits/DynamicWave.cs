@@ -6,41 +6,64 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	[CreateAssetMenu(fileName = "DynamicWave", menuName = "TooManyBits/Wave/Dynamic")]
 	public class DynamicWave : Wave
 	{
-		[SerializeField] private SimpleWave baseWave;
+		[SerializeField] private BasicWave baseWave;
 
 		[SerializeField] private float spawnRateIncrease;
 		[SerializeField] private float maxSpawnRate;
 
-		private SimpleWave _currentWave;
+		[SerializeField] [HideInInspector] private float[] origionalSpawnRates;
 
-		private void OnEnable()
+		private int ConfigCount => baseWave.Configurations.Length;
+
+		public override void ApplyBase()
 		{
-			if (baseWave is null) return;
+			LoadOriginalSpawnRates();
 
-			_currentWave = CreateInstance<SimpleWave>();
-			_currentWave.Configurations = baseWave.Configurations;
+			baseWave.Apply();
 		}
-
-		public override void ApplyNextWave()
+		
+		public override void ApplyNext()
 		{
 			ModifySpawnRates(Increase);
-			_currentWave.Apply();
+			baseWave.Apply();
 		}
-
-		public override void ApplyPreviousWave()
+		public override void ApplyPrevious()
 		{
 			ModifySpawnRates(Decrease);
-			_currentWave.Apply();
+			baseWave.Apply();
 		}
 
 		private void ModifySpawnRates(Func<float, float> modifier)
 		{
-			foreach (var config in _currentWave.Configurations)
+			if (origionalSpawnRates.Length == 0)
 			{
-				foreach (var spawner in config.Spawners)
-				{
-					spawner.SpawnRate = modifier(spawner.SpawnRate);
-				}
+				SaveOriginalSpawnRates();
+			}
+
+			for (int i = 0; i < ConfigCount; i++)
+			{
+				var config = baseWave.Configurations[i];
+
+				config.SpawnRate = modifier(config.SpawnRate);
+			}
+		}
+
+		private void SaveOriginalSpawnRates()
+		{
+			origionalSpawnRates = new float[ConfigCount];
+
+			for (int i = 0; i < ConfigCount; i++)
+			{
+				var config = baseWave.Configurations[i];
+				origionalSpawnRates[i] = config.SpawnRate;
+			}
+		}
+		private void LoadOriginalSpawnRates()
+		{
+			for (int i = 0; i < ConfigCount; i++)
+			{
+				var config = baseWave.Configurations[i];
+				config.SpawnRate = origionalSpawnRates[i];
 			}
 		}
 

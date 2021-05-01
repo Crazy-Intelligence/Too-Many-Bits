@@ -16,5 +16,9 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		public float SpawnTime => 1f / SpawnRate;
 		public bool Disabled => SpawnRate == 0;
+
+		public static event Action OnConfigsUpdated;
+
+		public static void UpdateAll() => OnConfigsUpdated?.Invoke();
 	}
 }
