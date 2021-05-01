@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
-	[CreateAssetMenu(fileName = "Waves", menuName = "TooManyBits/Wave/Layout")]
-	public class WaveLayout : ScriptableObject
+	[CreateAssetMenu(fileName = "SimpleWaves", menuName = "TooManyBits/Wave/SimpleCollection")]
+	public class SimpleWaveCollection : Wave
 	{
 		[SerializeField] private SimpleWave[] waves;
 
 		int _currentIndex;
 
-		public void ApplyNextWave()
+		public override void ApplyNextWave()
 		{
 			if (_currentIndex >= waves.Length) return;
 
@@ -17,7 +17,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_currentIndex++;
 		}
 
-		public void ApplyPreviousWave()
+		public override void ApplyPreviousWave()
 		{
 			if (_currentIndex <= 0) return;
 

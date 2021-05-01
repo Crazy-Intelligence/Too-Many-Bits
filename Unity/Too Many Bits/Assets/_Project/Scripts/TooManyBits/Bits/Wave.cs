@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
-	public abstract class AAA : ScriptableObject
+	public abstract class Wave : ScriptableObject
 	{
 		[ContextMenu("Apply Next")]
 		public abstract void ApplyNextWave();

@@ -8,6 +8,7 @@ namespace CrazyIntelligence.TooManyBits
 		[SerializeField] private float duration;
 		[SerializeField] private bool loop;
 		[SerializeField] private bool useUnscaledTime;
+		[SerializeField] private bool enableOnStart;
 		[SerializeField] private UnityEvent OnTimerEnd;
 
 		private bool _enabled;
@@ -18,7 +19,8 @@ namespace CrazyIntelligence.TooManyBits
 		{
 			_timer = new Timer(duration, loop);
 			_timer.OnTimerEnd += InvokeOnTimerEnd;
-			_enabled = false;
+
+			_enabled = enableOnStart;
 		}
 
 		private void Update()

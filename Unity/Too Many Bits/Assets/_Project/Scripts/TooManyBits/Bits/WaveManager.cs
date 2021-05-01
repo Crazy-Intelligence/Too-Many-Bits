@@ -4,14 +4,14 @@ namespace CrazyIntelligence.TooManyBits.Bits
 {
 	public class WaveManager : MonoBehaviour
 	{
-		[SerializeField] private WaveLayout waveLayout;
+		[SerializeField] private Wave wave;
 		
 		private void Start()
 		{
-			waveLayout.ApplyNextWave();
+			wave.ApplyNextWave();
 		}
 
-		public void NextWave() => waveLayout.ApplyNextWave();
-		public void PreviousWave() => waveLayout.ApplyPreviousWave();
+		public void NextWave() => wave.ApplyNextWave();
+		public void PreviousWave() => wave.ApplyPreviousWave();
 	}
 }

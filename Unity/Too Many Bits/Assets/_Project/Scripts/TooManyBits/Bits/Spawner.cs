@@ -6,8 +6,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	{
 		public SpawnerConfig Config;
 
-		
-
 		private Timer _timer;
 
 		private void Start()
