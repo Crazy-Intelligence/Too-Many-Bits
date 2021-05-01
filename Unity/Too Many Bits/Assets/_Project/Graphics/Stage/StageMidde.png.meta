@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: e222a4fcbf39a91449ceadfca6c40a1b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7431478711762950521
+    second: StageMidde_0
+  - first:
+      213: -744649327211534713
+    second: StageMidde_1
+  - first:
+      213: -6035412300375909123
+    second: StageMidde_2
+  - first:
+      213: -6039806634245278319
+    second: StageMidde_3
+  - first:
+      213: 7829061183258964367
+    second: StageMidde_4
+  - first:
+      213: -2947832960580512092
+    second: StageMidde_5
+  - first:
+      213: -7547761409389391928
+    second: StageMidde_6
+  - first:
+      213: 1973365568543265128
+    second: StageMidde_7
+  - first:
+      213: 7050036771089537344
+    second: StageMidde_8
+  - first:
+      213: 6068248953548464198
+    second: StageMidde_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +71,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +105,231 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: StageMidde_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 36
+        width: 86
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9791282c38ae12760800000000000000
+      internalID: 7431478711762950521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 190
+        width: 128
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786a259d1697aa5f0800000000000000
+      internalID: -744649327211534713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 321
+        width: 162
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfc12136d78ed3ca0800000000000000
+      internalID: -6035412300375909123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_3
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 168
+        width: 118
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19533cdcddb4e2ca0800000000000000
+      internalID: -6039806634245278319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 457
+        width: 118
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8133f08aa966ac60800000000000000
+      internalID: 7829061183258964367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 235
+        width: 154
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a619676a813717d0800000000000000
+      internalID: -2947832960580512092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_6
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 251
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf81f7ecf6f04790800000000000000
+      internalID: -7547761409389391928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_7
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 433
+        width: 211
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861120d778dc26b10800000000000000
+      internalID: 1973365568543265128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_8
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 102
+        width: 103
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049db323713c6d160800000000000000
+      internalID: 7050036771089537344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StageMidde_9
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 242
+        width: 134
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64064e4b540c63450800000000000000
+      internalID: 6068248953548464198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

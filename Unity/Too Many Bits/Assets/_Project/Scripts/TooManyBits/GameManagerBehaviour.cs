@@ -18,21 +18,6 @@ namespace CrazyIntelligence.TooManyBits
 			{
 				GameManager.DoGameOver();
 			}
-			
-			if (Input.GetKeyDown(KeyCode.Escape))
-			{
-				if (GameManager.IsPlaying)
-				{
-					GameManager.Pause();
-				}
-				else
-				{
-					GameManager.Continue();
-				}
-			}
-
-			Cursor.lockState = CursorLockMode.Confined;
-			Cursor.visible = !GameManager.IsPlaying;
 		}
 	}
 }
