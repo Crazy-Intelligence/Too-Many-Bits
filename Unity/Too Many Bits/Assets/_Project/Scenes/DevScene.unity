@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555781, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -451,7 +451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555781, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_Sprite
@@ -495,9 +495,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 476713510}
     m_Modifications:
     - target: {fileID: -8134924239403276022, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8134924239403276022, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 80d8ec111744dc24cb111d577e16eeda, type: 2}
+    - target: {fileID: -1943732433369285867, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
+      propertyPath: Config
+      value: 
+      objectReference: {fileID: 11400000, guid: 226b1ecc4d19c2e44af70eef525004bf, type: 2}
     - target: {fileID: 1581822655175434256, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_Mass
       value: 0.071638934
@@ -513,14 +521,6 @@ PrefabInstance:
     - target: {fileID: 5142541770011555778, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142541770011555778, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5142541770011555778, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555778, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_LocalPosition.x
@@ -594,7 +594,8 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.y
       value: -2.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8134924239403276022, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
 --- !u!4 &1182707957 stripped
 Transform:
@@ -814,7 +815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555781, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_Color.b
@@ -928,7 +929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1589644129
 Transform:
   m_ObjectHideFlags: 0
@@ -1037,7 +1038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555781, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_Sprite
@@ -1162,7 +1163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5142541770011555781, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
       propertyPath: m_Sprite
@@ -1267,6 +1268,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
+--- !u!1 &2024918424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
+  m_PrefabInstance: {fileID: 1119585649}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2024918425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024918424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f18eb462f385743ae92c3571e5aa80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+  loop: 0
+  useUnscaledTime: 0
+  enableOnStart: 0
+  OnTimerEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2028603544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,7 +1336,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f8c502c5842bb8341867cc87516b4780, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.381
   m_Pitch: 1
   Loop: 1
   Mute: 0

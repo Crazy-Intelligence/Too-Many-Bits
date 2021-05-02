@@ -11,11 +11,10 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		private CapsuleCollider2D _collider;
 		private SpriteRenderer _spriteRenderer;
 		private SpriterChanger _spriteChanger;
-		private Animator _animator;
 
-		private bool _animating;
-		private Timer _timer;
-
+		private Vector3 deltaScale;
+		private bool _scaling;
+		
 		private void Awake()
 		{
 			GetReferences();
@@ -26,30 +25,59 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			SetupObject();
 
 			GameManager.OnReset += DestroyThisObject;
-			weight.Add(Config.Weight);
+			weight.Add(Config.WeightValue);
 		}
 		private void OnDisable()
 		{
 			GameManager.OnReset -= DestroyThisObject;
-			weight.Remove(Config.Weight);
+			weight.Remove(Config.WeightValue);
 		}
 
 		private void Update()
 		{
-			if (!_animating) return;
+			if (_scaling)
+			{
+				Scale();
+			}
 
-			_timer.Tick(Time.deltaTime);
+			ChangeColor();
 		}
 
 		public void Destroy()
 		{
-			PlayAnimation(Config.DestroyAnimation);
-			_timer.OnTimerEnd += DestroyThisObject;
+			
 		}
 
 		public void Shrink()
 		{
-			PlayAnimation(Config.CollectAnimation);
+			deltaScale = -Config.DeltaScale;
+			_scaling = true;
+		}
+		public void Grow()
+		{
+			deltaScale = Config.DeltaScale;
+			_scaling = true;
+		}
+
+		private void ChangeColor()
+		{
+
+		}
+
+		private void Scale()
+		{
+			var currentScale = transform.localScale;
+
+			if (Config.IsOutOfBounds(currentScale, out var clamped))
+			{
+				transform.localScale = clamped;
+				_scaling = false;
+				return;
+			}
+
+			var newScale = currentScale + (deltaScale * (Time.deltaTime / Config.ScaleDuration));
+
+			transform.localScale = newScale;
 		}
 
 		private void GetReferences()
@@ -57,7 +85,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_collider = GetComponent<CapsuleCollider2D>();
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_spriteChanger = GetComponent<SpriterChanger>();
-			_animator = GetComponent<Animator>();
 		}
 		private void SetupObject()
 		{
@@ -67,24 +94,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_collider.size = Config.ColliderSize;
 
 			_spriteRenderer.color = Config.Color;
-			_spriteRenderer.sortingLayerName = "Bits";
-
-			_spriteChanger.spriteCollection = Config.SpriteCollection;
-
-			_animator.runtimeAnimatorController = Config.AnimatioController;
-		}
-
-		private void PlayAnimation(AnimationClip clip)
-		{
-			_timer = new Timer(clip.length);
-			_timer.OnTimerEnd += OnAnimationEnd;
-			_animating = true;
-			_animator.Play(clip.name);
-		}
-
-		private void OnAnimationEnd()
-		{
-			_animating = false;
+			
+			_spriteChanger.spriteCollection = Config.Sprites;
 		}
 
 		private void DestroyThisObject()

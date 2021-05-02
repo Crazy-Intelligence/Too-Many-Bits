@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ae73b9e7d557f4b9b6b35f72a760ce, type: 3}
   m_Name: Bit
   m_EditorClassIdentifier: 
-  SpriteCollection: {fileID: 11400000, guid: d14d434a2ec34c941b3abb24e1b336d2, type: 2}
+  Sprites: {fileID: 11400000, guid: d14d434a2ec34c941b3abb24e1b336d2, type: 2}
   Color: {r: 0.03529412, g: 1, b: 0, a: 1}
-  AnimatioController: {fileID: 9100000, guid: 80d8ec111744dc24cb111d577e16eeda, type: 2}
-  DestroyAnimation: {fileID: 7400000, guid: 312babbe112aa1b40b89428c519fca40, type: 2}
-  CollectAnimation: {fileID: 7400000, guid: 2927554f129586a4bba85e7a8b94eced, type: 2}
+  DestroyColler: {r: 1, g: 0, b: 0, a: 1}
+  ScaleDuration: 1
+  DestroyDuration: 1
   Scale: 1
-  Weight: 1
+  SmallScale: 0.3
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.35}
   ScoreValue: 1
   MoneyValue: 1
+  WeightValue: 1
