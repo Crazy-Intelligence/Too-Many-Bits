@@ -15,5 +15,5 @@ MonoBehaviour:
   Configurations:
   - Spawners:
     - {fileID: 11400000, guid: 9f420a270956f46409c60afcaaf6b6f6, type: 2}
-    SpawnRate: 100
+    SpawnRate: 200
     Bits: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}
