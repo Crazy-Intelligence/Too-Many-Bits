@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ae73b9e7d557f4b9b6b35f72a760ce, type: 3}
   m_Name: Kleinbuchstaben
   m_EditorClassIdentifier: 
-  SpriteCollection: {fileID: 11400000, guid: 37942703544db04409f7191c1e8a29c8, type: 2}
+  Sprites: {fileID: 11400000, guid: 37942703544db04409f7191c1e8a29c8, type: 2}
   Color: {r: 0.827451, g: 1, b: 0, a: 1}
-  AnimatioController: {fileID: 9100000, guid: bc9fcbf83582eb449acdd5653012982d, type: 2}
-  DestroyAnimation: {fileID: 7400000, guid: 312babbe112aa1b40b89428c519fca40, type: 2}
-  CollectAnimation: {fileID: 7400000, guid: 8042e4e9616d241459dfc4934d337477, type: 2}
+  DestroyColor: {r: 1, g: 0, b: 0.0844264, a: 1}
+  ScaleDuration: 1
+  DestroyDuration: 0.5
   Scale: 1.5
-  Weight: 1
+  SmallScale: 0.3
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.3}
   ScoreValue: 3
   MoneyValue: 3
+  WeightValue: 1

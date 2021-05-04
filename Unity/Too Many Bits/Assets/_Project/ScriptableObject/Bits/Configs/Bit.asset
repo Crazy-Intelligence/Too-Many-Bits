@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprites: {fileID: 11400000, guid: d14d434a2ec34c941b3abb24e1b336d2, type: 2}
   Color: {r: 0.03529412, g: 1, b: 0, a: 1}
-  DestroyColler: {r: 1, g: 0, b: 0, a: 1}
+  DestroyColor: {r: 1, g: 0, b: 0.0844264, a: 1}
   ScaleDuration: 1
-  DestroyDuration: 1
+  DestroyDuration: 0.5
   Scale: 1
   SmallScale: 0.3
   ColliderOffset: {x: 0, y: 0}

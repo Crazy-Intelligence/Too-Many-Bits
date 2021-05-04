@@ -8,7 +8,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		[Header("Visuals")]
 		public SpriteCollection Sprites;
 		public Color Color;
-		public Color DestroyColler;
+		public Color DestroyColor;
 
 		[Header("Animations")]
 		public float ScaleDuration;
@@ -26,26 +26,5 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		public int ScoreValue;
 		public int MoneyValue;
 		public int WeightValue;
-
-		public Vector3 ScaleVector => Vector3.one * Scale;
-		public Vector3 SmallScaleVector => Vector3.one * SmallScale;
-		public Vector3 DeltaScale => ScaleVector - SmallScaleVector;
-		
-		public bool IsOutOfBounds(Vector3 scale, out Vector3 clamped)
-		{
-			if (scale.x > Scale)
-			{
-				clamped = ScaleVector;
-				return true;
-			}
-			if (scale.x < SmallScale)
-			{
-				clamped = SmallScaleVector;
-				return true;
-			}
-
-			clamped = scale;
-			return false;
-		}
 	}
 }

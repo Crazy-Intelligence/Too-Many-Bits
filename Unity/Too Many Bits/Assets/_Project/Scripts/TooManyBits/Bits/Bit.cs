@@ -12,9 +12,11 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		private SpriteRenderer _spriteRenderer;
 		private SpriterChanger _spriteChanger;
 
-		private Vector3 deltaScale;
+		private Vector3 _targetScale;
 		private bool _scaling;
-		
+
+		private bool _changingColor;
+
 		private void Awake()
 		{
 			GetReferences();
@@ -39,45 +41,47 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			{
 				Scale();
 			}
-
-			ChangeColor();
+			if (_changingColor)
+			{
+				ChangeColor();
+			}
 		}
 
+		public void DeleteImmediatly()
+		{
+			DestroyThisObject();
+		}
 		public void Destroy()
 		{
-			
+			_changingColor = true;
 		}
-
 		public void Shrink()
 		{
-			deltaScale = -Config.DeltaScale;
+			_targetScale = Vector3.one * Config.SmallScale;
 			_scaling = true;
 		}
 		public void Grow()
 		{
-			deltaScale = Config.DeltaScale;
+			_targetScale = Vector3.one * Config.Scale;
 			_scaling = true;
 		}
 
 		private void ChangeColor()
 		{
-
+			_spriteRenderer.color = Color.Lerp(_spriteRenderer.color, Config.DestroyColor, Time.deltaTime / Config.DestroyDuration);
+			if (_spriteRenderer.color == Config.DestroyColor)
+			{
+				_changingColor = false;
+			}
 		}
 
 		private void Scale()
 		{
-			var currentScale = transform.localScale;
-
-			if (Config.IsOutOfBounds(currentScale, out var clamped))
+			transform.localScale = Vector3.Lerp(transform.localScale, _targetScale, Time.deltaTime / Config.ScaleDuration);
+			if (transform.localScale == _targetScale)
 			{
-				transform.localScale = clamped;
 				_scaling = false;
-				return;
 			}
-
-			var newScale = currentScale + (deltaScale * (Time.deltaTime / Config.ScaleDuration));
-
-			transform.localScale = newScale;
 		}
 
 		private void GetReferences()

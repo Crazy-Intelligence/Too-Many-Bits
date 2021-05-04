@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ae73b9e7d557f4b9b6b35f72a760ce, type: 3}
   m_Name: Sonderzeichen
   m_EditorClassIdentifier: 
-  SpriteCollection: {fileID: 11400000, guid: 940b2c3b890b135479a565ba3d0bdbfb, type: 2}
+  Sprites: {fileID: 0}
   Color: {r: 1, g: 0, b: 0.7882353, a: 1}
-  AnimatioController: {fileID: 9100000, guid: 076731a8c9a442b46b3e95e137cfe49e, type: 2}
-  DestroyAnimation: {fileID: 7400000, guid: 312babbe112aa1b40b89428c519fca40, type: 2}
-  CollectAnimation: {fileID: 7400000, guid: 186edc1b1f27c3640905e3e53ca7a72e, type: 2}
+  DestroyColor: {r: 0, g: 0, b: 0, a: 0}
+  ScaleDuration: 0
+  DestroyDuration: 0
   Scale: 5
-  Weight: 10
+  SmallScale: 0
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.31, y: 0.35}
   ScoreValue: 50
   MoneyValue: 50
+  WeightValue: 50

@@ -3,7 +3,7 @@ using UnityEngine;
 namespace CrazyIntelligence.TooManyBits.Bits
 {
 	[CreateAssetMenu(fileName = "Collector", menuName = "TooManyBits/Behaviour/Collector")]
-	public class CollectorBehaviour : ScriptableObject
+	public class TriggerBehaviour : ScriptableObject
 	{
 		[Header("Score")]
 		[SerializeField] private Counter score;
@@ -26,13 +26,16 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			switch (behaviour)
 			{
 				case Behaviour.deleteImmediatly:
-					Destroy(bit.gameObject);
+					bit.DeleteImmediatly();
 					break;
 				case Behaviour.destroy:
 					bit.Destroy();
 					break;
 				case Behaviour.shrink:
 					bit.Shrink();
+					break;
+				case Behaviour.grow:
+					bit.Grow();
 					break;
 			}
 		}
@@ -41,7 +44,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		{
 			deleteImmediatly,
 			destroy,
-			shrink
+			shrink,
+			grow
 		}
 	}
 }

@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
-	public class Collector : MonoBehaviour
+	public class Trigger : MonoBehaviour
 	{
-		[SerializeField] private CollectorBehaviour behaviour;
+		[SerializeField] private TriggerBehaviour behaviour;
 
 		private Collider2D _collider;
 
