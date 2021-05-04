@@ -846,7 +846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1121868294247651065, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -20
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 1933638310222602488, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_Icon
@@ -2137,7 +2137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1249903225052590906, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -20
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 1956882856865793587, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_Layer
@@ -2159,6 +2159,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 29d458a472455b446a4c0c0a8c9ea4a7, type: 2}
     - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: destroyBits
       value: 0
@@ -2230,7 +2234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1249903225052590906, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_ForceMagnitude
-      value: 20
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1956882856865793587, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_Layer
@@ -2252,6 +2256,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 11c115456fdab2d4da33c5b053e62810, type: 2}
     - target: {fileID: 5876544602722528334, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: MoneyMultiplier
       value: 3
@@ -2422,12 +2430,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1121868294247651065, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_ForceMagnitude
-      value: 20
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 1933638310222602488, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1933638310222602495, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 29d458a472455b446a4c0c0a8c9ea4a7, type: 2}
     - target: {fileID: 2244326937875590504, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_Layer
       value: 8

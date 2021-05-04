@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprites: {fileID: 0}
   Color: {r: 1, g: 0, b: 0.7882353, a: 1}
-  DestroyColor: {r: 0, g: 0, b: 0, a: 0}
-  ScaleDuration: 0
-  DestroyDuration: 0
+  DestroyColor: {r: 1, g: 0, b: 0.0844264, a: 1}
+  ScaleDuration: 0.5
+  DestroyDuration: 0.5
   Scale: 5
-  SmallScale: 0
+  SmallScale: 0.3
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.31, y: 0.35}
   ScoreValue: 50

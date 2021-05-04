@@ -16,6 +16,4 @@ MonoBehaviour:
   scoreMultiplier: 1
   money: {fileID: 11400000, guid: 21852c7a791c3054db7072eb5796d950, type: 2}
   moneyMultiplier: 1
-  destroyBits: 0
-  deleteBits: 1
-  shrink: 0
+  behaviour: 0

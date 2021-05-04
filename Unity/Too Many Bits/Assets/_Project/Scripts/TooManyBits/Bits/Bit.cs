@@ -17,7 +17,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		private Vector3 _targetScale;
 		private bool _scaling;
 
-		private bool _changingColor;
+		private bool _destroying;
 
 		private void Awake()
 		{
@@ -29,12 +29,12 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			SetupObject();
 
 			GameManager.OnReset += DestroyThisObject;
+
 			weight.Add(Config.WeightValue);
 		}
 		private void OnDisable()
 		{
 			GameManager.OnReset -= DestroyThisObject;
-			weight.Remove(Config.WeightValue);
 		}
 
 		private void Update()
@@ -43,7 +43,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			{
 				Scale();
 			}
-			if (_changingColor)
+			if (_destroying)
 			{
 				ChangeColor();
 				_timer.Tick(Time.deltaTime);
@@ -56,18 +56,21 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		}
 		public void Destroy()
 		{
-			_changingColor = true;
+			_destroying = true;
+			_collider.enabled = false;
 			_timer = new Timer(Config.DestroyDuration);
 			_timer.OnTimerEnd += DestroyThisObject;
 		}
 		public void Shrink()
 		{
 			_targetScale = Vector3.one * Config.SmallScale;
+			gameObject.layer = LayerMask.NameToLayer("SmallBits");
 			_scaling = true;
 		}
 		public void Grow()
 		{
 			_targetScale = Vector3.one * Config.Scale;
+			gameObject.layer = LayerMask.NameToLayer("Bits");
 			_scaling = true;
 		}
 
@@ -76,7 +79,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_spriteRenderer.color = Color.Lerp(_spriteRenderer.color, Config.DestroyColor, Time.deltaTime / Config.DestroyDuration);
 			if (_spriteRenderer.color == Config.DestroyColor)
 			{
-				_changingColor = false;
+				_destroying = false;
 			}
 		}
 
@@ -99,16 +102,23 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		{
 			transform.localScale = new Vector3(Config.Scale, Config.Scale, 1f);
 
+			_collider.enabled = true;
 			_collider.offset = Config.ColliderOffset;
 			_collider.size = Config.ColliderSize;
 
 			_spriteRenderer.color = Config.Color;
 			
 			_spriteChanger.spriteCollection = Config.Sprites;
+
+			gameObject.layer = LayerMask.NameToLayer("Bits");
+
+			_scaling = false;
+			_destroying = false;
 		}
 
 		private void DestroyThisObject()
 		{
+			weight.Remove(Config.WeightValue);
 			ObjectPool.Despawn(gameObject);
 		}
 

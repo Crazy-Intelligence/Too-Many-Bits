@@ -3064,6 +3064,54 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3736215768002472000, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Size.x
+      value: 1.032978
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736215768002472000, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3980546
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736215768002472000, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.016489029
+      objectReference: {fileID: 0}
+    - target: {fileID: 3736215768002472000, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.028856039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784009054033677543, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4853158
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784009054033677543, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.623265
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784009054033677543, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.2426579
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784009054033677543, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.015031934
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784009054322439155, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Size.x
+      value: 1.526618
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784009054322439155, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.5507306
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784009054322439155, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.263309
+      objectReference: {fileID: 0}
+    - target: {fileID: 3784009054322439155, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.047481954
+      objectReference: {fileID: 0}
     - target: {fileID: 4522088937531991494, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
