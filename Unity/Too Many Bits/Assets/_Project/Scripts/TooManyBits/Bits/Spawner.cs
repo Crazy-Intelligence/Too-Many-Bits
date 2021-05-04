@@ -50,7 +50,9 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void SpawnObject()
 		{
-			var newObject = Instantiate(Config.Bits.Prefab, transform.position, Quaternion.identity);
+			var newObject = ObjectPool.Spawn(Config.Bits.Prefab);
+
+			newObject.transform.position = transform.position;
 
 			var bit = newObject.GetComponent<Bit>();
 			bit.Config = Config.Bits.GetRandomConfig();

@@ -12,6 +12,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		private SpriteRenderer _spriteRenderer;
 		private SpriterChanger _spriteChanger;
 
+		private Timer _timer;
+
 		private Vector3 _targetScale;
 		private bool _scaling;
 
@@ -44,6 +46,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			if (_changingColor)
 			{
 				ChangeColor();
+				_timer.Tick(Time.deltaTime);
 			}
 		}
 
@@ -54,6 +57,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		public void Destroy()
 		{
 			_changingColor = true;
+			_timer = new Timer(Config.DestroyDuration);
+			_timer.OnTimerEnd += DestroyThisObject;
 		}
 		public void Shrink()
 		{
@@ -104,7 +109,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void DestroyThisObject()
 		{
-			Destroy(gameObject);
+			ObjectPool.Despawn(gameObject);
 		}
 
 		[ContextMenu("Setup")]
