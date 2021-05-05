@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fan (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3441380600778600913, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
+      propertyPath: speed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3441380600778600919, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2792,6 +2796,10 @@ PrefabInstance:
     - target: {fileID: 3441380600778600912, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
       propertyPath: m_Name
       value: Fan
+      objectReference: {fileID: 0}
+    - target: {fileID: 3441380600778600913, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
+      propertyPath: speed
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3441380600778600919, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
       propertyPath: m_RootOrder
