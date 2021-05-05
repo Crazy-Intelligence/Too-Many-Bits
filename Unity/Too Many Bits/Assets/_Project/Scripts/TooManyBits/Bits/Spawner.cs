@@ -56,8 +56,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 			var bit = newObject.GetComponent<Bit>();
 			bit.Config = Config.Bits.GetRandomConfig();
-			
-			newObject.SetActive(true);
+
+			bit.Enable();
 
 			var rb = newObject.GetComponent<Rigidbody2D>();
 			ApplySpawnForce(rb);

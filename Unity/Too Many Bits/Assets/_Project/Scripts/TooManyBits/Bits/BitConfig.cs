@@ -1,3 +1,4 @@
+using CrazyIntelligence.TooManyBits.Audio;
 using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Bits
@@ -9,6 +10,10 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		public SpriteCollection Sprites;
 		public Color Color;
 		public Color DestroyColor;
+
+		[Header("Audio")]
+		public ConfiguredAudioClip OnCollectClip;
+		public ConfiguredAudioClip OnDestroyClip;
 
 		[Header("Animations")]
 		public float ScaleDuration;

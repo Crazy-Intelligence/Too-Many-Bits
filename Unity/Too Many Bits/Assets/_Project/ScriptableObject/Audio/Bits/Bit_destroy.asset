@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bef64010c2c8c0549aef6fed7261d8aa, type: 3}
-  m_Name: Bit_collect_small
+  m_Name: Bit_destroy
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 9dad4d42f46ba6b4a9d4962acc00928b, type: 3}
-  minVolume: 0.7
-  maxVolume: 0.8
-  minPitch: 3
-  maxPitch: 3
+  clip: {fileID: 8300000, guid: df10e48f07b43f5458a31c0a37457987, type: 3}
+  minVolume: 1
+  maxVolume: 1
+  minPitch: 0.9
+  maxPitch: 1.1
   loop: 0

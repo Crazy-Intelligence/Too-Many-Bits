@@ -8,7 +8,9 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		[SerializeField] private Counter weight;
 
+
 		private CapsuleCollider2D _collider;
+		private AudioSource _audioSource;
 		private SpriteRenderer _spriteRenderer;
 		private SpriterChanger _spriteChanger;
 
@@ -26,15 +28,11 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void OnEnable()
 		{
-			SetupObject();
-
-			GameManager.OnReset += DestroyThisObject;
-
-			weight.Add(Config.WeightValue);
+			GameManager.OnReset += Despawn;
 		}
 		private void OnDisable()
 		{
-			GameManager.OnReset -= DestroyThisObject;
+			GameManager.OnReset -= Despawn;
 		}
 
 		private void Update()
@@ -50,22 +48,34 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			}
 		}
 
+		public void Enable()
+		{
+			weight.Add(Config.WeightValue);
+
+			SetupObject();
+		}
+
 		public void DeleteImmediatly()
 		{
-			DestroyThisObject();
+			Despawn();
 		}
+
 		public void Destroy()
 		{
 			_destroying = true;
 			_collider.enabled = false;
 			_timer = new Timer(Config.DestroyDuration);
-			_timer.OnTimerEnd += DestroyThisObject;
+			_timer.OnTimerEnd += Despawn;
+
+			Config.OnDestroyClip.Play(_audioSource);
 		}
 		public void Shrink()
 		{
 			_targetScale = Vector3.one * Config.SmallScale;
 			gameObject.layer = LayerMask.NameToLayer("SmallBits");
 			_scaling = true;
+
+			Config.OnCollectClip.Play(_audioSource);
 		}
 		public void Grow()
 		{
@@ -95,6 +105,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		private void GetReferences()
 		{
 			_collider = GetComponent<CapsuleCollider2D>();
+			_audioSource = GetComponent<AudioSource>();
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_spriteChanger = GetComponent<SpriterChanger>();
 		}
@@ -116,7 +127,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_destroying = false;
 		}
 
-		private void DestroyThisObject()
+		private void Despawn()
 		{
 			weight.Remove(Config.WeightValue);
 			ObjectPool.Despawn(gameObject);

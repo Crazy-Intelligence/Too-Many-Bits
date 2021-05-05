@@ -12,12 +12,15 @@ namespace CrazyIntelligence.TooManyBits.Audio
 		[Space]
 		[SerializeField] [Range(-3f, 3f)] private float minPitch = 1f;
 		[SerializeField] [Range(-3f, 3f)] private float maxPitch = 1f;
+		[Space]
+		[SerializeField] private bool loop;
 
 		public override void Play(AudioSource source)
 		{
 			source.clip = clip;
 			source.volume = GetRandomVolume();
 			source.pitch = GetRandomPitch();
+			source.loop = loop;
 			source.Play();
 		}
 
