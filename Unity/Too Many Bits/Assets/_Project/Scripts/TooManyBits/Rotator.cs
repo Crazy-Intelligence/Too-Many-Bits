@@ -20,7 +20,7 @@ namespace CrazyIntelligence.TooManyBits
 
 		private void Update()
 		{
-			_rotationAngel = speed * 10f * Time.deltaTime;
+			_rotationAngel = speed * Time.unscaledDeltaTime;
 
 			if (invert)
 			{

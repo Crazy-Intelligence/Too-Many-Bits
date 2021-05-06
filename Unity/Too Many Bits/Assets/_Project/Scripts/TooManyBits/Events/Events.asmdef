@@ -1,0 +1,16 @@
+{
+    "name": "Events",
+    "rootNamespace": "CrazyIntelligence.TooManyBits.Events",
+    "references": [
+        "GUID:6dbcdaf6322f63348b4c277fff7de260"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

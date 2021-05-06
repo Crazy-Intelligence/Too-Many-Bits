@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Fan
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: c7f6011a044497b4cbec370eb122c1de, type: 3}
-  minVolume: 0.2
-  maxVolume: 0.4
-  minPitch: 1
-  maxPitch: 1
+  minVolume: 0.01
+  maxVolume: 0.05
+  minPitch: 0.9
+  maxPitch: 1.1
   loop: 1
