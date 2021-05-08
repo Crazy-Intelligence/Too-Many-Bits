@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: Pan2D
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2484467429991046013, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
+      propertyPath: Priority
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3441380600778600912, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
       propertyPath: m_Name
       value: Fan (1)
@@ -218,6 +222,8 @@ GameObject:
   - component: {fileID: 31301304}
   - component: {fileID: 31301300}
   - component: {fileID: 31301303}
+  - component: {fileID: 31301305}
+  - component: {fileID: 31301302}
   - component: {fileID: 31301306}
   m_Layer: 0
   m_Name: BackgroundMusic
@@ -268,6 +274,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &31301302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31301299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cca847e5cfa214a9e2d66fb1d3e8c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnContinue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 31301307}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &31301303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +344,33 @@ MonoBehaviour:
   gameTracks: {fileID: 11400000, guid: 94090fe3410c9654e916ca8badbbda5a, type: 2}
   menuTracks: {fileID: 11400000, guid: 28de1baca72e4e74ea6050c582fde18f, type: 2}
   transitionDuration: 2
+--- !u!114 &31301305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31301299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbe108cc45559a4b88b251a2b57bf2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 31301307}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &31301306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,7 +417,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2012,7 +2072,7 @@ MonoBehaviour:
   OnItemBought:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1713094511}
         m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimeManager, TooManyBits
         m_MethodName: SlowTime
         m_Mode: 1
@@ -2966,6 +3026,10 @@ PrefabInstance:
     - target: {fileID: 2484467429991046013, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
       propertyPath: Pan2D
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2484467429991046013, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
+      propertyPath: Priority
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3441380600778600912, guid: 5aa69e55bffb96042ae16918202abc06, type: 3}
       propertyPath: m_Name

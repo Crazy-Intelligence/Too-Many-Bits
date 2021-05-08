@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ae73b9e7d557f4b9b6b35f72a760ce, type: 3}
   m_Name: Zahl
   m_EditorClassIdentifier: 
-  Sprites: {fileID: 0}
-  Color: {r: 0, g: 1, b: 0.69803923, a: 1}
-  DestroyColor: {r: 1, g: 0, b: 0.0844264, a: 1}
-  OnCollectClip: {fileID: 11400000, guid: 1538e6e2221bbc64093f93f2f009d31a, type: 2}
-  OnDestroyClip: {fileID: 11400000, guid: ca2b7b7153c5ee8429ad38d426da0203, type: 2}
-  ScaleDuration: 0.5
-  DestroyDuration: 1
-  Scale: 2
-  SmallScale: 0.3
+  sharedConfig: {fileID: 11400000, guid: d421161ba185ee445b57daaf88c72578, type: 2}
+  Sprites: {fileID: 11400000, guid: 13467f2667e5e394aa8891e07c77a904, type: 2}
+  NormalColor: {r: 0, g: 1, b: 0.69803923, a: 1}
+  NormalScale: 2
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.35}
-  ScoreValue: 5
-  MoneyValue: 5
-  WeightValue: 5
+  scoreValue: 10
+  moneyValue: 10
+  weightValue: 10

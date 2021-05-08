@@ -5,12 +5,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	[CreateAssetMenu(fileName = "Collector", menuName = "TooManyBits/Behaviour/Collector")]
 	public class TriggerBehaviour : ScriptableObject
 	{
-		[Header("Score")]
-		[SerializeField] private Counter score;
 		[SerializeField] private int scoreMultiplier;
-
-		[Header("Money")]
-		[SerializeField] private Counter money;
 		[SerializeField] private int moneyMultiplier;
 
 		[Header("Behaviour")]
@@ -18,10 +13,10 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		public void Invoke(Bit bit)
 		{
-			var info = bit.Config;
+			var config = bit.Config;
 
-			score.Add(info.ScoreValue * scoreMultiplier);
-			money.Add(info.MoneyValue * moneyMultiplier);
+			config.ChangeScore(scoreMultiplier);
+			config.ChangeMoney(moneyMultiplier);
 
 			switch (behaviour)
 			{

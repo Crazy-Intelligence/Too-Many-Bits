@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ae73b9e7d557f4b9b6b35f72a760ce, type: 3}
   m_Name: Bit
   m_EditorClassIdentifier: 
+  sharedConfig: {fileID: 11400000, guid: d421161ba185ee445b57daaf88c72578, type: 2}
   Sprites: {fileID: 11400000, guid: d14d434a2ec34c941b3abb24e1b336d2, type: 2}
-  Color: {r: 0.03529412, g: 1, b: 0, a: 1}
-  DestroyColor: {r: 1, g: 0, b: 0.0844264, a: 1}
-  OnCollectClip: {fileID: 11400000, guid: 374668c65ea62d048a05cbaaa16d3aca, type: 2}
-  OnDestroyClip: {fileID: 11400000, guid: ca2b7b7153c5ee8429ad38d426da0203, type: 2}
-  ScaleDuration: 0.5
-  DestroyDuration: 1
-  Scale: 1
-  SmallScale: 0.3
+  NormalColor: {r: 0.03529412, g: 1, b: 0, a: 1}
+  NormalScale: 1
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.35}
-  ScoreValue: 1
-  MoneyValue: 1
-  WeightValue: 1
+  scoreValue: 1
+  moneyValue: 1
+  weightValue: 1

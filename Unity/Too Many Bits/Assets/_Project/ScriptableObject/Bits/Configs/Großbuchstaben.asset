@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ae73b9e7d557f4b9b6b35f72a760ce, type: 3}
   m_Name: "Gro\xDFbuchstaben"
   m_EditorClassIdentifier: 
+  sharedConfig: {fileID: 11400000, guid: d421161ba185ee445b57daaf88c72578, type: 2}
   Sprites: {fileID: 11400000, guid: 121f6376e35f9a24ab5a39e19b6c0f18, type: 2}
-  Color: {r: 0.827451, g: 1, b: 0, a: 1}
-  DestroyColor: {r: 1, g: 0, b: 0.0844264, a: 1}
-  OnCollectClip: {fileID: 11400000, guid: 1538e6e2221bbc64093f93f2f009d31a, type: 2}
-  OnDestroyClip: {fileID: 11400000, guid: ca2b7b7153c5ee8429ad38d426da0203, type: 2}
-  ScaleDuration: 0.5
-  DestroyDuration: 1
-  Scale: 3
-  SmallScale: 0.3
+  NormalColor: {r: 0.827451, g: 1, b: 0, a: 1}
+  NormalScale: 3
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.36375165}
-  ScoreValue: 10
-  MoneyValue: 10
-  WeightValue: 10
+  scoreValue: 15
+  moneyValue: 15
+  weightValue: 15

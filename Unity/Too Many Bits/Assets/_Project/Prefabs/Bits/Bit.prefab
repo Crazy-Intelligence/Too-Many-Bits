@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4765609896112948851}
   - component: {fileID: 4565132093708806547}
   - component: {fileID: -4267018472796822255}
+  - component: {fileID: 2476535855809420105}
   - component: {fileID: 2002455993729549247}
   - component: {fileID: -1943732433369285867}
   - component: {fileID: -6867418292762030755}
@@ -22,7 +23,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5142541770011555778
 Transform:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -221,6 +222,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2476535855809420105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142541770011555780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2574ce8ba0d3cd41a9e95a369234cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2002455993729549247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +261,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 0}
-  weight: {fileID: 11400000, guid: 0a60914f74cbaff42a96f607557d49b2, type: 2}
+  OnGrowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnShrinkEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2476535855809420105}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
+          Audio
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 374668c65ea62d048a05cbaaa16d3aca, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
+            Audio
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDestroyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2476535855809420105}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
+          Audio
+        m_MethodName: Play
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: ca2b7b7153c5ee8429ad38d426da0203, type: 2}
+          m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
+            Audio
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-6867418292762030755
 MonoBehaviour:
   m_ObjectHideFlags: 0

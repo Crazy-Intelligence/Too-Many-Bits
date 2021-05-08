@@ -1,135 +1,128 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
 	public class Bit : MonoBehaviour
 	{
 		public BitConfig Config;
-
-		[SerializeField] private Counter weight;
-
+		[SerializeField] private UnityEvent OnGrowEvent;
+		[SerializeField] private UnityEvent OnShrinkEvent;
+		[SerializeField] private UnityEvent OnDestroyEvent;
+		
 		private CapsuleCollider2D _collider;
-		private AudioSource _audioSource;
 		private SpriteRenderer _spriteRenderer;
 		private SpriterChanger _spriteChanger;
-
-		private Timer _timer;
-
-		private Vector3 _targetScale;
-		private bool _scaling;
-
-		private bool _destroying;
 
 		private void Awake()
 		{
 			GetReferences();
 		}
-
+		
 		private void OnEnable()
 		{
-			GameManager.OnReset += Despawn;
+			Config.AddWeight();
+			SetupObject();
 		}
 		private void OnDisable()
 		{
-			GameManager.OnReset -= Despawn;
-		}
-
-		private void Update()
-		{
-			if (_scaling)
-			{
-				Scale();
-			}
-			if (_destroying)
-			{
-				ChangeColor();
-				_timer.Tick(Time.deltaTime);
-			}
-		}
-
-		public void Enable()
-		{
-			weight.Add(Config.WeightValue);
-
-			SetupObject();
+			StopAllCoroutines();
 		}
 
 		public void DeleteImmediatly()
 		{
-			Despawn();
+			StartCoroutine(Despawn(0f));
 		}
 
 		public void Destroy()
 		{
-			_destroying = true;
-			_collider.enabled = false;
-			_timer = new Timer(Config.DestroyDuration);
-			_timer.OnTimerEnd += Despawn;
+			StartCoroutine(ChangeColor(Config.DestroyedColor, Config.DestroyDuration));
 
-			Config.OnDestroyClip.Play(_audioSource);
+			_collider.enabled = false;
+
+			StartCoroutine(Despawn(Config.DestroyDuration));
+
+			OnDestroyEvent?.Invoke();
 		}
 		public void Shrink()
 		{
-			_targetScale = Vector3.one * Config.SmallScale;
-			gameObject.layer = LayerMask.NameToLayer("SmallBits");
-			_scaling = true;
+			StartCoroutine(Scale(Vector3.one * Config.SmallScale, Config.ScaleDuration));
 
-			Config.OnCollectClip.Play(_audioSource);
+			gameObject.layer = LayerMask.NameToLayer("SmallBits");
+
+			OnShrinkEvent?.Invoke();
 		}
 		public void Grow()
 		{
-			_targetScale = Vector3.one * Config.Scale;
+			StartCoroutine(Scale(Vector3.one * Config.NormalScale, Config.ScaleDuration));
+
 			gameObject.layer = LayerMask.NameToLayer("Bits");
-			_scaling = true;
+
+			OnGrowEvent?.Invoke();
 		}
 
-		private void ChangeColor()
+		private IEnumerator ChangeColor(Color newColor, float duration)
 		{
-			_spriteRenderer.color = Color.Lerp(_spriteRenderer.color, Config.DestroyColor, Time.deltaTime / Config.DestroyDuration);
-			if (_spriteRenderer.color == Config.DestroyColor)
+			var timer = new Timer(duration);
+
+			while (timer.RemainingSeconds > 0f)
 			{
-				_destroying = false;
+				_spriteRenderer.color = Color.Lerp(_spriteRenderer.color, newColor, duration * Time.deltaTime);
+
+				timer.Tick(Time.deltaTime);
+				yield return null;
 			}
 		}
 
-		private void Scale()
+		private IEnumerator Scale(Vector3 newScale, float duration)
 		{
-			transform.localScale = Vector3.Lerp(transform.localScale, _targetScale, Time.deltaTime / Config.ScaleDuration);
-			if (transform.localScale == _targetScale)
+			var timer = new Timer(duration);
+
+			while (timer.RemainingSeconds > 0f)
 			{
-				_scaling = false;
+				transform.localScale = Vector3.Lerp(transform.localScale, newScale, duration * Time.deltaTime);
+
+				timer.Tick(Time.deltaTime);
+				yield return null;
 			}
+		}
+		
+		private IEnumerator Despawn(float waitDuration)
+		{
+			waitDuration += 0.16f;
+
+			var timer = new Timer(waitDuration);
+
+			while (timer.RemainingSeconds > 0f)
+			{
+				timer.Tick(Time.deltaTime);
+				yield return null;
+			}
+
+			Config.RemoveWeight();
+			ObjectPool.Despawn(gameObject);
 		}
 
 		private void GetReferences()
 		{
 			_collider = GetComponent<CapsuleCollider2D>();
-			_audioSource = GetComponent<AudioSource>();
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_spriteChanger = GetComponent<SpriterChanger>();
 		}
 		private void SetupObject()
 		{
-			transform.localScale = new Vector3(Config.Scale, Config.Scale, 1f);
+			transform.localScale = new Vector3(Config.NormalScale, Config.NormalScale, 1f);
 
 			_collider.enabled = true;
 			_collider.offset = Config.ColliderOffset;
 			_collider.size = Config.ColliderSize;
 
-			_spriteRenderer.color = Config.Color;
+			_spriteRenderer.color = Config.NormalColor;
 			
 			_spriteChanger.spriteCollection = Config.Sprites;
 
 			gameObject.layer = LayerMask.NameToLayer("Bits");
-
-			_scaling = false;
-			_destroying = false;
-		}
-
-		private void Despawn()
-		{
-			weight.Remove(Config.WeightValue);
-			ObjectPool.Despawn(gameObject);
 		}
 
 		[ContextMenu("Setup")]
