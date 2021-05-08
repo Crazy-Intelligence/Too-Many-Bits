@@ -34,6 +34,7 @@ namespace CrazyIntelligence.TooManyBits
 			for (int i = 0; i < parts.Length; i++)
 			{
 				parts[i].isKinematic = true;
+				parts[i].Sleep();
 				parts[i].position = _defaultPositions[i];
 				parts[i].rotation = _defaultRotations[i];
 			}

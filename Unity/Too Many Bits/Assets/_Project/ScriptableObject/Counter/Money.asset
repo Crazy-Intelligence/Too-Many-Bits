@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee47b7eee5565c24882738994dc2136e, type: 3}
   m_Name: Money
   m_EditorClassIdentifier: 
-  Count: 1061
+  Count: 0
   CanBeNegative: 0

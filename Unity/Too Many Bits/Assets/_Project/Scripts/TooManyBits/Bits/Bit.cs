@@ -8,7 +8,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		[SerializeField] private Counter weight;
 
-
 		private CapsuleCollider2D _collider;
 		private AudioSource _audioSource;
 		private SpriteRenderer _spriteRenderer;

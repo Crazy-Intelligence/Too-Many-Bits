@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee47b7eee5565c24882738994dc2136e, type: 3}
-  m_Name: Weight
+  m_Script: {fileID: 11500000, guid: 493a7d08a9d1aad4a831f2d14798cf31, type: 3}
+  m_Name: background01
   m_EditorClassIdentifier: 
-  Count: 0
-  CanBeNegative: 0
+  clip: {fileID: 8300000, guid: f8c502c5842bb8341867cc87516b4780, type: 3}
+  volume: 1
+  pitch: 1
+  loop: 0
