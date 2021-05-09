@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31b761db7566047bffe02750eec699, type: 3}
+  m_Name: Pip_Base
+  m_EditorClassIdentifier: 
+  Configurations:
+  - Targets: {fileID: 11400000, guid: 8cbf5b8c32d81284d942a7dd91178a43, type: 2}
+    SpawnSettings: {fileID: 11400000, guid: 0dfc465d422c32543aab18d9a44bf2b2, type: 2}

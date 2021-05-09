@@ -822,8 +822,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a185cd0f21138c8449d3e9e371b622c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave: {fileID: 11400000, guid: ac27e3fa5f66f924481d41c5be7b1878, type: 2}
-  disabled: {fileID: 11400000, guid: 9d8c69cf71646d34f809d0634121ef30, type: 2}
+  wave: {fileID: 11400000, guid: b715951c66ef55645a4b31869754bd46, type: 2}
+  disabled: {fileID: 11400000, guid: 179945ae7e83b194080cd089d693b104, type: 2}
 --- !u!114 &475439851
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,17 @@
+{
+    "name": "Waves",
+    "rootNamespace": "CrazyIntelligence.TooManyBits.Waves",
+    "references": [
+        "GUID:9f4d9e0973c5c9d41b357ad526808771",
+        "GUID:6dbcdaf6322f63348b4c277fff7de260"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

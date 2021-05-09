@@ -11,10 +11,12 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		[Range(0f, 89f)] public float SpawnAngelRange;
 		[Range(0, 179f)] public float SpawnAngelOffset;
 		[Space]
+		[SerializeField] private float _spawnRateDeviation;
+		
 		public float SpawnRate;
 		public BitCollection Bits;
 
-		public float SpawnTime => 1f / SpawnRate;
+		public float SpawnTime => 1f / SpawnRate + UnityEngine.Random.Range(_spawnRateDeviation / -2f, _spawnRateDeviation / 2f);
 		public bool Disabled => SpawnRate == 0;
 
 		public static event Action OnConfigsUpdated;
