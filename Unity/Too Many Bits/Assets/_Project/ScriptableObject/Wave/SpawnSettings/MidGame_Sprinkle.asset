@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: MidGame_Sprinkle
   m_EditorClassIdentifier: 
   SpawnRate: 1
-  Bits: {fileID: 11400000, guid: 455fac7ee3aa94b4e8a2fb48475e5b85, type: 2}
+  Bits:
+    List:
+    - Object: {fileID: 11400000, guid: 4aa805f200acea448b2abb0937104bd3, type: 2}
+      Weight: 1

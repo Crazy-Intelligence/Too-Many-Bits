@@ -55,7 +55,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			newObject.transform.position = transform.position;
 
 			var bit = newObject.GetComponent<Bit>();
-			bit.Config = Config.Bits.GetRandomConfig();
+			bit.Config = Config.Bits.GetRandom();
 
 			newObject.SetActive(true);
 

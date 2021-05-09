@@ -8,7 +8,7 @@ namespace CrazyIntelligence.TooManyBits.Waves
 	{
 		public SpawnerConfig[] Spawners;
 
-		public void ApplyChanges(float spawnRate, BitCollection bits)
+		public void ApplyChanges(float spawnRate, WeightedList<BitConfig> bits)
 		{
 			foreach (var spawner in Spawners)
 			{

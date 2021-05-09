@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41812a33499c78408b538798ec59314, type: 3}
-  m_Name: BitOnly_Normal
+  m_Name: Pipe_Level3
   m_EditorClassIdentifier: 
   SpawnRate: 5
   Bits:
     List:
     - Object: {fileID: 11400000, guid: 226b1ecc4d19c2e44af70eef525004bf, type: 2}
-      Weight: 1
+      Weight: 80
+    - Object: {fileID: 11400000, guid: 4aa805f200acea448b2abb0937104bd3, type: 2}
+      Weight: 15
+    - Object: {fileID: 11400000, guid: f2522eb3cce7b3e4288461f76c105d2b, type: 2}
+      Weight: 5

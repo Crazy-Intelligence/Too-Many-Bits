@@ -7,6 +7,6 @@ namespace CrazyIntelligence.TooManyBits.Waves
 	public class SpawnSettings : ScriptableObject
 	{
 		[Range(0f, 200f)] public float SpawnRate;
-		public BitCollection Bits;
+		public WeightedList<BitConfig> Bits;
 	}
 }
