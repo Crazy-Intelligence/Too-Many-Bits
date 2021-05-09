@@ -20,4 +20,4 @@ MonoBehaviour:
   ColliderSize: {x: 0.31, y: 0.35}
   scoreValue: 50
   moneyValue: 50
-  weightValue: 50
+  weightValue: 30

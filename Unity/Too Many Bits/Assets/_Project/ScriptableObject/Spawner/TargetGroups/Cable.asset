@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1793de86e2a324d48b4a3a9ca774a54e, type: 3}
   m_Name: Cable
   m_EditorClassIdentifier: 
-  Spawners: []
+  Spawners:
+  - {fileID: 11400000, guid: ed263f84636f7604981b091cce8edf9a, type: 2}
+  - {fileID: 11400000, guid: 1c19f3b2311a54f41b594570ee334be2, type: 2}

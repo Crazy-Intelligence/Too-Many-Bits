@@ -5,7 +5,7 @@ namespace CrazyIntelligence.TooManyBits.Waves
 	[System.Serializable]
 	public class DynamicWaveInfo
 	{
-		public Wave wave;
+		[SerializeField] private Wave wave;
 		public int MaxLevelUpCount;
 
 		private int _remainingLevelUps;

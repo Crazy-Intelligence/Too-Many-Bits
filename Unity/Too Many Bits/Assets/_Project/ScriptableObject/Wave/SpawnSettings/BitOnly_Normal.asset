@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe31b761db7566047bffe02750eec699, type: 3}
-  m_Name: Pip_Base
+  m_Script: {fileID: 11500000, guid: c41812a33499c78408b538798ec59314, type: 3}
+  m_Name: BitOnly_Normal
   m_EditorClassIdentifier: 
-  Configurations:
-  - Targets: {fileID: 11400000, guid: 8cbf5b8c32d81284d942a7dd91178a43, type: 2}
-    SpawnSettings: {fileID: 11400000, guid: 0dfc465d422c32543aab18d9a44bf2b2, type: 2}
+  SpawnRate: 25
+  Bits: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}

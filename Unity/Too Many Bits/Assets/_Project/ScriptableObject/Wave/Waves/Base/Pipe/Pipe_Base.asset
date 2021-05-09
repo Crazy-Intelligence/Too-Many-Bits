@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
-  m_Name: CableLeft
+  m_Script: {fileID: 11500000, guid: fe31b761db7566047bffe02750eec699, type: 3}
+  m_Name: Pipe_Base
   m_EditorClassIdentifier: 
-  SpawnForce: 50
-  SpawnAngelRange: 19.2
-  SpawnAngelOffset: 13.1
-  SpawnRate: 0
-  Bits: {fileID: 0}
+  Configurations:
+  - Targets: {fileID: 11400000, guid: 8cbf5b8c32d81284d942a7dd91178a43, type: 2}
+    SpawnSettings: {fileID: 11400000, guid: 0dfc465d422c32543aab18d9a44bf2b2, type: 2}

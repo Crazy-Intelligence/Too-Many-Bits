@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
   m_Name: Schwein_Pipe
   m_EditorClassIdentifier: 
+  Prefab: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
   SpawnForce: 50
   SpawnAngelRange: 30
   SpawnAngelOffset: 46.2
+  _spawnRateDeviation: 0
   SpawnRate: 0
   Bits: {fileID: 0}

@@ -12,7 +12,7 @@ namespace CrazyIntelligence.TooManyBits.Waves
 		public override void ApplyBase()
 		{
 			_current = 0;
-			waves[_current].wave.ApplyBase();
+			waves[_current].ApplyBase();
 		}
 
 		public override void ApplyNext()

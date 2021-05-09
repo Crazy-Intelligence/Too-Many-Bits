@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
-  m_Name: CableRight
+  m_Name: Pipe
   m_EditorClassIdentifier: 
-  SpawnForce: 50
-  SpawnAngelRange: 22.5
-  SpawnAngelOffset: 167.8
+  Prefab: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
+  SpawnForce: 60
+  SpawnAngelRange: 43
+  SpawnAngelOffset: 0
+  _spawnRateDeviation: 0
   SpawnRate: 0
   Bits: {fileID: 11400000, guid: caa516c774029034999f75508322ba16, type: 2}

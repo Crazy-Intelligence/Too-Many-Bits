@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c41812a33499c78408b538798ec59314, type: 3}
-  m_Name: AFewKBundZahlen
+  m_Name: MidGame_Sprinkle
   m_EditorClassIdentifier: 
-  SpawnRate: 0
-  Bits: {fileID: 0}
+  SpawnRate: 1
+  Bits: {fileID: 11400000, guid: 455fac7ee3aa94b4e8a2fb48475e5b85, type: 2}

@@ -50,7 +50,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void SpawnObject()
 		{
-			var newObject = ObjectPool.Spawn(Config.Bits.Prefab);
+			var newObject = ObjectPool.Spawn(Config.Prefab);
 
 			newObject.transform.position = transform.position;
 
