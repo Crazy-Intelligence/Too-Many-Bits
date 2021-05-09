@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CrazyIntelligence.TooManyBits
 {
@@ -6,6 +7,9 @@ namespace CrazyIntelligence.TooManyBits
 	{
 		public float SlowDuration;
 		[Range(0.01f, 1f)] public float SlowTimeScale;
+
+		[SerializeField] private UnityEvent OnSlowTime;
+		[SerializeField] private UnityEvent OnNormalTime;
 
 		private Timer _timer;
 		private float _timeScaleBeforePause;
@@ -38,6 +42,7 @@ namespace CrazyIntelligence.TooManyBits
 		{
 			SetTimeScale(SlowTimeScale);
 			_timer.Reset();
+			OnSlowTime?.Invoke();
 		}
 
 		public static void SetTimeScale(float timeScale)
@@ -59,6 +64,7 @@ namespace CrazyIntelligence.TooManyBits
 		private void ResetTimeScale()
 		{
 			SetTimeScale(1f);
+			OnNormalTime?.Invoke();
 		}
 	}
 }
