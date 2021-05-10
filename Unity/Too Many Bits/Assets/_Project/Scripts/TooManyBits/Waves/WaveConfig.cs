@@ -1,18 +1,23 @@
+using CrazyIntelligence.TooManyBits.Bits;
 using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Waves
 {
-	[System.Serializable]
-	public class WaveConfig
+	[CreateAssetMenu(fileName = "WaveConfig", menuName = "TooManyBits/Waves/Config")]
+	public class WaveConfig : ScriptableObject
 	{
-		[SerializeField] private TargetGroup Targets;
-		[SerializeField] private SpawnSettings SpawnSettings;
+		public SpawnerConfig[] Targets;
 
-		public float SpawnRate { get => SpawnSettings.SpawnRate; set => SpawnSettings.SpawnRate = value; }
+		[Range(0f, 200f)] public float SpawnRate;
+		public WeightedList<BitConfig> Bits;
 
 		public void Apply()
 		{
-			Targets.ApplyChanges(SpawnSettings.SpawnRate, SpawnSettings.Bits);
+			foreach (var spawner in Targets)
+			{
+				spawner.SpawnRate = SpawnRate;
+				spawner.Bits = Bits;
+			}
 		}
 	}
 }

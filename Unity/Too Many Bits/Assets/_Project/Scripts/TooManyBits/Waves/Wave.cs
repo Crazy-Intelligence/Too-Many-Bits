@@ -1,18 +1,22 @@
+using CrazyIntelligence.TooManyBits.Bits;
 using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Waves
 {
-	[CreateAssetMenu(fileName = "Wave", menuName = "TooManyBits/Waves/Wave")]
-	public class Wave : ScriptableObject
+	[System.Serializable]
+	public class Wave
 	{
-		public WaveConfig[] Configurations;
+		[SerializeField] private WaveConfig[] configurations;
+		public float Duration;
 
 		public void Apply()
 		{
-			foreach (var config in Configurations)
+			foreach (var config in configurations)
 			{
 				config.Apply();
 			}
+
+			SpawnerConfig.UpdateAll();
 		}
 	}
 }

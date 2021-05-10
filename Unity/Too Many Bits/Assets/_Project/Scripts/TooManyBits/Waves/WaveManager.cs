@@ -6,31 +6,53 @@ namespace CrazyIntelligence.TooManyBits.Waves
 	{
 		[SerializeField] private WaveLayout layout;
 
+		private Timer _timer;
+
 		private int _currentIndex;
+		private bool _disabled;
 
 		private void Start()
 		{
+			_timer = new Timer(0f);
+			_timer.OnTimerEnd += NextWave;
+
 			Disable();
+		}
+		private void Update()
+		{
+			if (_disabled) return;
+			_timer.Tick(Time.deltaTime);
 		}
 
 		public void Disable()
 		{
+			_disabled = true;
 			layout.Disabled.Apply();
 		}
-
-		public void BaseWave()
+		public void Enable()
 		{
-			_currentIndex = 1;
-			layout.Waves[0].Apply();
+			_disabled = false;
+			StartWave(_currentIndex);
 		}
 
+		public void FirstWave()
+		{
+			_currentIndex = 0;
+			StartWave(_currentIndex);
+		}
 		public void NextWave()
 		{
-			if (_currentIndex >= layout.Waves.Length) return;
-
-			layout.Waves[_currentIndex].Apply();
-
 			_currentIndex++;
+			StartWave(_currentIndex);
+		}
+
+		private void StartWave(int index)
+		{
+			if (index >= layout.WaveCount) return;
+
+			layout.Apply(index, out var duration);
+
+			_timer.Reset(duration);
 		}
 	}
 }

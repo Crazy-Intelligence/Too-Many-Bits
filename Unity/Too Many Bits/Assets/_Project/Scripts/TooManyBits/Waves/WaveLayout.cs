@@ -6,6 +6,20 @@ namespace CrazyIntelligence.TooManyBits.Waves
 	public class WaveLayout : ScriptableObject
 	{
 		public Wave Disabled;
-		public Wave[] Waves;
+		[SerializeField] private Wave[] Waves;
+
+		public int WaveCount => Waves.Length;
+
+		public void Apply(int index, out float duration)
+		{
+			if (index >= Waves.Length)
+			{
+				duration = 0f;
+				return;
+			}
+
+			Waves[index].Apply();
+			duration = Waves[index].Duration;
+		}
 	}
 }
