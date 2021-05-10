@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Waves
 {
-	[CreateAssetMenu(fileName = "Spawners", menuName = "TooManyBits/Wave/SpawnSettings")]
-	public class SpawnSettings : ScriptableObject
+	[System.Serializable]
+	public class SpawnSettings
 	{
 		[Range(0f, 200f)] public float SpawnRate;
 		public WeightedList<BitConfig> Bits;

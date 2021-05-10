@@ -939,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1121868294247651065, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -200
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 1933638310222602488, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_Icon
@@ -2253,7 +2253,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1249903225052590906, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_ForceMagnitude
-      value: -200
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 1956882856865793587, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_Layer
@@ -2338,7 +2338,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1249903225052590906, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_ForceMagnitude
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1956882856865793587, guid: 60fe4f3a6c3bc5942bb1724c902fd8aa, type: 3}
       propertyPath: m_Layer
@@ -2531,7 +2531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1121868294247651065, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_ForceMagnitude
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1933638310222602488, guid: f2873bc7b88346a4cae55a36d17a4db5, type: 3}
       propertyPath: m_Layer

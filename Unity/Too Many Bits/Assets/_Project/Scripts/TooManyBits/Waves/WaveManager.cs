@@ -4,18 +4,33 @@ namespace CrazyIntelligence.TooManyBits.Waves
 {
 	public class WaveManager : MonoBehaviour
 	{
-		[SerializeField] private Wave wave;
-		[SerializeField] private Wave disabled;
+		[SerializeField] private WaveLayout layout;
+
+		private int _currentIndex;
 
 		private void Start()
 		{
-			DisableWave();
+			Disable();
 		}
 
-		public void DisableWave() => disabled.ApplyBase();
+		public void Disable()
+		{
+			layout.Disabled.Apply();
+		}
 
-		public void BaseWave() => wave.ApplyBase();
+		public void BaseWave()
+		{
+			_currentIndex = 1;
+			layout.Waves[0].Apply();
+		}
 
-		public void NextWave() => wave.ApplyNext();
+		public void NextWave()
+		{
+			if (_currentIndex >= layout.Waves.Length) return;
+
+			layout.Waves[_currentIndex].Apply();
+
+			_currentIndex++;
+		}
 	}
 }

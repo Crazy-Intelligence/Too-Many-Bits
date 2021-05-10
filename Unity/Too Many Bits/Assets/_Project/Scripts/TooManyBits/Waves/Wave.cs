@@ -2,9 +2,17 @@ using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Waves
 {
-	public abstract class Wave : ScriptableObject
+	[CreateAssetMenu(fileName = "Wave", menuName = "TooManyBits/Waves/Wave")]
+	public class Wave : ScriptableObject
 	{
-		public abstract void ApplyBase();
-		public abstract void ApplyNext();
+		public WaveConfig[] Configurations;
+
+		public void Apply()
+		{
+			foreach (var config in Configurations)
+			{
+				config.Apply();
+			}
+		}
 	}
 }

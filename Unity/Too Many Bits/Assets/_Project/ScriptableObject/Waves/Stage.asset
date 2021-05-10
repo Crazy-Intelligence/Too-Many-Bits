@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe31b761db7566047bffe02750eec699, type: 3}
-  m_Name: Cable_Base
+  m_Script: {fileID: 11500000, guid: a380cead46c728e4da61acae635ebd54, type: 3}
+  m_Name: Stage
   m_EditorClassIdentifier: 
-  Configurations:
-  - Targets: {fileID: 11400000, guid: 814b7a4b1f0ee5245a14cc9486f2c16e, type: 2}
-    SpawnSettings: {fileID: 11400000, guid: 1cf0de439406ad245b61cd7dc28f379e, type: 2}
+  Disabled: {fileID: 0}
+  Waves: []

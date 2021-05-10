@@ -3,8 +3,8 @@ using CrazyIntelligence.TooManyBits.Bits;
 
 namespace CrazyIntelligence.TooManyBits.Waves
 {
-	[CreateAssetMenu(fileName = "Spawners", menuName = "TooManyBits/Spawner/WaveTargetGroup")]
-	public class TargetGroup : ScriptableObject
+	[System.Serializable]
+	public class TargetGroup
 	{
 		public SpawnerConfig[] Spawners;
 
