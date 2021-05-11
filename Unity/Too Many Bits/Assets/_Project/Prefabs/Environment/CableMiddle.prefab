@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 5695813890881775264}
   - component: {fileID: 5950722894481645502}
   - component: {fileID: 3481088347016553154}
-  - component: {fileID: 4067917787098918214}
   - component: {fileID: 3868909885268747955}
+  - component: {fileID: 4688188554685704171}
+  - component: {fileID: 7517160555993058156}
   m_Layer: 8
   m_Name: CableMiddle
   m_TagString: Untagged
@@ -110,45 +111,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &4067917787098918214
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076529894805420767}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 8192cd0172761ee4980d52cad0506e11, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.543602, y: 0.5}
-    newSize: {x: 5.51, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.7780404, y: 0.100013494}
-      - {x: 2.6473432, y: 0.19844913}
-      - {x: 2.5088608, y: 0.10673277}
-      - {x: 1.4478409, y: 0.060330287}
-      - {x: -2.709509, y: 0.025643691}
-      - {x: -0.78571486, y: 0.07016134}
-      - {x: -0.61493015, y: 0.070792556}
-    - - {x: 1.7636914, y: -0.12304552}
-      - {x: 2.6473432, y: -0.25}
-      - {x: 2.5088608, y: -0.13}
-      - {x: 1.4478409, y: -0.08}
-      - {x: -2.68, y: -0.16}
-      - {x: -0.78571486, y: -0.16}
-      - {x: -0.61493015, y: -0.14}
 --- !u!114 &3868909885268747955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +123,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d59b151f472a7459ead86d315c2dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &4688188554685704171
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076529894805420767}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0945344, y: -0.19901979}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.543602, y: 0.5}
+    newSize: {x: 5.51, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.354533, y: 0.10196042}
+  m_EdgeRadius: 0
+--- !u!61 &7517160555993058156
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076529894805420767}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0945344, y: 0.2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.543602, y: 0.5}
+    newSize: {x: 5.51, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.354533, y: 0.10196042}
+  m_EdgeRadius: 0
 --- !u!1 &2244326937875590504
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,12 +309,12 @@ PolygonCollider2D:
       - {x: 0.43365848, y: -0.35073638}
       - {x: 0.07593346, y: -0.21132565}
       - {x: -0.39093277, y: -0.17321348}
-      - {x: -0.619612, y: -0.07025884}
+      - {x: -0.57968736, y: -0.122013554}
       - {x: -0.43893892, y: -0.21634701}
       - {x: 0.051591784, y: -0.25665644}
     - - {x: 0.4350232, y: 0.42028284}
       - {x: -0.360285, y: 0.25585485}
-      - {x: -0.58424926, y: 0.12541534}
+      - {x: -0.56502604, y: 0.1549895}
       - {x: -0.34699565, y: 0.21979424}
       - {x: 0.07752457, y: 0.21956226}
 --- !u!1 &6859879450895863603

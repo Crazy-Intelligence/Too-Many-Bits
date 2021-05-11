@@ -27,6 +27,9 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 348f1f495a05d874a86ec365eb8b259b, type: 2}
     Duration: 30
   - configurations:
+    - {fileID: 11400000, guid: 379c80401a19f15419d6669bad5bdd3e, type: 2}
+    Duration: 30
+  - configurations:
     - {fileID: 11400000, guid: 102b3b6abb51dae41948ae78afee539e, type: 2}
     Duration: 30
   - configurations:
