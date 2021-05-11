@@ -12,9 +12,9 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		public SpriteCollection Sprites;
 		public Color NormalColor;
 
-		[Header("Transform Info")]
+		[Header("Physics")]
 		public float NormalScale;
-		[Space]
+		public float Mass;
 		public Vector2 ColliderOffset;
 		public Vector2 ColliderSize;
 

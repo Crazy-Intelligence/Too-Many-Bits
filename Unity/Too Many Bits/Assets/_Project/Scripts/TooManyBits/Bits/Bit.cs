@@ -10,7 +10,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		[SerializeField] private UnityEvent OnGrowEvent;
 		[SerializeField] private UnityEvent OnShrinkEvent;
 		[SerializeField] private UnityEvent OnDestroyEvent;
-		
+
+		Rigidbody2D _rigidbody;
 		private CapsuleCollider2D _collider;
 		private SpriteRenderer _spriteRenderer;
 		private SpriterChanger _spriteChanger;
@@ -68,7 +69,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 			while (timer.RemainingSeconds > 0f)
 			{
-				_spriteRenderer.color = Color.Lerp(_spriteRenderer.color, newColor, duration * Time.deltaTime);
+				_spriteRenderer.color = Color.Lerp(_spriteRenderer.color, newColor, (timer.ElapsedSeconds / duration));
 
 				timer.Tick(Time.deltaTime);
 				yield return null;
@@ -81,7 +82,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 			while (timer.RemainingSeconds > 0f)
 			{
-				transform.localScale = Vector3.Lerp(transform.localScale, newScale, duration * Time.deltaTime);
+				transform.localScale = Vector3.Lerp(transform.localScale, newScale, (timer.ElapsedSeconds / duration));
 
 				timer.Tick(Time.deltaTime);
 				yield return null;
@@ -106,6 +107,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private void GetReferences()
 		{
+			_rigidbody = GetComponent<Rigidbody2D>();
 			_collider = GetComponent<CapsuleCollider2D>();
 			_spriteRenderer = GetComponent<SpriteRenderer>();
 			_spriteChanger = GetComponent<SpriterChanger>();
@@ -113,6 +115,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		private void SetupObject()
 		{
 			transform.localScale = new Vector3(Config.NormalScale, Config.NormalScale, 1f);
+
+			_rigidbody.mass = Config.Mass;
 
 			_collider.enabled = true;
 			_collider.offset = Config.ColliderOffset;

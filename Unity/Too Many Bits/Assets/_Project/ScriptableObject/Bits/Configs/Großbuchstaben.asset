@@ -16,6 +16,7 @@ MonoBehaviour:
   Sprites: {fileID: 11400000, guid: 121f6376e35f9a24ab5a39e19b6c0f18, type: 2}
   NormalColor: {r: 0.827451, g: 1, b: 0, a: 1}
   NormalScale: 3
+  Mass: 100
   ColliderOffset: {x: 0, y: 0}
   ColliderSize: {x: 0.24, y: 0.36375165}
   scoreValue: 15

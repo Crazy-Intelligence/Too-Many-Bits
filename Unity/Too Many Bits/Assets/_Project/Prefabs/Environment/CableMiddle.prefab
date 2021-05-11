@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5695813890881775264}
   - component: {fileID: 5950722894481645502}
   - component: {fileID: 3481088347016553154}
-  - component: {fileID: 3868909885268747955}
   - component: {fileID: 4688188554685704171}
   - component: {fileID: 7517160555993058156}
+  - component: {fileID: 3868909885268747955}
   m_Layer: 8
   m_Name: CableMiddle
   m_TagString: Untagged
@@ -111,18 +111,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3868909885268747955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076529894805420767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25d59b151f472a7459ead86d315c2dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &4688188554685704171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -136,7 +124,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0945344, y: -0.19901979}
+  m_Offset: {x: -0.0945344, y: -0.26}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +150,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0945344, y: 0.2}
+  m_Offset: {x: -0.0945344, y: 0.29}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -175,6 +163,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.354533, y: 0.10196042}
   m_EdgeRadius: 0
+--- !u!114 &3868909885268747955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076529894805420767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25d59b151f472a7459ead86d315c2dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2244326937875590504
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,12 +309,12 @@ PolygonCollider2D:
       - {x: 0.43365848, y: -0.35073638}
       - {x: 0.07593346, y: -0.21132565}
       - {x: -0.39093277, y: -0.17321348}
-      - {x: -0.57968736, y: -0.122013554}
+      - {x: -1.005542, y: -0.19543684}
       - {x: -0.43893892, y: -0.21634701}
       - {x: 0.051591784, y: -0.25665644}
     - - {x: 0.4350232, y: 0.42028284}
       - {x: -0.360285, y: 0.25585485}
-      - {x: -0.56502604, y: 0.1549895}
+      - {x: -1.0583065, y: 0.2552111}
       - {x: -0.34699565, y: 0.21979424}
       - {x: 0.07752457, y: 0.21956226}
 --- !u!1 &6859879450895863603
@@ -390,7 +390,7 @@ AreaEffector2D:
     m_Bits: 4294967295
   m_UseGlobalAngle: 0
   m_ForceAngle: 0
-  m_ForceMagnitude: 10
+  m_ForceMagnitude: -500
   m_ForceVariation: 0
   m_ForceTarget: 0
   m_Drag: 0
@@ -540,6 +540,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2491907667521257207, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 29d458a472455b446a4c0c0a8c9ea4a7, type: 2}
     - target: {fileID: 2491907667521257207, guid: 8c45f1656041fd942a50a21b6f470808, type: 3}
       propertyPath: destroyBits
       value: 0

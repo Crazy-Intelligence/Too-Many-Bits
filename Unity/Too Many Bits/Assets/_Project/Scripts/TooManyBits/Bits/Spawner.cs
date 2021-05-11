@@ -38,7 +38,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		{
 			var spawnTime = Config.SpawnTime;
 
-			var overflow = _timer.CountedSeconds / spawnTime;
+			var overflow = _timer.ElapsedSeconds / spawnTime;
 
 			for (int i = 1; i < overflow; i++)
 			{
