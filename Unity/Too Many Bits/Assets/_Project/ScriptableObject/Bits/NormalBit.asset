@@ -15,7 +15,8 @@ MonoBehaviour:
   score: {fileID: 11400000, guid: bcfe599cdc2c69e4ba2ad60ba24228f5, type: 2}
   money: {fileID: 11400000, guid: 21852c7a791c3054db7072eb5796d950, type: 2}
   weight: {fileID: 11400000, guid: 0a60914f74cbaff42a96f607557d49b2, type: 2}
-  ScaleDuration: 1
+  ScaleDuration: 2
   DestroyDuration: 0.5
-  DestroyedColor: {r: 1, g: 0, b: 0.0844264, a: 1}
+  DestroyedColor: {r: 1, g: 0, b: 0.0844264, a: 0.78431374}
   SmallScale: 0.3
+  SmallMass: 10

@@ -14,7 +14,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		[Header("Physics")]
 		public float NormalScale;
-		public float Mass;
+		public float NormalMass;
 		public Vector2 ColliderOffset;
 		public Vector2 ColliderSize;
 
@@ -23,12 +23,14 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		[SerializeField] private int moneyValue;
 		[SerializeField] private int weightValue;
 
+		public Color DestroyedColor => sharedConfig.DestroyedColor;
+		
 		public float DestroyDuration => sharedConfig.DestroyDuration;
 		public float ScaleDuration => sharedConfig.ScaleDuration;
 		
-		public Color DestroyedColor => sharedConfig.DestroyedColor;
 		public float SmallScale => sharedConfig.SmallScale;
 
+		public float SmallMass => sharedConfig.SmallMass;
 
 		public void ChangeScore(int multiplier) => sharedConfig.ChangeScore(scoreValue * multiplier);
 		public void ChangeMoney(int multiplier) => sharedConfig.ChangeMoney(moneyValue * multiplier);

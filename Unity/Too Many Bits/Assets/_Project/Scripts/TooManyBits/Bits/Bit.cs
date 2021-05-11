@@ -50,6 +50,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		{
 			StartCoroutine(Scale(Vector3.one * Config.SmallScale, Config.ScaleDuration));
 
+			_rigidbody.mass = Config.SmallMass;
+
 			gameObject.layer = LayerMask.NameToLayer("SmallBits");
 
 			OnShrinkEvent?.Invoke();
@@ -57,6 +59,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		public void Grow()
 		{
 			StartCoroutine(Scale(Vector3.one * Config.NormalScale, Config.ScaleDuration));
+
+			_rigidbody.mass = Config.NormalMass;
 
 			gameObject.layer = LayerMask.NameToLayer("Bits");
 
@@ -116,7 +120,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		{
 			transform.localScale = new Vector3(Config.NormalScale, Config.NormalScale, 1f);
 
-			_rigidbody.mass = Config.Mass;
+			_rigidbody.mass = Config.NormalMass;
 
 			_collider.enabled = true;
 			_collider.offset = Config.ColliderOffset;

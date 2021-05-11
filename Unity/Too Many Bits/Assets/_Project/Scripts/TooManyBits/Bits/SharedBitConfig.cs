@@ -16,8 +16,9 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		[Space]
 		public Color DestroyedColor;
 
-		[Header("Transform Info")]
+		[Header("Physics")]
 		public float SmallScale;
+		public float SmallMass;
 
 		public void ChangeScore(int amount) => score.Add(amount);
 		public void ChangeMoney(int amount) => money.Add(amount);
