@@ -790,7 +790,6 @@ GameObject:
   m_Component:
   - component: {fileID: 475439847}
   - component: {fileID: 475439849}
-  - component: {fileID: 475439851}
   - component: {fileID: 475439853}
   - component: {fileID: 475439852}
   - component: {fileID: 475439854}
@@ -828,38 +827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layout: {fileID: 11400000, guid: 24e7ca396ec0c124fbfa75b82362d1d3, type: 2}
---- !u!114 &475439851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475439846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8f18eb462f385743ae92c3571e5aa80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 20
-  loop: 1
-  useUnscaledTime: 0
-  enableOnStart: 0
-  OnTimerEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 475439849}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.WaveManager,
-          Bits
-        m_MethodName: NextWave
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &475439852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,21 +843,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 475439849}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.WaveManager,
-          Bits
-        m_MethodName: BaseWave
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 475439851}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimerBehaviour, TooManyBits
-        m_MethodName: StopTimer
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+          Waves
+        m_MethodName: Disable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -916,9 +871,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 475439849}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.WaveManager,
-          Bits
-        m_MethodName: BaseWave
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+          Waves
+        m_MethodName: Enable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -928,9 +883,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 475439851}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimerBehaviour, TooManyBits
-        m_MethodName: StartTimer
+      - m_Target: {fileID: 475439849}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+          Waves
+        m_MethodName: FirstWave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -956,21 +912,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 475439849}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.WaveManager,
-          Bits
-        m_MethodName: DisableWave
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 475439851}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimerBehaviour, TooManyBits
-        m_MethodName: StopTimer
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+          Waves
+        m_MethodName: Disable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

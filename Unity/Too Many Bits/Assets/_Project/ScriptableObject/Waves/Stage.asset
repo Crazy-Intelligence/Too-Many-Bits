@@ -13,6 +13,40 @@ MonoBehaviour:
   m_Name: Stage
   m_EditorClassIdentifier: 
   Disabled:
-    configurations: []
+    configurations:
+    - {fileID: 11400000, guid: 72adab2bed2f16e4facf2f31d9ccf2c8, type: 2}
     Duration: 0
-  Waves: []
+  Waves:
+  - configurations:
+    - {fileID: 11400000, guid: efef35e4dbe38d8498d4884fbd73662f, type: 2}
+    Duration: 15
+  - configurations:
+    - {fileID: 11400000, guid: da28bd8bc94a156499480f98f2e8f5ba, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 348f1f495a05d874a86ec365eb8b259b, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 102b3b6abb51dae41948ae78afee539e, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 1e02e7f6986218d45ba5e09f8ce47407, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 7b39ed6ebbe79264eb188a5240aad1bc, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 6fb948defde55bb429b04b9d55adaeea, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: e0d491a1d56ff274bba02bcfc6edb899, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: ae2dce42e693e014da214324d5470cb3, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 4d7c793a5363e2e4ca8a9d87b0035aec, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: b79652746725f4f4e9a47e6664db6828, type: 2}
+    Duration: 30
