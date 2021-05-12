@@ -1531,6 +1531,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
   m_PrefabInstance: {fileID: 1022122195}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1022122198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9061638043241464363, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
+  m_PrefabInstance: {fileID: 1022122195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022122196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a185cd0f21138c8449d3e9e371b622c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1022122199 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4539420029193251350, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
@@ -1870,7 +1881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524436263}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21, y: 1.24, z: 0}
+  m_LocalPosition: {x: 1.23, y: 0.89, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 1022122197}
@@ -1938,6 +1949,19 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 11400000, guid: 77ab400f0bed66847852808cc53e26d3, type: 2}
           m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
             Audio
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1022122198}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+          Waves
+        m_MethodName: Enable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2743,7 +2767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 712150176862356853, guid: 370fd1be613d8d84c9bf0421b59f03eb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 712150176862356853, guid: 370fd1be613d8d84c9bf0421b59f03eb, type: 3}
       propertyPath: m_LocalPosition.z

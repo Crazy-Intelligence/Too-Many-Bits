@@ -129,6 +129,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_spriteRenderer.color = Config.NormalColor;
 			
 			_spriteChanger.spriteCollection = Config.Sprites;
+			_spriteChanger.ChangeSpriteToRandom();
 
 			gameObject.layer = LayerMask.NameToLayer("Bits");
 		}

@@ -575,6 +575,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5763604731483860615, guid: 3c1d256c62baf764ca8d13de3b5b5595, type: 3}
+      propertyPath: m_text
+      value: Game Over
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763604731483860615, guid: 3c1d256c62baf764ca8d13de3b5b5595, type: 3}
       propertyPath: m_fontSizeBase
       value: 40
       objectReference: {fileID: 0}

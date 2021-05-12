@@ -29,15 +29,14 @@ namespace CrazyIntelligence.TooManyBits
 			_timer.Tick(Time.deltaTime);
 		}
 
-		private void OnTimerEnd()
-		{
-			ChangeSpriteToRandom();
-		}
-
-		private void ChangeSpriteToRandom()
+		public void ChangeSpriteToRandom()
 		{
 			_spriteRenderer.sprite = spriteCollection.GetRandomSprite();
 		}
 
+		private void OnTimerEnd()
+		{
+			ChangeSpriteToRandom();
+		}
 	}
 }
