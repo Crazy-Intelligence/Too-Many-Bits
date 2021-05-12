@@ -18,6 +18,9 @@ MonoBehaviour:
     Duration: 0
   Waves:
   - configurations:
+    - {fileID: 11400000, guid: 72adab2bed2f16e4facf2f31d9ccf2c8, type: 2}
+    Duration: 2
+  - configurations:
     - {fileID: 11400000, guid: efef35e4dbe38d8498d4884fbd73662f, type: 2}
     Duration: 15
   - configurations:
