@@ -29,26 +29,35 @@ namespace CrazyIntelligence.TooManyBits
 
 		private void InvokeAction()
 		{
+			sequence[_current].Invoke();
+
+			_current++;
+
 			if (_current >= sequence.Length)
 			{
 				_enabled = false;
 				return;
 			}
 
-			sequence[_current].Invoke();
-
-			_timer.Reset(sequence[_current].Delay);
-
-			_current++;
+			ResetTimer();
 		}
 
 		private void SetupTimer()
 		{
 			if (_timer is null)
 			{
-				_timer = new Timer(sequence[_current].Delay);
+				var delay = sequence[_current].Delay;
+
+				_timer = new Timer(delay);
 				_timer.OnTimerEnd += InvokeAction;
 			}
+		}
+
+		private void ResetTimer()
+		{
+			var delay = sequence[_current].Delay;
+
+			_timer.Reset(delay);
 		}
 	}
 }

@@ -19,8 +19,7 @@ namespace CrazyIntelligence.TooManyBits
 		{
 			ElapsedSeconds += deltaTime;
 
-			if (RemainingSeconds <= 0f)
-			{ return; }
+			//if (RemainingSeconds <= 0f) return; 
 
 			RemainingSeconds -= deltaTime;
 
