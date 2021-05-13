@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
 	public class Spawner : MonoBehaviour
 	{
 		public SpawnerConfig Config;
+		public UnityEvent OnSpawnEvent;
 
 		private Timer _timer;
 
@@ -61,6 +63,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 			var rb = newObject.GetComponent<Rigidbody2D>();
 			ApplySpawnForce(rb);
+
+			OnSpawnEvent?.Invoke();
 		}
 
 		private void ApplySpawnForce(Rigidbody2D rb)

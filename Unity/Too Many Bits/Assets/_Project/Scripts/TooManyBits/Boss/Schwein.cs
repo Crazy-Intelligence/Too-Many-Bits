@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CrazyIntelligence.TooManyBits.Boss
 {
 	public class Schwein : MonoBehaviour
 	{
-		[SerializeField] private UnityEvent OnSpit;
+		[SerializeField] private Sequence SpawnSequence;
+		[SerializeField] private Sequence SpitSequence;
 
 		private void Update()
 		{
@@ -13,12 +13,21 @@ namespace CrazyIntelligence.TooManyBits.Boss
 			{
 				Spit();
 			}
+
+			SpawnSequence.TickTimer(Time.deltaTime);
+			SpitSequence.TickTimer(Time.deltaTime);
+		}
+
+		public void Spawn()
+		{
+			gameObject.SetActive(true);
+			SpawnSequence.Start();
 		}
 
 		[ContextMenu("Spit")]
 		public void Spit()
 		{
-			OnSpit?.Invoke();
+			SpitSequence.Start();
 		}
 	}
 }

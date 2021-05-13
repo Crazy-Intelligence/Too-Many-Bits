@@ -5,11 +5,18 @@ namespace CrazyIntelligence.TooManyBits.Boss
 {
 	public class Boss : MonoBehaviour
 	{
-		[SerializeField] private UnityEvent OnSpawn;
+		public GameObject BossObject;
+		[SerializeField] private UnityEvent OnSpawnEvent;
 
+		private void Awake()
+		{
+			BossObject.SetActive(false);
+		}
+
+		[ContextMenu("Spawn")]
 		public void Spawn()
 		{
-			OnSpawn?.Invoke();
+			OnSpawnEvent?.Invoke();
 		}
 	}
 }

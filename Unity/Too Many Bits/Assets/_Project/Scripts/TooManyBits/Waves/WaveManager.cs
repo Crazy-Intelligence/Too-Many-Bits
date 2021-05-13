@@ -11,11 +11,13 @@ namespace CrazyIntelligence.TooManyBits.Waves
 		private int _currentIndex;
 		private bool _disabled;
 
-		private void Start()
+		private void Awake()
 		{
 			_timer = new Timer(0f);
 			_timer.OnTimerEnd += NextWave;
-
+		}
+		private void Start()
+		{
 			Disable();
 		}
 		private void Update()
@@ -24,22 +26,26 @@ namespace CrazyIntelligence.TooManyBits.Waves
 			_timer.Tick(Time.deltaTime);
 		}
 
+		[ContextMenu("Disable")]
 		public void Disable()
 		{
 			_disabled = true;
 			layout.Disabled.Apply();
 		}
+		[ContextMenu("Enable")]
 		public void Enable()
 		{
 			_disabled = false;
 			StartWave(_currentIndex);
 		}
 
+		[ContextMenu("FirstWave")]
 		public void FirstWave()
 		{
 			_currentIndex = 0;
 			StartWave(_currentIndex);
 		}
+		[ContextMenu("NextWave")]
 		public void NextWave()
 		{
 			_currentIndex++;

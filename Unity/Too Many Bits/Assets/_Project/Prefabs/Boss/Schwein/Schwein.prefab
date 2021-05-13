@@ -125,6 +125,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 446481d06b2f28d41996b299bd951e97, type: 2}
+  OnSpawnEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3737387378992774163}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Schwein, Boss
+        m_MethodName: Spit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Spit
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7578723221055783812
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +280,7 @@ GameObject:
   - component: {fileID: 4254058528515940840}
   - component: {fileID: 4539420029193251350}
   - component: {fileID: 9061638043241464363}
+  - component: {fileID: 3737387378992774163}
   - component: {fileID: 2739205030517788515}
   - component: {fileID: 847500169184166770}
   m_Layer: 7
@@ -390,7 +406,7 @@ MonoBehaviour:
   - {fileID: 7578723222255321722}
   m_Bounds:
     m_Center: {x: -0.00034499168, y: 0, z: 0}
-    m_Extent: {x: 2.434655, y: 2.0700002, z: 0}
+    m_Extent: {x: 2.434655, y: 2.0699997, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!82 &4254058528515940840
@@ -514,6 +530,87 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layout: {fileID: 11400000, guid: 927b9e35d81a42c439d66d4dcb449554, type: 2}
+--- !u!114 &3737387378992774163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578723221765083101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492a56fb2f9576a479249a34abf1a239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnSequence:
+    sequence:
+    - Delay: 0.1
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 9061638043241464363}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: Enable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 4539420029193251350}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
+              Audio
+            m_MethodName: Play
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: c0afcca9b3a68cf4ea98d50ac911b258, type: 2}
+              m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
+                Audio
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  SpitSequence:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7578723221765083090}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Spit
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Delay: 0.5
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4539420029193251350}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
+              Audio
+            m_MethodName: Play
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: f8d96b227627cbb4f8b7f6b1e94a7514, type: 2}
+              m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
+                Audio
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
 --- !u!114 &2739205030517788515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,15 +1074,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.0126648545
+      value: 0.012665331
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.0020602942
+      value: -0.002060175
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.592335
+      value: 0.59233516
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -1155,11 +1252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.0126648545
+      value: 0.012665451
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.002059698
+      value: -0.0020600557
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -1167,7 +1264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 0.9279401
+      value: 0.92793983
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519245, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_MaskInteraction
@@ -1345,15 +1442,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.012665153
+      value: 0.012665212
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.002060175
+      value: -0.0020602345
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.5923352
+      value: 0.5923351
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Extent.y
@@ -1535,15 +1632,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.012665093
+      value: 0.0126648545
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.0020599365
+      value: -0.002059698
+      objectReference: {fileID: 0}
+    - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 0.5923351
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519244, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 0.92794025
+      value: 0.92794
       objectReference: {fileID: 0}
     - target: {fileID: 703160068120519245, guid: ed894c7b0755680409ccc5ab2e8c8a47, type: 3}
       propertyPath: m_MaskInteraction

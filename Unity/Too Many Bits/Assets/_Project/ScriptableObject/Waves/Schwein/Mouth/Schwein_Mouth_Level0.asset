@@ -18,4 +18,4 @@ MonoBehaviour:
     List:
     - Object: {fileID: 11400000, guid: efaf49efa60e1b148b26a2d75d65a360, type: 2}
       Weight: 1
-  SpawnRate: 1
+  SpawnRate: 0.5

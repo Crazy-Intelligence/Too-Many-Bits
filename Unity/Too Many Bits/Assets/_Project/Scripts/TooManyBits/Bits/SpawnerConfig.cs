@@ -8,7 +8,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	{
 		public GameObject Prefab;
 		[Space]
-		[Range(50f, 150f)] public float SpawnForce;
+		public float SpawnForce;
 		[Space]
 		[Range(0f, 89f)] public float SpawnAngelRange;
 		[Range(0, 179f)] public float SpawnAngelOffset;
