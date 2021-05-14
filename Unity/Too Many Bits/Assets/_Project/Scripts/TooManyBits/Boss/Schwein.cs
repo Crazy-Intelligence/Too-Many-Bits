@@ -6,18 +6,16 @@ namespace CrazyIntelligence.TooManyBits.Boss
 	{
 		[SerializeField] private Sequence SpawnSequence;
 		[SerializeField] private Sequence SpitSequence;
+		[SerializeField] private Sequence ScreamSequence;
 
 		private void Update()
 		{
-			if (Input.GetKeyDown(KeyCode.Space))
-			{
-				Spit();
-			}
-
 			SpawnSequence.TickTimer(Time.deltaTime);
 			SpitSequence.TickTimer(Time.deltaTime);
+			ScreamSequence.TickTimer(Time.deltaTime);
 		}
 
+		[ContextMenu("Spawn")]
 		public void Spawn()
 		{
 			gameObject.SetActive(true);
@@ -28,6 +26,12 @@ namespace CrazyIntelligence.TooManyBits.Boss
 		public void Spit()
 		{
 			SpitSequence.Start();
+		}
+
+		[ContextMenu("Scream")]
+		public void Scream()
+		{
+			ScreamSequence.Start();
 		}
 	}
 }

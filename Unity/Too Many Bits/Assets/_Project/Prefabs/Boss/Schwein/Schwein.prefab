@@ -283,6 +283,8 @@ GameObject:
   - component: {fileID: 3737387378992774163}
   - component: {fileID: 7242760465868854259}
   - component: {fileID: 2739205030517788515}
+  - component: {fileID: 4498348683611816659}
+  - component: {fileID: 4355750767814614137}
   - component: {fileID: 847500169184166770}
   m_Layer: 7
   m_Name: Schwein
@@ -376,7 +378,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 15c15c3770560624e8ed835b23ba2a15, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -409,7 +411,7 @@ MonoBehaviour:
     m_Center: {x: -0.00034499168, y: 0, z: 0}
     m_Extent: {x: 2.434655, y: 2.0700002, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!82 &4254058528515940840
 AudioSource:
   m_ObjectHideFlags: 0
@@ -592,6 +594,90 @@ MonoBehaviour:
       Actions:
         m_PersistentCalls:
           m_Calls:
+          - m_Target: {fileID: 3737387378992774163}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Schwein,
+              Boss
+            m_MethodName: Scream
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Delay: 6
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 9061638043241464363}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: NextWave
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 7242760465868854259}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+  SpitSequence:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7578723221765083090}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Spit
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Delay: 0.15
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4539420029193251350}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
+              Audio
+            m_MethodName: Play
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: f8d96b227627cbb4f8b7f6b1e94a7514, type: 2}
+              m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
+                Audio
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  ScreamSequence:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
           - m_Target: {fileID: 7578723221765083090}
             m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
             m_MethodName: SetTrigger
@@ -692,71 +778,6 @@ MonoBehaviour:
               m_StringArgument: Shake
               m_BoolArgument: 0
             m_CallState: 2
-    - Delay: 6
-      Actions:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 9061638043241464363}
-            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
-              Waves
-            m_MethodName: NextWave
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-          - m_Target: {fileID: 7242760465868854259}
-            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-            m_MethodName: set_enabled
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
-  SpitSequence:
-    sequence:
-    - Delay: 0
-      Actions:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 7578723221765083090}
-            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-            m_MethodName: SetTrigger
-            m_Mode: 5
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: Spit
-              m_BoolArgument: 0
-            m_CallState: 2
-    - Delay: 0.15
-      Actions:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4539420029193251350}
-            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
-              Audio
-            m_MethodName: Play
-            m_Mode: 2
-            m_Arguments:
-              m_ObjectArgument: {fileID: 11400000, guid: f8d96b227627cbb4f8b7f6b1e94a7514, type: 2}
-              m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
-                Audio
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
 --- !u!114 &7242760465868854259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,6 +820,60 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4498348683611816659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578723221765083101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbe108cc45559a4b88b251a2b57bf2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7242760465868854259}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4355750767814614137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578723221765083101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cca847e5cfa214a9e2d66fb1d3e8c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnContinue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7242760465868854259}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &847500169184166770
 MonoBehaviour:

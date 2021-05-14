@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: background02
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: ec1d8c08da89e9d47b76d6f44be2f562, type: 3}
-  volume: 1
+  volume: 0.466
   pitch: 1
   loop: 1

@@ -343,7 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTracks: {fileID: 11400000, guid: 94090fe3410c9654e916ca8badbbda5a, type: 2}
   menuTracks: {fileID: 11400000, guid: 28de1baca72e4e74ea6050c582fde18f, type: 2}
-  bossTracks: {fileID: 0}
+  bossTracks: {fileID: 11400000, guid: a185ffc34ec6b1047a1e372a2500d4d6, type: 2}
   transitionDuration: 2
 --- !u!114 &31301305
 MonoBehaviour:
@@ -811,7 +811,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -827,25 +826,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!95 &519420030
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 874108040c4e4ae45a131d384a6273ab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1907,7 +1887,7 @@ MonoBehaviour:
   BossObject: {fileID: 1022122196}
   Weight: {fileID: 11400000, guid: 0a60914f74cbaff42a96f607557d49b2, type: 2}
   maxWeight: 700
-  timeUntilSpawn: 180
+  timeUntilSpawn: 1
   OnSpawnSequence:
     sequence:
     - Delay: 0
@@ -1939,6 +1919,19 @@ MonoBehaviour:
               m_StringArgument: Hide
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 31301304}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.BackgroundMusicPlayer,
+              Audio
+            m_MethodName: PlayBossMusic
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - Delay: 3
       Actions:
         m_PersistentCalls:
@@ -1954,22 +1947,6 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - Delay: 2
-      Actions:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 519420030}
-            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-            m_MethodName: SetTrigger
-            m_Mode: 5
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: LongShake
               m_BoolArgument: 0
             m_CallState: 2
 --- !u!114 &1524436267

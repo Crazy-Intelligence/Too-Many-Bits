@@ -346,7 +346,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cf9a5c1995f57e44daf5e4c2c3b34c6f, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
     m_Center: {x: 0.012665391, y: -0.0020595193, z: 0}
     m_Extent: {x: 0.5923352, y: 0.92794037, z: 0}
   m_UseBatching: 1
-  m_AlwaysUpdate: 1
+  m_AlwaysUpdate: 0
 --- !u!1 &703160068226540620
 GameObject:
   m_ObjectHideFlags: 0
