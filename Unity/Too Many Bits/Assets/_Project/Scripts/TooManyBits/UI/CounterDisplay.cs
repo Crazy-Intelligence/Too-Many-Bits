@@ -16,7 +16,7 @@ namespace CrazyIntelligence.TooManyBits.UI
 
 		private void Update()
 		{
-			_text.text = counter.Count.ToString();
+			_text.text = counter.Value.ToString();
 		}
 	}
 }

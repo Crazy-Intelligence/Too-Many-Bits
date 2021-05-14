@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7578723220855590470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.030351331, y: -1.509824, z: 0}
+  m_LocalPosition: {x: -0.030351331, y: -0.62, z: 0}
   m_LocalScale: {x: 1.0117362, y: 1.0341262, z: 1}
   m_Children: []
   m_Father: {fileID: 7578723221765083095}
@@ -653,10 +653,6 @@ MonoBehaviour:
               m_StringArgument: Shake
               m_BoolArgument: 0
             m_CallState: 2
-    - Delay: 8
-      Actions:
-        m_PersistentCalls:
-          m_Calls:
           - m_Target: {fileID: 9061638043241464363}
             m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
               Waves
@@ -677,6 +673,23 @@ MonoBehaviour:
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 11400000, guid: 77ab400f0bed66847852808cc53e26d3, type: 2}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Shake
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Delay: 6
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 9061638043241464363}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: NextWave
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
@@ -747,6 +760,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7578723221765083101}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &847500169184166770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +792,18 @@ MonoBehaviour:
           Waves
         m_MethodName: Disable
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7578723221765083101}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

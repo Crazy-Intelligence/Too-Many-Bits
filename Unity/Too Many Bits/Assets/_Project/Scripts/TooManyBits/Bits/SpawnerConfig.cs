@@ -19,7 +19,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		public WeightedList<BitConfig> Bits;
 
 		public float SpawnTime => 1f / SpawnRate + UnityEngine.Random.Range(_spawnRateDeviation / -2f, _spawnRateDeviation / 2f);
-		public bool Disabled => SpawnRate == 0;
+		public bool Disabled => SpawnRate == 0 || GameManager.IsPlaying == false;
 
 		public static event Action OnConfigsUpdated;
 

@@ -6,17 +6,39 @@ namespace CrazyIntelligence.TooManyBits.Boss
 	public class Boss : MonoBehaviour
 	{
 		public GameObject BossObject;
-		[SerializeField] private UnityEvent OnSpawnEvent;
+		[SerializeField] private Counter Weight;
+		[SerializeField] private int maxWeight;
+		[SerializeField] private float timeUntilSpawn;
+
+		[SerializeField] private Sequence OnSpawnSequence;
+
+		private bool _ticking;
+		private Timer _timer;
 
 		private void Awake()
 		{
 			BossObject.SetActive(false);
+
+			_timer = new Timer(timeUntilSpawn);
+			_timer.OnTimerEnd += Spawn;
+		}
+
+		private void Update()
+		{
+			OnSpawnSequence.TickTimer(Time.deltaTime);
+
+			if (_ticking == false || Weight.Value > maxWeight) return;
+
+			_timer.Tick(Time.deltaTime);
 		}
 
 		[ContextMenu("Spawn")]
 		public void Spawn()
 		{
-			OnSpawnEvent?.Invoke();
+			OnSpawnSequence.Start();
+			_ticking = false;
 		}
+
+		public void IsTicking(bool value) => _ticking = value;
 	}
 }

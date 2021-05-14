@@ -19,7 +19,7 @@ namespace CrazyIntelligence.TooManyBits
 
 		private void Update()
 		{
-			if (gameOverTrigger.Count >= countUntilGameOver)
+			if (gameOverTrigger.Value >= countUntilGameOver)
 			{
 				GameManager.DoGameOver();
 			}

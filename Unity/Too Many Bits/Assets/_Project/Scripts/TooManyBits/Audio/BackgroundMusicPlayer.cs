@@ -7,6 +7,7 @@ namespace CrazyIntelligence.TooManyBits.Audio
 	{
 		[SerializeField] private ConfiguredAudioClip gameTracks;
 		[SerializeField] private ConfiguredAudioClip menuTracks;
+		[SerializeField] private ConfiguredAudioClip bossTracks;
 		[Space]
 		[SerializeField] private float transitionDuration;
 
@@ -27,6 +28,10 @@ namespace CrazyIntelligence.TooManyBits.Audio
 		public void PlayMenuMusic()
 		{
 			StartCoroutine(ChangeTrack(menuTracks));
+		}
+		public void PlayBossMusic()
+		{
+			StartCoroutine(ChangeTrack(bossTracks));
 		}
 
 		private IEnumerator ChangeTrack(ConfiguredAudioClip newTrack)

@@ -343,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTracks: {fileID: 11400000, guid: 94090fe3410c9654e916ca8badbbda5a, type: 2}
   menuTracks: {fileID: 11400000, guid: 28de1baca72e4e74ea6050c582fde18f, type: 2}
+  bossTracks: {fileID: 0}
   transitionDuration: 2
 --- !u!114 &31301305
 MonoBehaviour:
@@ -810,6 +811,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -825,6 +827,25 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!95 &519420030
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 874108040c4e4ae45a131d384a6273ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1818,6 +1839,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1524436265}
   - component: {fileID: 1524436266}
+  - component: {fileID: 1524436269}
+  - component: {fileID: 1524436268}
+  - component: {fileID: 1524436267}
+  - component: {fileID: 1524436264}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -1825,6 +1850,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1524436264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524436263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGameOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1524436266}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
+        m_MethodName: IsTicking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1524436265
 Transform:
   m_ObjectHideFlags: 0
@@ -1853,14 +1905,119 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BossObject: {fileID: 1022122196}
-  OnSpawnEvent:
+  Weight: {fileID: 11400000, guid: 0a60914f74cbaff42a96f607557d49b2, type: 2}
+  maxWeight: 700
+  timeUntilSpawn: 180
+  OnSpawnSequence:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 475439849}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: Disable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 709143331}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Hide
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Delay: 3
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1022122200}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Schwein,
+              Boss
+            m_MethodName: Spawn
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Delay: 2
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 519420030}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: LongShake
+              m_BoolArgument: 0
+            m_CallState: 2
+--- !u!114 &1524436267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524436263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01cca847e5cfa214a9e2d66fb1d3e8c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnContinue:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 475439849}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
-          Waves
-        m_MethodName: Disable
-        m_Mode: 1
+      - m_Target: {fileID: 1524436266}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
+        m_MethodName: IsTicking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &1524436268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524436263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbe108cc45559a4b88b251a2b57bf2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1524436266}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
+        m_MethodName: IsTicking
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1869,29 +2026,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 709143331}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Hide
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1022122200}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Schwein, Boss
-        m_MethodName: Spawn
-        m_Mode: 1
+--- !u!114 &1524436269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524436263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceee064d8f201ad418f702dfed031dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1524436266}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
+        m_MethodName: IsTicking
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!4 &1533257441 stripped
 Transform:

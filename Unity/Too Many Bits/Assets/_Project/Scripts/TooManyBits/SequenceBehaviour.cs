@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits
 {
-	public class SeqeuenceBehaviour : MonoBehaviour
+	public class SequenceBehaviour : MonoBehaviour
 	{
 		[SerializeField] private Sequence sequence;
 

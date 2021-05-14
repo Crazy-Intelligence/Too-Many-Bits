@@ -73,7 +73,7 @@ namespace CrazyIntelligence.TooManyBits.UI
 			for (int i = 4 - 1; i >= 0; i--)
 			{
 				int trigger = triggers[i];
-				if (weight.Count >= trigger)
+				if (weight.Value >= trigger)
 				{
 					return i;
 				}

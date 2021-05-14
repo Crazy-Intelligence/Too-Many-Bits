@@ -20,7 +20,7 @@ namespace CrazyIntelligence.TooManyBits.UI
 
 		public void TryBuy()
 		{
-			if (money.Count < item.Price) return;
+			if (money.Value < item.Price) return;
 
 			money.Remove(item.Price);
 

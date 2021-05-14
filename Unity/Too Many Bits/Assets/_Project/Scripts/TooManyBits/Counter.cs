@@ -5,15 +5,15 @@ namespace CrazyIntelligence.TooManyBits
 	[CreateAssetMenu(fileName = "Counter", menuName = "TooManyBits/Counter")]
 	public class Counter : ScriptableObject
 	{
-		public int Count;
+		public int Value;
 		[SerializeField] private bool CanBeNegative;
 
-		public void Add(int amount) => Count += amount;
+		public void Add(int amount) => Value += amount;
 		public void Remove(int amount)
 		{
-			Count -= amount;
+			Value -= amount;
 
-			if (Count < 0 && !CanBeNegative)
+			if (Value < 0 && !CanBeNegative)
 			{
 				Reset();
 			}
@@ -21,7 +21,7 @@ namespace CrazyIntelligence.TooManyBits
 
 		public void Reset()
 		{
-			Count = 0;
+			Value = 0;
 		}
 	}
 }
