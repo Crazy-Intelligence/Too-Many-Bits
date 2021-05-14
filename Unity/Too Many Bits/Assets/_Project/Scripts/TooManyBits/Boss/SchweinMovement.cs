@@ -1,0 +1,44 @@
+using UnityEngine;
+
+namespace CrazyIntelligence.TooManyBits.Boss
+{
+	public class SchweinMovement : MonoBehaviour
+	{
+		[SerializeField] private float moveSpeed;
+		[SerializeField] private Vector3[] positions;
+
+		private int _current;
+
+		private void Update()
+		{
+			transform.position = Vector3.MoveTowards(transform.position, GetTargetPosition(), moveSpeed * Time.deltaTime);
+		}
+
+		private Vector3 GetTargetPosition()
+		{
+			if (Vector3.Distance(transform.position, positions[_current]) <= 0.1f)
+			{
+				_current++;
+			}
+
+			if (_current >= positions.Length)
+			{
+				_current = 0;
+			}
+
+			return positions[_current];
+		}
+
+		private void OnDrawGizmosSelected()
+		{
+			if (positions.Length == 0) return;
+
+			Gizmos.color = Color.green;
+
+			foreach (var pos in positions)
+			{
+				Gizmos.DrawWireSphere(pos, 1f);
+			}
+		}
+	}
+}

@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 4539420029193251350}
   - component: {fileID: 9061638043241464363}
   - component: {fileID: 3737387378992774163}
+  - component: {fileID: 7242760465868854259}
   - component: {fileID: 2739205030517788515}
   - component: {fileID: 847500169184166770}
   m_Layer: 7
@@ -575,6 +576,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 7242760465868854259}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - Delay: 3
       Actions:
         m_PersistentCalls:
@@ -696,6 +709,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 7242760465868854259}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
   SpitSequence:
     sequence:
     - Delay: 0
@@ -732,6 +757,22 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+--- !u!114 &7242760465868854259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578723221765083101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4801a5076adec9b46a574f0b70f273d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  positions:
+  - {x: -3.5, y: 2.5, z: 0}
+  - {x: 3.5, y: 2.5, z: 0}
 --- !u!114 &2739205030517788515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,19 +788,6 @@ MonoBehaviour:
   OnReset:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9061638043241464363}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
-          Waves
-        m_MethodName: Disable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 7578723221765083101}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -787,19 +815,6 @@ MonoBehaviour:
   OnGameOver:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9061638043241464363}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
-          Waves
-        m_MethodName: Disable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 7578723221765083101}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
