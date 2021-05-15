@@ -4,6 +4,8 @@ namespace CrazyIntelligence.TooManyBits
 {
 	public class GameEventListener : MonoBehaviour
 	{
+		[SerializeField] private bool useUnscaledTime;
+		[Header("Events")]
 		[SerializeField] private Sequence OnStart;
 		[SerializeField] private Sequence OnReset;
 		[SerializeField] private Sequence OnPause;
@@ -31,6 +33,24 @@ namespace CrazyIntelligence.TooManyBits
 			GameManager.OnGameOver -= InvokeOnGameOver;
 			GameManager.OnAppStart -= InvokeOnAppStart;
 			GameManager.OnAppExit -= InvokeOnAppExit;
+		}
+
+		private void Update()
+		{
+			float deltaTime;
+
+			if (useUnscaledTime)
+				deltaTime = Time.unscaledDeltaTime;
+			else
+				deltaTime = Time.deltaTime;
+
+			OnStart.TickTimer(deltaTime);
+			OnReset.TickTimer(deltaTime);
+			OnPause.TickTimer(deltaTime);
+			OnContinue.TickTimer(deltaTime);
+			OnGameOver.TickTimer(deltaTime);
+			OnAppStart.TickTimer(deltaTime);
+			OnAppExit.TickTimer(deltaTime);
 		}
 
 		private void InvokeOnStart() => OnStart.Start();
