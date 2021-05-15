@@ -282,10 +282,8 @@ GameObject:
   - component: {fileID: 9061638043241464363}
   - component: {fileID: 3737387378992774163}
   - component: {fileID: 7242760465868854259}
-  - component: {fileID: 2739205030517788515}
   - component: {fileID: 4498348683611816659}
   - component: {fileID: 4355750767814614137}
-  - component: {fileID: 847500169184166770}
   m_Layer: 7
   m_Name: Schwein
   m_TagString: Untagged
@@ -520,6 +518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2574ce8ba0d3cd41a9e95a369234cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: c431a90024c899247a5bf4451d594a92, type: 2}
+  audioType: 1
 --- !u!114 &9061638043241464363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,33 +794,6 @@ MonoBehaviour:
   positions:
   - {x: -3.5, y: 2.5, z: 0}
   - {x: 3.5, y: 2.5, z: 0}
---- !u!114 &2739205030517788515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7578723221765083101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d50a74a9315ccb40b9e996b649a56a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnReset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7578723221765083101}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4498348683611816659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -874,33 +847,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &847500169184166770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7578723221765083101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnGameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7578723221765083101}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &7578723221998864374
 GameObject:

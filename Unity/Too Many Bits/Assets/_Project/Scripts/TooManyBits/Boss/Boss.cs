@@ -12,7 +12,9 @@ namespace CrazyIntelligence.TooManyBits.Boss
 
 		[SerializeField] private Sequence OnSpawnSequence;
 
+		private bool _spawned;
 		private bool _ticking;
+
 		private Timer _timer;
 
 		private void Awake()
@@ -25,6 +27,8 @@ namespace CrazyIntelligence.TooManyBits.Boss
 
 		private void Update()
 		{
+			if (_spawned) return;
+
 			OnSpawnSequence.TickTimer(Time.deltaTime);
 
 			if (_ticking == false || Weight.Value > maxWeight) return;
@@ -36,7 +40,7 @@ namespace CrazyIntelligence.TooManyBits.Boss
 		public void Spawn()
 		{
 			OnSpawnSequence.Start();
-			_ticking = false;
+			_spawned = true;
 		}
 
 		public void IsTicking(bool value) => _ticking = value;

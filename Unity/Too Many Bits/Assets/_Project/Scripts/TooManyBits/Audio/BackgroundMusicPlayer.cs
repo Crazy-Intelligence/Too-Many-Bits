@@ -5,6 +5,8 @@ namespace CrazyIntelligence.TooManyBits.Audio
 {
 	public class BackgroundMusicPlayer : MonoBehaviour
 	{
+		[SerializeField] private GameSettings settings;
+		[Space]
 		[SerializeField] private ConfiguredAudioClip gameTracks;
 		[SerializeField] private ConfiguredAudioClip menuTracks;
 		[SerializeField] private ConfiguredAudioClip bossTracks;
@@ -44,6 +46,8 @@ namespace CrazyIntelligence.TooManyBits.Audio
 				yield return null;
 			}
 			newTrack.Play(_source);
+
+			_source.volume *= settings.MasterVolume * settings.MusicVolume;
 
 			_timer.Reset();
 		}
