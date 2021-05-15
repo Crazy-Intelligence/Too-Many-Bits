@@ -282,8 +282,7 @@ GameObject:
   - component: {fileID: 9061638043241464363}
   - component: {fileID: 3737387378992774163}
   - component: {fileID: 7242760465868854259}
-  - component: {fileID: 4498348683611816659}
-  - component: {fileID: 4355750767814614137}
+  - component: {fileID: 3194536880966626383}
   m_Layer: 7
   m_Name: Schwein
   m_TagString: Untagged
@@ -794,7 +793,7 @@ MonoBehaviour:
   positions:
   - {x: -3.5, y: 2.5, z: 0}
   - {x: 3.5, y: 2.5, z: 0}
---- !u!114 &4498348683611816659
+--- !u!114 &3194536880966626383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -803,51 +802,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 7578723221765083101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abbe108cc45559a4b88b251a2b57bf2a, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence: []
+  OnReset:
+    sequence: []
   OnPause:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7242760465868854259}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4355750767814614137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7578723221765083101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01cca847e5cfa214a9e2d66fb1d3e8c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7242760465868854259}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   OnContinue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7242760465868854259}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7242760465868854259}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+  OnGameOver:
+    sequence: []
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []
 --- !u!1 &7578723221998864374
 GameObject:
   m_ObjectHideFlags: 0

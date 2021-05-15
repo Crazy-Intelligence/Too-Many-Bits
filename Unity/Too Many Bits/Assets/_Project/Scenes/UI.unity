@@ -608,24 +608,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 224973962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence: []
+  OnReset:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 224973964}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Hide
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnPause:
+    sequence: []
+  OnContinue:
+    sequence: []
   OnGameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 224973964}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 224973964}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []
 --- !u!114 &224973964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,33 +691,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &224973966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224973962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d50a74a9315ccb40b9e996b649a56a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnReset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 224973964}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &235209367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,24 +1475,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 536423990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d50a74a9315ccb40b9e996b649a56a2, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 536423992}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Hide
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   OnReset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 536423992}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 536423992}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnPause:
+    sequence: []
+  OnContinue:
+    sequence: []
+  OnGameOver:
+    sequence: []
+  OnAppStart:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 536423992}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnAppExit:
+    sequence: []
 --- !u!114 &536423992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,60 +1575,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &536423994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536423990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceee064d8f201ad418f702dfed031dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 536423992}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &536423995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536423990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ae6f4431532e644ab2c610fc601c9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnAppStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 536423992}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &564528995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1957,24 +1961,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 583503819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01cca847e5cfa214a9e2d66fb1d3e8c9, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence: []
+  OnReset:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 583503821}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Hide
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnPause:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 583503821}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   OnContinue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 583503821}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 583503821}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Hide
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnGameOver:
+    sequence: []
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []
 --- !u!114 &583503821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,60 +2061,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &583503823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583503819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abbe108cc45559a4b88b251a2b57bf2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnPause:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 583503821}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &583503824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583503819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d50a74a9315ccb40b9e996b649a56a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnReset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 583503821}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &608999295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3178,7 +3179,6 @@ GameObject:
   - component: {fileID: 1028147140}
   - component: {fileID: 1028147139}
   - component: {fileID: 1028147138}
-  - component: {fileID: 1028147142}
   - component: {fileID: 1028147137}
   m_Layer: 5
   m_Name: Shop
@@ -3219,24 +3219,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028147135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1028147138}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnReset:
+    sequence: []
+  OnPause:
+    sequence: []
+  OnContinue:
+    sequence: []
   OnGameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1028147138}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1028147138}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Hide
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []
 --- !u!114 &1028147138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3306,33 +3340,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028147135}
   m_CullTransparentMesh: 1
---- !u!114 &1028147142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028147135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceee064d8f201ad418f702dfed031dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1028147138}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1068051608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3460,7 +3467,6 @@ GameObject:
   - component: {fileID: 1110114876}
   - component: {fileID: 1110114875}
   - component: {fileID: 1110114874}
-  - component: {fileID: 1110114878}
   - component: {fileID: 1110114873}
   m_Layer: 5
   m_Name: Counter
@@ -3502,24 +3508,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110114871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1110114874}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnReset:
+    sequence: []
+  OnPause:
+    sequence: []
+  OnContinue:
+    sequence: []
   OnGameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1110114874}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1110114874}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Hide
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []
 --- !u!114 &1110114874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3589,33 +3629,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1110114871}
   m_CullTransparentMesh: 1
---- !u!114 &1110114878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110114871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceee064d8f201ad418f702dfed031dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1110114874}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1209434207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,7 +3641,6 @@ GameObject:
   - component: {fileID: 1209434213}
   - component: {fileID: 1209434212}
   - component: {fileID: 1209434211}
-  - component: {fileID: 1209434210}
   - component: {fileID: 1209434209}
   m_Layer: 5
   m_Name: Score Text
@@ -3665,51 +3677,56 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209434207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnGameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1209434211}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1209434210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1209434207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceee064d8f201ad418f702dfed031dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  useUnscaledTime: 0
   OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1209434211}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1209434211}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+  OnReset:
+    sequence: []
+  OnPause:
+    sequence: []
+  OnContinue:
+    sequence: []
+  OnGameOver:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1209434211}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []
 --- !u!114 &1209434211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4868,24 +4885,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558846284}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d50a74a9315ccb40b9e996b649a56a2, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence: []
   OnReset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1558846286}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1558846286}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Hide
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnPause:
+    sequence: []
+  OnContinue:
+    sequence: []
+  OnGameOver:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1558846286}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []
 --- !u!114 &1558846286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4898,33 +4949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf064754e5df849469414d37fa9cda7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1558846287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558846284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnGameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1558846286}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!95 &1558846288
 Animator:
   serializedVersion: 3
@@ -5699,8 +5723,6 @@ GameObject:
   - component: {fileID: 2036674393}
   - component: {fileID: 2036674386}
   - component: {fileID: 2036674387}
-  - component: {fileID: 2036674391}
-  - component: {fileID: 2036674392}
   - component: {fileID: 2036674385}
   m_Layer: 5
   m_Name: WeightDisplay
@@ -5740,37 +5762,88 @@ MonoBehaviour:
   m_GameObject: {fileID: 2036674383}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2036674386}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnReset:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2036674387}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.WeightDisplay,
+              UI
+            m_MethodName: Enable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnPause:
+    sequence: []
+  OnContinue:
+    sequence: []
   OnGameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2036674386}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2036674387}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.WeightDisplay,
-          UI
-        m_MethodName: Disable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 2036674386}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement,
+              UI
+            m_MethodName: Hide
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 2036674387}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.WeightDisplay,
+              UI
+            m_MethodName: Disable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []
 --- !u!114 &2036674386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5912,61 +5985,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036674383}
   m_CullTransparentMesh: 1
---- !u!114 &2036674391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036674383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceee064d8f201ad418f702dfed031dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2036674386}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.UIElement, UI
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2036674392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036674383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d50a74a9315ccb40b9e996b649a56a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnReset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2036674387}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.UI.WeightDisplay,
-          UI
-        m_MethodName: Enable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2036674393
 MonoBehaviour:
   m_ObjectHideFlags: 0

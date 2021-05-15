@@ -16,8 +16,7 @@ GameObject:
   - component: {fileID: 2476535855809420105}
   - component: {fileID: 2002455993729549247}
   - component: {fileID: -1943732433369285867}
-  - component: {fileID: -6654087281204268183}
-  - component: {fileID: -6867418292762030755}
+  - component: {fileID: 1666042797081384415}
   m_Layer: 6
   m_Name: Bit
   m_TagString: Untagged
@@ -299,7 +298,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-6654087281204268183
+--- !u!114 &1666042797081384415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -308,48 +307,53 @@ MonoBehaviour:
   m_GameObject: {fileID: 5142541770011555780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d50a74a9315ccb40b9e996b649a56a2, type: 3}
+  m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useUnscaledTime: 0
+  OnStart:
+    sequence: []
   OnReset:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -1943732433369285867}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.Bit, Bits
-        m_MethodName: DeleteImmediatly
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &-6867418292762030755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5142541770011555780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5c8a1c765f717d4aa7768fdbd7cbdbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: -1943732433369285867}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.Bit, Bits
+            m_MethodName: DeleteImmediatly
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnPause:
+    sequence: []
+  OnContinue:
+    sequence: []
   OnGameOver:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -1943732433369285867}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.Bit, Bits
-        m_MethodName: Destroy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: -1943732433369285867}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.Bit, Bits
+            m_MethodName: Destroy
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  OnAppStart:
+    sequence: []
+  OnAppExit:
+    sequence: []

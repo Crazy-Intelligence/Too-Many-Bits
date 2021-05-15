@@ -14,6 +14,8 @@ namespace CrazyIntelligence.TooManyBits
 
 		public void Start()
 		{
+			if (sequence.Length == 0) return;
+
 			_enabled = true;
 			_current = 0;
 
