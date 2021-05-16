@@ -28,6 +28,7 @@ namespace CrazyIntelligence.TooManyBits.UI
 			if (disabled) return;
 
 			int i = GetCurrentIndex();
+			_lastIndex = i;
 
 			ChangeSprite(i);
 

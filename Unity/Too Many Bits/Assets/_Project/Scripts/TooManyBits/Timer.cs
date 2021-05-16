@@ -43,13 +43,13 @@ namespace CrazyIntelligence.TooManyBits
 
 		private void CheckTimerEnd()
 		{
-			if (RemainingSeconds > 0f) { return; }
+			if (RemainingSeconds > 0f) return;
 
 			RemainingSeconds = 0f;
 
 			OnTimerEnd?.Invoke();
 
-			if (_loop) { Reset(); }
+			if (_loop) Reset();
 		}
 	}
 }

@@ -12,7 +12,6 @@ namespace CrazyIntelligence.TooManyBits
 		[SerializeField] private UnityEvent OnNormalTime;
 
 		private Timer _timer;
-		private float _timeScaleBeforePause;
 
 		private void Start()
 		{
@@ -20,24 +19,11 @@ namespace CrazyIntelligence.TooManyBits
 			_timer.OnTimerEnd += ResetTimeScale;
 		}
 
-		private void OnEnable()
-		{
-			GameManager.OnReset += ResetTimeScale; 
-			GameManager.OnPause += OnGamePause;
-			GameManager.OnContinue += OnGameContinue;
-		}
-		private void OnDisable()
-		{
-			GameManager.OnReset -= ResetTimeScale;
-			GameManager.OnPause -= OnGamePause;
-			GameManager.OnContinue -= OnGameContinue;
-		}
-
 		private void Update()
 		{
 			_timer.Tick(Time.unscaledDeltaTime);
 		}
-
+		
 		public void SlowTime()
 		{
 			SetTimeScale(SlowTimeScale);
@@ -45,22 +31,11 @@ namespace CrazyIntelligence.TooManyBits
 			OnSlowTime?.Invoke();
 		}
 
-		public static void SetTimeScale(float timeScale)
+		private void SetTimeScale(float timeScale)
 		{
 			Time.timeScale = timeScale;
 			Time.fixedDeltaTime = Time.timeScale * 0.02f;
 		}
-
-		private void OnGamePause()
-		{
-			_timeScaleBeforePause = Time.timeScale;
-			SetTimeScale(0);
-		}
-		private void OnGameContinue()
-		{
-			SetTimeScale(_timeScaleBeforePause);
-		}
-
 		private void ResetTimeScale()
 		{
 			SetTimeScale(1f);

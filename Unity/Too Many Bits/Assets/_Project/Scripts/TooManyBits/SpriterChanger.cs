@@ -16,12 +16,13 @@ namespace CrazyIntelligence.TooManyBits
 		private void Awake()
 		{
 			_spriteRenderer = GetComponent<SpriteRenderer>();
+
 			_timer = new Timer(timeUntilChange, true);
+			_timer.OnTimerEnd += OnTimerEnd;
 		}
 		private void Start()
 		{
 			ChangeSpriteToRandom();
-			_timer.OnTimerEnd += OnTimerEnd;
 		}
 
 		private void Update()

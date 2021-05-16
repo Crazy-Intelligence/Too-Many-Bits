@@ -18,18 +18,6 @@ namespace CrazyIntelligence.TooManyBits
 		{
 			_rigidbody = GetComponent<Rigidbody2D>();
 		}
-		private void OnEnable()
-		{
-			GameManager.OnPause += OnGamePause;
-			GameManager.OnContinue += OnGameContinue;
-			GameManager.OnReset += OnGameReset;
-		}
-		private void OnDisable()
-		{
-			GameManager.OnPause -= OnGamePause;
-			GameManager.OnContinue -= OnGameContinue;
-			GameManager.OnReset -= OnGameReset;
-		}
 		private void Start()
 		{
 			_lastMousePosition = GetMousePos();
@@ -68,15 +56,15 @@ namespace CrazyIntelligence.TooManyBits
 
 			return targetRotation;
 		}
-		private void OnGamePause()
+		public void OnGamePause()
 		{
 			_rigidbody.simulated = false;
 		}
-		private void OnGameContinue()
+		public void OnGameContinue()
 		{
 			_rigidbody.simulated = true;
 		}
-		private void OnGameReset()
+		public void OnGameReset()
 		{
 			_rigidbody.simulated = true;
 		}
