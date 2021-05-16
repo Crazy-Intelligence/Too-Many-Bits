@@ -13,17 +13,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_collider = GetComponent<Collider2D>();
 		}
 
-		private void OnEnable()
-		{
-			GameManager.OnReset += Enable;
-			GameManager.OnGameOver += Disable;
-		}
-		private void OnDisable()
-		{
-			GameManager.OnReset -= Enable;
-			GameManager.OnGameOver -= Disable;
-		}
-
 		private void OnTriggerEnter2D(Collider2D collision)
 		{
 			var bit = collision.GetComponent<Bit>();
@@ -33,7 +22,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			behaviour.Invoke(bit);
 		}
 
-		private void Disable() => _collider.enabled = false;
-		private void Enable() => _collider.enabled = true;
+		public void Disable() => _collider.enabled = false;
+		public void Enable() => _collider.enabled = true;
 	}
 }
