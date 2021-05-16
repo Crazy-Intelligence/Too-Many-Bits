@@ -1879,39 +1879,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    - Delay: 10
-      Actions:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 709143331}
-            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-            m_MethodName: SetTrigger
-            m_Mode: 5
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: Show
-              m_BoolArgument: 0
-            m_CallState: 2
-    - Delay: 2
-      Actions:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 475439849}
-            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
-              Waves
-            m_MethodName: Enable
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: Show
-              m_BoolArgument: 0
-            m_CallState: 2
 --- !u!4 &1533257441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490678196267720985, guid: 35d19cd2f7297bb43ac28ba0ff995089, type: 3}

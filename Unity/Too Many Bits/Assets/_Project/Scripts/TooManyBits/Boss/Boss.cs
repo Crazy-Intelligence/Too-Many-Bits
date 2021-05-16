@@ -27,9 +27,9 @@ namespace CrazyIntelligence.TooManyBits.Boss
 
 		private void Update()
 		{
-			if (_spawned) return;
-
 			OnSpawnSequence.TickTimer(Time.deltaTime);
+
+			if (_spawned) return;
 
 			if (_ticking == false || Weight.Value > maxWeight) return;
 
