@@ -5,8 +5,8 @@ namespace CrazyIntelligence.TooManyBits
 {
 	public class GameManagerBehaviour : MonoBehaviour
 	{
-		[SerializeField] private Counter gameOverTrigger;
-		[SerializeField] [Range(500, 1500)] private int countUntilGameOver;
+		[SerializeField] private Counter weight;
+		[Range(500, 1500)] public int WeightUntilGameOver;
 
 		private void Awake()
 		{
@@ -19,7 +19,7 @@ namespace CrazyIntelligence.TooManyBits
 
 		private void Update()
 		{
-			if (gameOverTrigger.Value >= countUntilGameOver)
+			if (weight.Value >= WeightUntilGameOver)
 			{
 				GameManager.DoGameOver();
 			}

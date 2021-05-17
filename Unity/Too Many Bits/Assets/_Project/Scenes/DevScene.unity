@@ -921,21 +921,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BossObject: {fileID: 7578723221178498941}
-  OnSpawnEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7578723221178498940}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Schwein, Boss
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  Weight: {fileID: 0}
+  maxWeight: 0
+  timeUntilSpawn: 0
+  OnSpawnSequence:
+    sequence: []
 --- !u!1001 &1594397114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1508,6 +1498,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2574ce8ba0d3cd41a9e95a369234cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 0}
+  audioType: 0
 --- !u!1001 &7578723221178498939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1721,17 +1713,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
---- !u!114 &7578723221178498940 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3737387378992774163, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
-  m_PrefabInstance: {fileID: 7578723221178498939}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7578723221178498941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 492a56fb2f9576a479249a34abf1a239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7578723221178498941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7578723221765083101, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}

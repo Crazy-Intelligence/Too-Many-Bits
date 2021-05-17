@@ -4,39 +4,46 @@ namespace CrazyIntelligence.TooManyBits
 {
 	public class StageBehaviour : MonoBehaviour
 	{
-		[SerializeField] private Rigidbody2D[] parts;
+		[SerializeField] private SpriteRenderer[] sprites;
+		[SerializeField] [Range(0, 500)] private int minimumWeight;
+		[SerializeField] private Counter weight;
 
-		private Vector3[] _defaultPositions;
-		private float[] _defaultRotations;
+		private GameManagerBehaviour _gameManager;
 
-		private void Start()
+		private bool _disabled;
+
+		private void Awake()
 		{
-			_defaultPositions = new Vector3[parts.Length];
-			_defaultRotations = new float[parts.Length];
-
-			for (int i = 0; i < parts.Length; i++)
-			{
-				_defaultPositions[i] = parts[i].position;
-				_defaultRotations[i] = parts[i].rotation;
-			}
+			_gameManager = FindObjectOfType<GameManagerBehaviour>();
 		}
 
-		public void FallApart()
+		private void Update()
 		{
-			foreach (var rb in parts)
-			{
-				rb.isKinematic = false;
-			}
+			if (_disabled) return;
+
+			ChangeColor();
 		}
 
-		public void ResetParts()
+		public void Disable()
 		{
-			for (int i = 0; i < parts.Length; i++)
+			_disabled = true;
+		}
+		public void Enable()
+		{
+			_disabled = false;
+		}
+
+		private void ChangeColor()
+		{
+			if (weight.Value < minimumWeight) return;
+
+			var weightPercent = (float)(weight.Value - minimumWeight) / (float)(_gameManager.WeightUntilGameOver - minimumWeight);
+
+			var color = new Color(1f, 1f - weightPercent, 1f - weightPercent, 1f);
+
+			foreach (var sprite in sprites)
 			{
-				parts[i].isKinematic = true;
-				parts[i].Sleep();
-				parts[i].position = _defaultPositions[i];
-				parts[i].rotation = _defaultRotations[i];
+				sprite.color = color;
 			}
 		}
 	}
