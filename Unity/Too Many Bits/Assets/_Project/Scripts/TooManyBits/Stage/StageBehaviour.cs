@@ -21,7 +21,7 @@ namespace CrazyIntelligence.TooManyBits
 		{
 			if (_disabled) return;
 
-			ChangeColor();
+			ChangeColor(GetWeightColor());
 		}
 
 		public void Disable()
@@ -33,18 +33,22 @@ namespace CrazyIntelligence.TooManyBits
 			_disabled = false;
 		}
 
-		private void ChangeColor()
+		private void ChangeColor(Color color)
 		{
-			if (weight.Value < minimumWeight) return;
-
-			var weightPercent = (float)(weight.Value - minimumWeight) / (float)(_gameManager.WeightUntilGameOver - minimumWeight);
-
-			var color = new Color(1f, 1f - weightPercent, 1f - weightPercent, 1f);
-
 			foreach (var sprite in sprites)
 			{
 				sprite.color = color;
 			}
+		}
+
+		private Color GetWeightColor()
+		{
+			if (weight.Value < minimumWeight) return Color.white;
+
+			var weightPercent = (float)(weight.Value - minimumWeight) / (float)(_gameManager.WeightUntilGameOver - minimumWeight);
+
+			var color = new Color(1f, 1f - weightPercent, 1f - weightPercent, 1f);
+			return color;
 		}
 	}
 }

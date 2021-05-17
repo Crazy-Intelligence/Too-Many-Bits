@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0125cb4919f30d4fa4c57c264824114, type: 3}
   m_Name: NormalBit
   m_EditorClassIdentifier: 
+  boundarySize: {x: 12.390921, y: 8.217043}
+  boundaryCenter: {x: 0, y: 0.87246585}
+  MaxTimeOutsideBoundary: 3
   score: {fileID: 11400000, guid: bcfe599cdc2c69e4ba2ad60ba24228f5, type: 2}
   money: {fileID: 11400000, guid: 21852c7a791c3054db7072eb5796d950, type: 2}
   weight: {fileID: 11400000, guid: 0a60914f74cbaff42a96f607557d49b2, type: 2}

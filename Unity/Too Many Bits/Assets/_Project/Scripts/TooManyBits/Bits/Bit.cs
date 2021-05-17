@@ -11,14 +11,19 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		[SerializeField] private UnityEvent OnShrinkEvent;
 		[SerializeField] private UnityEvent OnDestroyEvent;
 
-		Rigidbody2D _rigidbody;
+		private Rigidbody2D _rigidbody;
 		private CapsuleCollider2D _collider;
 		private SpriteRenderer _spriteRenderer;
 		private SpriterChanger _spriteChanger;
 
+		private Timer _timer;
+
 		private void Awake()
 		{
 			GetReferences();
+
+			_timer = new Timer(Config.MaxTimeOutSideBoundary);
+			_timer.OnTimerEnd += Destroy;
 		}
 		
 		private void OnEnable()
@@ -29,6 +34,12 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		private void OnDisable()
 		{
 			StopAllCoroutines();
+		}
+		private void Update()
+		{
+			if (Config.IsInsideBoundary(transform.position)) return;
+
+			_timer.Tick(Time.deltaTime);
 		}
 
 		public void DeleteImmediatly()

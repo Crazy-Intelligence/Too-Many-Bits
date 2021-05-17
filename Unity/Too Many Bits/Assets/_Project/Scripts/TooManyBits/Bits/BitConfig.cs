@@ -23,6 +23,9 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		[SerializeField] private int moneyValue;
 		[SerializeField] private int weightValue;
 
+		public bool IsInsideBoundary(Vector3 position) => sharedConfig.IsInsideBoundary(position);
+		public float MaxTimeOutSideBoundary => sharedConfig.MaxTimeOutsideBoundary;
+
 		public Color DestroyedColor => sharedConfig.DestroyedColor;
 		
 		public float DestroyDuration => sharedConfig.DestroyDuration;
