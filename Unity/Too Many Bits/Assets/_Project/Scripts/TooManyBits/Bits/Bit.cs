@@ -21,9 +21,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		private void Awake()
 		{
 			GetReferences();
-
-			_timer = new Timer(Config.MaxTimeOutSideBoundary);
-			_timer.OnTimerEnd += Destroy;
 		}
 		
 		private void OnEnable()
@@ -37,6 +34,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		}
 		private void Update()
 		{
+			if (_timer is null) return;
 			if (Config.IsInsideBoundary(transform.position)) return;
 
 			_timer.Tick(Time.deltaTime);
@@ -44,22 +42,22 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		public void DeleteImmediatly()
 		{
-			StartCoroutine(Despawn(0f));
+			StartCoroutine(DespawnRoutine(0f));
 		}
 
 		public void Destroy()
 		{
-			StartCoroutine(ChangeColor(Config.DestroyedColor, Config.DestroyDuration));
+			StartCoroutine(ChangeColorRoutine(Config.DestroyedColor, Config.DestroyDuration));
 
 			_collider.enabled = false;
 
-			StartCoroutine(Despawn(Config.DestroyDuration));
+			StartCoroutine(DespawnRoutine(Config.DestroyDuration));
 
 			OnDestroyEvent?.Invoke();
 		}
 		public void Shrink()
 		{
-			StartCoroutine(Scale(Vector3.one * Config.SmallScale, Config.ScaleDuration));
+			StartCoroutine(ScaleRoutine(Vector3.one * Config.SmallScale, Config.ScaleDuration));
 
 			_rigidbody.mass = Config.SmallMass;
 
@@ -69,7 +67,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 		}
 		public void Grow()
 		{
-			StartCoroutine(Scale(Vector3.one * Config.NormalScale, Config.ScaleDuration));
+			StartCoroutine(ScaleRoutine(Vector3.one * Config.NormalScale, Config.ScaleDuration));
 
 			_rigidbody.mass = Config.NormalMass;
 
@@ -78,7 +76,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			OnGrowEvent?.Invoke();
 		}
 
-		private IEnumerator ChangeColor(Color newColor, float duration)
+		private IEnumerator ChangeColorRoutine(Color newColor, float duration)
 		{
 			var timer = new Timer(duration);
 
@@ -91,7 +89,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			}
 		}
 
-		private IEnumerator Scale(Vector3 newScale, float duration)
+		private IEnumerator ScaleRoutine(Vector3 newScale, float duration)
 		{
 			var timer = new Timer(duration);
 
@@ -104,7 +102,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			}
 		}
 		
-		private IEnumerator Despawn(float waitDuration)
+		private IEnumerator DespawnRoutine(float waitDuration)
 		{
 			waitDuration += 0.16f;
 
@@ -138,10 +136,21 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			_collider.size = Config.ColliderSize;
 
 			_spriteRenderer.color = Config.NormalColor;
-			
+			StartCoroutine(ChangeSortingLayerRoutine());
+
 			_spriteChanger.spriteCollection = Config.Sprites;
 
 			gameObject.layer = LayerMask.NameToLayer("Bits");
+
+			_timer = new Timer(Config.MaxTimeOutSideBoundary);
+			_timer.OnTimerEnd += Destroy;
+		}
+
+		private IEnumerator ChangeSortingLayerRoutine()
+		{
+			yield return new WaitForSeconds(1f);
+
+			_spriteRenderer.sortingLayerName = "Bits";
 		}
 
 		[ContextMenu("Setup")]

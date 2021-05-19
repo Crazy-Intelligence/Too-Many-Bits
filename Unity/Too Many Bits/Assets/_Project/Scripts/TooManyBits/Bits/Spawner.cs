@@ -64,6 +64,9 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			var rb = newObject.GetComponent<Rigidbody2D>();
 			ApplySpawnForce(rb);
 
+			var sprite = newObject.GetComponent<SpriteRenderer>();
+			sprite.sortingLayerName = Config.StartLayer;
+
 			OnSpawnEvent?.Invoke();
 		}
 

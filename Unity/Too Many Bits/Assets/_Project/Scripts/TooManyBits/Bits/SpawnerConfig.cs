@@ -8,6 +8,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	{
 		public GameObject Prefab;
 		[Space]
+		public string StartLayer;
+		[Space]
 		public float SpawnForce;
 		[Space]
 		[Range(0f, 89f)] public float SpawnAngelRange;
