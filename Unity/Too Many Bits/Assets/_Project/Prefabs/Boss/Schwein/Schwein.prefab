@@ -71,7 +71,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e446094a02f33544a83ea33732909a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5054649d3ec89664a8bf43cb8d248ca0, type: 3}
   m_MaskAlphaCutoff: 0.8
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
@@ -81,6 +81,53 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3798424508137044463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3677779337917428002}
+  - component: {fileID: 8635353223782110485}
+  m_Layer: 7
+  m_Name: Spawner mouth const
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3677779337917428002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798424508137044463}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7578723221765083095}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8635353223782110485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3798424508137044463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c0efd587eaf1fa43ae13c1a6e2455d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Config: {fileID: 11400000, guid: e68e12266f13cd640ad26157e5aea00c, type: 2}
+  OnSpawnEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7578723220855590470
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +139,7 @@ GameObject:
   - component: {fileID: 7578723220855590469}
   - component: {fileID: 7578723220855590468}
   m_Layer: 7
-  m_Name: Spawner mouth
+  m_Name: Spawner mouth spit
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -106,8 +153,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7578723220855590470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.030351331, y: -0.62, z: 0}
-  m_LocalScale: {x: 1.0117362, y: 1.0341262, z: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7578723221765083095}
   m_RootOrder: 8
@@ -283,6 +330,8 @@ GameObject:
   - component: {fileID: 3737387378992774163}
   - component: {fileID: 7242760465868854259}
   - component: {fileID: 3194536880966626383}
+  - component: {fileID: 2657491982621798947}
+  - component: {fileID: 1173217376454354045}
   m_Layer: 7
   m_Name: Schwein
   m_TagString: Untagged
@@ -310,6 +359,7 @@ Transform:
   - {fileID: 6984846380714698603}
   - {fileID: 7578723221998864373}
   - {fileID: 7578723220855590469}
+  - {fileID: 3677779337917428002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -635,6 +685,157 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 7242760465868854259}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.SchweinMovement,
+              Boss
+            m_MethodName: MoveFromOrigin
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+  DespawnSequence:
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7242760465868854259}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.SchweinMovement,
+              Boss
+            m_MethodName: MoveToOrigin
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 9061638043241464363}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: Disable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Delay: 3
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7578723221765083090}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Despawn
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 7578723221376810448}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Shake
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 6984846381201946050}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Shake
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 6984846381015857805}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Shake
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 6984846380714698606}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Shake
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 9061638043241464363}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: FirstWave
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Delay: 5
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 9061638043241464363}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: Disable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 7578723221765083101}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   SpitSequence:
     sequence:
     - Delay: 0
@@ -789,10 +990,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4801a5076adec9b46a574f0b70f273d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 1.5
   positions:
   - {x: -3.5, y: 2.5, z: 0}
   - {x: 3.5, y: 2.5, z: 0}
+  originPosition: {x: 1.25, y: 1, z: 0}
 --- !u!114 &3194536880966626383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -805,7 +1007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useUnscaledTime: 0
   OnStart:
     sequence: []
   OnReset:
@@ -847,11 +1048,176 @@ MonoBehaviour:
               m_BoolArgument: 1
             m_CallState: 2
   OnGameOver:
-    sequence: []
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 9061638043241464363}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: Disable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   OnAppStart:
     sequence: []
   OnAppExit:
     sequence: []
+--- !u!60 &2657491982621798947
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578723221765083101}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.87, y: 4.14}
+    newSize: {x: 6.45, y: 4.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.185, y: -1.6999999}
+      - {x: 1.165, y: -1.56}
+      - {x: 1.225, y: -1.42}
+      - {x: 1.4649999, y: -1.1899999}
+      - {x: 1.675, y: -1.0699999}
+      - {x: 1.885, y: -0.85999995}
+      - {x: 2.0049999, y: -0.59999996}
+      - {x: 2.0449998, y: -0.42}
+      - {x: 2.105, y: -0.21}
+      - {x: 2.075, y: -0.049999997}
+      - {x: 2.115, y: -0.03}
+      - {x: 2.115, y: 0.17}
+      - {x: 2.175, y: 0.32999998}
+      - {x: 2.435, y: 0.58}
+      - {x: 2.435, y: 0.74}
+      - {x: 2.2549999, y: 0.88}
+      - {x: 2.095, y: 0.96999997}
+      - {x: 1.765, y: 1.1}
+      - {x: 1.635, y: 1.26}
+      - {x: 1.635, y: 1.42}
+      - {x: 1.625, y: 1.4499999}
+      - {x: 1.5949999, y: 1.49}
+      - {x: 1.425, y: 1.5899999}
+      - {x: 1.435, y: 1.6899999}
+      - {x: 1.305, y: 1.74}
+      - {x: 1.155, y: 1.73}
+      - {x: 1.115, y: 1.89}
+      - {x: 1.0749999, y: 1.9699999}
+      - {x: 0.895, y: 1.9799999}
+      - {x: 0.825, y: 1.9}
+      - {x: 0.645, y: 1.92}
+      - {x: 0.625, y: 1.9799999}
+      - {x: 0.555, y: 2.02}
+      - {x: 0.275, y: 2.06}
+      - {x: -0.325, y: 2.06}
+      - {x: -0.625, y: 2.02}
+      - {x: -0.72499996, y: 1.9}
+      - {x: -0.835, y: 1.91}
+      - {x: -0.955, y: 1.92}
+      - {x: -1.055, y: 1.8299999}
+      - {x: -1.105, y: 1.68}
+      - {x: -1.385, y: 1.67}
+      - {x: -1.435, y: 1.5999999}
+      - {x: -1.495, y: 1.38}
+      - {x: -1.625, y: 1.31}
+      - {x: -1.765, y: 1.1999999}
+      - {x: -2.165, y: 1.03}
+      - {x: -2.325, y: 0.88}
+      - {x: -2.435, y: 0.66999996}
+      - {x: -2.435, y: 0.45999998}
+      - {x: -2.375, y: 0.37}
+      - {x: -2.2949998, y: 0.32}
+      - {x: -2.305, y: 0.14}
+      - {x: -2.185, y: 0.03}
+      - {x: -2.205, y: -0.11}
+      - {x: -2.0349998, y: -0.21}
+      - {x: -2.0149999, y: -0.35999998}
+      - {x: -1.9449999, y: -0.51}
+      - {x: -1.885, y: -0.61}
+      - {x: -1.635, y: -0.9}
+      - {x: -1.405, y: -1.04}
+      - {x: -1.175, y: -1.36}
+      - {x: -1.235, y: -1.65}
+      - {x: -1.2149999, y: -1.8299999}
+      - {x: -1.0749999, y: -1.9399999}
+      - {x: -0.955, y: -2.02}
+      - {x: -0.825, y: -2.06}
+      - {x: -0.705, y: -2.07}
+      - {x: 0.515, y: -2.07}
+      - {x: 0.755, y: -2.05}
+      - {x: 1.025, y: -2.01}
+      - {x: 1.155, y: -1.9}
+    - - {x: 0.905, y: -0.45999998}
+      - {x: 0.835, y: -0.42999998}
+      - {x: 0.765, y: -0.39}
+      - {x: 0.765, y: -0.37}
+      - {x: 0.755, y: -0.26999998}
+      - {x: 0.765, y: -0.26}
+      - {x: 0.775, y: -0.21}
+      - {x: 0.775, y: -0.19999999}
+      - {x: 0.92499995, y: -0.13}
+      - {x: 0.98499995, y: -0.11}
+      - {x: 1.185, y: -0.099999994}
+      - {x: 1.1949999, y: -0.11}
+      - {x: 1.265, y: -0.12}
+      - {x: 1.415, y: -0.21}
+      - {x: 1.405, y: -0.31}
+      - {x: 1.375, y: -0.39999998}
+      - {x: 1.3249999, y: -0.45999998}
+      - {x: 1.2149999, y: -0.48999998}
+      - {x: 1.035, y: -0.5}
+      - {x: 1.025, y: -0.48999998}
+    - - {x: -1.2149999, y: -0.45999998}
+      - {x: -1.355, y: -0.34}
+      - {x: -1.365, y: -0.19999999}
+      - {x: -1.135, y: -0.099999994}
+      - {x: -1.095, y: -0.089999996}
+      - {x: -0.905, y: -0.08}
+      - {x: -0.905, y: -0.089999996}
+      - {x: -0.685, y: -0.19}
+      - {x: -0.715, y: -0.37}
+      - {x: -0.775, y: -0.45}
+      - {x: -0.85499996, y: -0.47}
+      - {x: -0.85499996, y: -0.48}
+--- !u!251 &1173217376454354045
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578723221765083101}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 180
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 70
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &7578723221998864374
 GameObject:
   m_ObjectHideFlags: 0
