@@ -1538,18 +1538,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1575,18 +1563,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578723221765083095, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7578723221765083101, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
@@ -1875,7 +1851,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 1524436266}
             m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
-            m_MethodName: IsTicking
+            m_MethodName: SetTicking
             m_Mode: 6
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -1903,36 +1879,8 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 1524436266}
-            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
-            m_MethodName: IsTicking
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
   OnPause:
-    sequence:
-    - Delay: 0
-      Actions:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1524436266}
-            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
-            m_MethodName: IsTicking
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+    sequence: []
   OnContinue:
     sequence:
     - Delay: 0
@@ -1959,7 +1907,7 @@ MonoBehaviour:
           m_Calls:
           - m_Target: {fileID: 1524436266}
             m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
-            m_MethodName: IsTicking
+            m_MethodName: SetTicking
             m_Mode: 6
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -1970,7 +1918,35 @@ MonoBehaviour:
               m_BoolArgument: 0
             m_CallState: 2
   OnAppStart:
-    sequence: []
+    sequence:
+    - Delay: 0
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1022122196}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1524436266}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Boss, Boss
+            m_MethodName: SetTicking
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   OnAppExit:
     sequence: []
 --- !u!4 &1524436265
@@ -2000,7 +1976,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ba068c7db028f4aba2913540a78417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossObject: {fileID: 1022122196}
   Weight: {fileID: 11400000, guid: 0a60914f74cbaff42a96f607557d49b2, type: 2}
   maxWeight: 700
   timeUntilSpawn: 180
@@ -2050,7 +2025,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-    - Delay: 3
+    - Delay: 1
       Actions:
         m_PersistentCalls:
           m_Calls:

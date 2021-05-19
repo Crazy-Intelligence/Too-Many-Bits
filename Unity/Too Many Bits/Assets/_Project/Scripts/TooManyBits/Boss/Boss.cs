@@ -4,7 +4,6 @@ namespace CrazyIntelligence.TooManyBits.Boss
 {
 	public class Boss : MonoBehaviour
 	{
-		public GameObject BossObject;
 		[SerializeField] private Counter Weight;
 		[SerializeField] private int maxWeight;
 		[Space]
@@ -15,16 +14,14 @@ namespace CrazyIntelligence.TooManyBits.Boss
 		[SerializeField] private Sequence OnSpawnSequence;
 		[SerializeField] private Sequence OnDespawnSequence;
 
-		private bool _spawned;
 		private bool _ticking;
+		private bool _spawned;
 
 		private Timer _spawnTimer;
 		private Timer _despawnTimer;
 
 		private void Awake()
 		{
-			BossObject.SetActive(false);
-
 			_spawnTimer = new Timer(timeUntilSpawn);
 			_spawnTimer.OnTimerEnd += Spawn;
 
@@ -36,7 +33,7 @@ namespace CrazyIntelligence.TooManyBits.Boss
 		{
 			OnSpawnSequence.TickTimer(Time.deltaTime);
 			OnDespawnSequence.TickTimer(Time.deltaTime);
-			
+
 			if (_ticking == false) return;
 
 			if (_spawned)
@@ -65,7 +62,7 @@ namespace CrazyIntelligence.TooManyBits.Boss
 			_spawned = false;
 		}
 
-		public void IsTicking(bool value) => _ticking = value;
+		public void SetTicking(bool value) => _ticking = value;
 
 		private float GetActiveTime() => Random.Range(minActiveTime, maxActivTime);
 	}
