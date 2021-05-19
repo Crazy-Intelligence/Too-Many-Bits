@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pipe
   m_EditorClassIdentifier: 
   Prefab: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
+  StartLayer: Bits
   SpawnForce: 60
   SpawnAngelRange: 60
   SpawnAngelOffset: 0

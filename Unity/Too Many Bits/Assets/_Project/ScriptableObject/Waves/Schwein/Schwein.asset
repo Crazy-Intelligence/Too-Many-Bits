@@ -19,8 +19,21 @@ MonoBehaviour:
   Waves:
   - configurations:
     - {fileID: 11400000, guid: 10672b25aa42bb04ca7fb4aa66c02667, type: 2}
+    - {fileID: 11400000, guid: c734e8c1240a85d44aeb4d6d920434ff, type: 2}
+    - {fileID: 11400000, guid: c568f0e917c06824e95806cc131340b1, type: 2}
     Duration: 5
   - configurations:
-    - {fileID: 11400000, guid: 57de63f3ff53efb41a1e91650bb31a25, type: 2}
     - {fileID: 11400000, guid: 27097163f648ef744b0ae684a93c9218, type: 2}
+    - {fileID: 11400000, guid: 57de63f3ff53efb41a1e91650bb31a25, type: 2}
+    - {fileID: 11400000, guid: 9f2b3a1cb19122d4b9343e4fb08e2408, type: 2}
+    Duration: 20
+  - configurations:
+    - {fileID: 11400000, guid: 5f140528f1269e442874492a458353b2, type: 2}
+    - {fileID: 11400000, guid: 57de63f3ff53efb41a1e91650bb31a25, type: 2}
+    - {fileID: 11400000, guid: 61ddbd590ca898f4d9ed7b38fe4246de, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 1bf041d4db6485645888478452b13941, type: 2}
+    - {fileID: 11400000, guid: 57de63f3ff53efb41a1e91650bb31a25, type: 2}
+    - {fileID: 11400000, guid: c666e80e16e6b99408266f71746ef210, type: 2}
     Duration: 0

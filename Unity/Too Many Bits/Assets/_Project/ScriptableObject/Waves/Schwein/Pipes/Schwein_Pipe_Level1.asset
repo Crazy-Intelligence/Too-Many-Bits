@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4fd8bde47d87124fa397dd89c642cfd, type: 3}
-  m_Name: Schwein_Mouth_Level0
+  m_Name: Schwein_Pipe_Level1
   m_EditorClassIdentifier: 
   Targets:
-  - {fileID: 11400000, guid: 446481d06b2f28d41996b299bd951e97, type: 2}
+  - {fileID: 11400000, guid: 26958c89419fcb043b786107cdf397d3, type: 2}
+  - {fileID: 11400000, guid: 879a15524800bed4db9daaa7963c20ff, type: 2}
   Bits:
     List:
-    - Object: {fileID: 11400000, guid: efaf49efa60e1b148b26a2d75d65a360, type: 2}
+    - Object: {fileID: 11400000, guid: 226b1ecc4d19c2e44af70eef525004bf, type: 2}
       Weight: 1
-  SpawnRate: 0.2
+  SpawnRate: 5

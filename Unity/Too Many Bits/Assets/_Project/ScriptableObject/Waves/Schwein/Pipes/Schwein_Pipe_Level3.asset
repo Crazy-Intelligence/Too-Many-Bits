@@ -9,17 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379429bd889ec6845b704068e9faec26, type: 3}
-  m_Name: Schwein_Pipe mirrored
+  m_Script: {fileID: 11500000, guid: d4fd8bde47d87124fa397dd89c642cfd, type: 3}
+  m_Name: Schwein_Pipe_Level3
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
-  StartLayer: Boss
-  SpawnForce: 75
-  SpawnAngelRange: 28.5
-  SpawnAngelOffset: 135.3
-  _spawnRateDeviation: 0
-  SpawnRate: 0
+  Targets:
+  - {fileID: 11400000, guid: 26958c89419fcb043b786107cdf397d3, type: 2}
+  - {fileID: 11400000, guid: 879a15524800bed4db9daaa7963c20ff, type: 2}
   Bits:
     List:
     - Object: {fileID: 11400000, guid: 226b1ecc4d19c2e44af70eef525004bf, type: 2}
       Weight: 1
+  SpawnRate: 20
