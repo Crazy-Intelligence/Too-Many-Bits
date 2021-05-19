@@ -310,7 +310,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2e887c773d7844c87d6bf0c7e471e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useUnscaledTime: 0
   OnStart:
     sequence: []
   OnReset:
@@ -373,10 +372,10 @@ MonoBehaviour:
       Actions:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: -1943732433369285867}
-            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.Bit, Bits
-            m_MethodName: Destroy
-            m_Mode: 1
+          - m_Target: {fileID: -4765609896112948851}
+            m_TargetAssemblyTypeName: UnityEngine.Rigidbody2D, UnityEngine
+            m_MethodName: set_simulated
+            m_Mode: 6
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

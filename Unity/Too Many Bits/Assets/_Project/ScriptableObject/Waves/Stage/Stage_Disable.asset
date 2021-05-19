@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Targets:
   - {fileID: 11400000, guid: b03f7743d0bf27d4c842e54a07ee7701, type: 2}
-  - {fileID: 11400000, guid: ed263f84636f7604981b091cce8edf9a, type: 2}
-  - {fileID: 11400000, guid: 1c19f3b2311a54f41b594570ee334be2, type: 2}
-  SpawnRate: 0
   Bits:
     List:
     - Object: {fileID: 11400000, guid: 226b1ecc4d19c2e44af70eef525004bf, type: 2}
       Weight: 1
+  SpawnRate: 0
