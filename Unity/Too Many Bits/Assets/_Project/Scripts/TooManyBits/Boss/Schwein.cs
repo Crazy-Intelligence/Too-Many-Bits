@@ -5,12 +5,15 @@ namespace CrazyIntelligence.TooManyBits.Boss
 	public class Schwein : MonoBehaviour
 	{
 		[SerializeField] private Sequence SpawnSequence;
+		[SerializeField] private Sequence DespawnSequence;
+		[Space]
 		[SerializeField] private Sequence SpitSequence;
 		[SerializeField] private Sequence ScreamSequence;
 
 		private void Update()
 		{
 			SpawnSequence.TickTimer(Time.deltaTime);
+			DespawnSequence.TickTimer(Time.deltaTime);
 			SpitSequence.TickTimer(Time.deltaTime);
 			ScreamSequence.TickTimer(Time.deltaTime);
 		}
@@ -18,8 +21,13 @@ namespace CrazyIntelligence.TooManyBits.Boss
 		[ContextMenu("Spawn")]
 		public void Spawn()
 		{
-			gameObject.SetActive(true);
 			SpawnSequence.Start();
+		}
+
+		[ContextMenu("Despawn")]
+		public void Despawn()
+		{
+			DespawnSequence.Start();
 		}
 
 		[ContextMenu("Spit")]

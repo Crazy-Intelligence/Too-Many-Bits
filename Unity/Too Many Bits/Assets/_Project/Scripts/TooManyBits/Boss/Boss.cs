@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CrazyIntelligence.TooManyBits.Boss
 {
@@ -8,32 +7,48 @@ namespace CrazyIntelligence.TooManyBits.Boss
 		public GameObject BossObject;
 		[SerializeField] private Counter Weight;
 		[SerializeField] private int maxWeight;
+		[Space]
 		[SerializeField] private float timeUntilSpawn;
-
+		[SerializeField] private float maxActivTime;
+		[SerializeField] private float minActiveTime;
+		[Space]
 		[SerializeField] private Sequence OnSpawnSequence;
+		[SerializeField] private Sequence OnDespawnSequence;
 
 		private bool _spawned;
 		private bool _ticking;
 
-		private Timer _timer;
+		private Timer _spawnTimer;
+		private Timer _despawnTimer;
 
 		private void Awake()
 		{
 			BossObject.SetActive(false);
 
-			_timer = new Timer(timeUntilSpawn);
-			_timer.OnTimerEnd += Spawn;
+			_spawnTimer = new Timer(timeUntilSpawn);
+			_spawnTimer.OnTimerEnd += Spawn;
+
+			_despawnTimer = new Timer(GetActiveTime());
+			_despawnTimer.OnTimerEnd += Despawn;
 		}
 
 		private void Update()
 		{
 			OnSpawnSequence.TickTimer(Time.deltaTime);
+			OnDespawnSequence.TickTimer(Time.deltaTime);
+			
+			if (_ticking == false) return;
 
-			if (_spawned) return;
+			if (_spawned)
+			{
+				_despawnTimer.Tick(Time.deltaTime);
+			}
+			else
+			{
+				if (Weight.Value > maxWeight) return;
 
-			if (_ticking == false || Weight.Value > maxWeight) return;
-
-			_timer.Tick(Time.deltaTime);
+				_spawnTimer.Tick(Time.deltaTime);
+			}
 		}
 
 		[ContextMenu("Spawn")]
@@ -43,6 +58,15 @@ namespace CrazyIntelligence.TooManyBits.Boss
 			_spawned = true;
 		}
 
+		[ContextMenu("Despawn")]
+		public void Despawn()
+		{
+			OnDespawnSequence.Start();
+			_spawned = false;
+		}
+
 		public void IsTicking(bool value) => _ticking = value;
+
+		private float GetActiveTime() => Random.Range(minActiveTime, maxActivTime);
 	}
 }
