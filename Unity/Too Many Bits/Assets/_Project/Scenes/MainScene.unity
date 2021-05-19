@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 475439849}
   - component: {fileID: 475439848}
   m_Layer: 0
-  m_Name: WaveManager
+  m_Name: StageWaveManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1987,7 +1987,7 @@ MonoBehaviour:
   BossObject: {fileID: 1022122196}
   Weight: {fileID: 11400000, guid: 0a60914f74cbaff42a96f607557d49b2, type: 2}
   maxWeight: 700
-  timeUntilSpawn: 1
+  timeUntilSpawn: 180
   maxActivTime: 120
   minActiveTime: 30
   OnSpawnSequence:
@@ -2855,6 +2855,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 951278277953774763, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 951278277953774764, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
     - target: {fileID: 1110155646953295787, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -2870,6 +2878,14 @@ PrefabInstance:
     - target: {fileID: 1346715722251449422, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381719875876719338, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
+    - target: {fileID: 1381719875876719341, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 1510165739163009265, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
@@ -2971,6 +2987,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3578258378807576547, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578258378807576548, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
     - target: {fileID: 3627781748921986323, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -2979,6 +3003,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4055496086943175106, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055496086943175109, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
     - target: {fileID: 4186944488739911116, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -2999,13 +3031,45 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4697667897143740448, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
+    - target: {fileID: 4697667897143740455, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031851502205068259, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031851502205068260, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
     - target: {fileID: 5085773492804685656, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5287502007500212042, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287502007500212045, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
     - target: {fileID: 5295111172256739937, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442270956674206145, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
+    - target: {fileID: 5442270956674206150, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 5730983037850197677, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
@@ -3039,6 +3103,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 6534395311499826666, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: m_Name
+      value: StageDestroyerTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534395311499826669, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 11400000, guid: 769687a4c386031429b7d7ba4f98524e, type: 2}
     - target: {fileID: 6832378066136711487, guid: fab220f3ab195a9488c45302283aa5c8, type: 3}
       propertyPath: m_Layer
       value: 8
