@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfbf76a6206f9cd4cab12417e457857e, type: 3}
-  m_Name: Destroy
+  m_Name: SecurityVacuum
   m_EditorClassIdentifier: 
-  scoreMultiplier: -5
-  moneyMultiplier: -5
-  behaviour: 1
+  scoreMultiplier: -10
+  moneyMultiplier: -10
+  behaviour: 0
