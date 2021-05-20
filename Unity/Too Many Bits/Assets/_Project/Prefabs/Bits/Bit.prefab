@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2476535855809420105}
   - component: {fileID: 2002455993729549247}
   - component: {fileID: -1943732433369285867}
+  - component: {fileID: -7383741961557826209}
   - component: {fileID: 1666042797081384415}
   m_Layer: 6
   m_Name: Bit
@@ -266,6 +267,33 @@ MonoBehaviour:
   OnGrowEvent:
     m_PersistentCalls:
       m_Calls: []
+  OnSpawnEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7383741961557826209}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimerBehaviour, TooManyBits
+        m_MethodName: StopTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -7383741961557826209}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimerBehaviour, TooManyBits
+        m_MethodName: ResetTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnShrinkEvent:
     m_PersistentCalls:
       m_Calls:
@@ -283,12 +311,55 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -7383741961557826209}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimerBehaviour, TooManyBits
+        m_MethodName: StartTimer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDestroyEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -4267018472796822255}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-7383741961557826209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142541770011555780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f18eb462f385743ae92c3571e5aa80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
+  loop: 0
+  useUnscaledTime: 0
+  enableOnStart: 0
+  OnTimerEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1943732433369285867}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.Bit, Bits
+        m_MethodName: DeleteImmediatly
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

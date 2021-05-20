@@ -8,6 +8,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 	{
 		public BitConfig Config;
 		[SerializeField] private UnityEvent OnGrowEvent;
+		[SerializeField] private UnityEvent OnSpawnEvent;
 		[SerializeField] private UnityEvent OnShrinkEvent;
 		[SerializeField] private UnityEvent OnDestroyEvent;
 
@@ -144,6 +145,8 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 			_timer = new Timer(Config.MaxTimeOutSideBoundary);
 			_timer.OnTimerEnd += Destroy;
+
+			OnSpawnEvent?.Invoke();
 		}
 
 		private IEnumerator ChangeSortingLayerRoutine()

@@ -39,8 +39,12 @@ namespace CrazyIntelligence.TooManyBits
 
 		[ContextMenu("StartTimer")]
 		public void StartTimer() => _enabled = true;
+		
 		[ContextMenu("Stop Timer")]
 		public void StopTimer() => _enabled = false;
+
+		[ContextMenu("Reset Timer")]
+		public void ResetTimer() => _timer.Reset();
 
 		private void InvokeOnTimerEnd() => OnTimerEnd?.Invoke();
 	}
