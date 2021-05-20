@@ -1836,7 +1836,6 @@ GameObject:
   - component: {fileID: 1524436265}
   - component: {fileID: 1524436266}
   - component: {fileID: 1524436264}
-  - component: {fileID: 1524436267}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -2114,6 +2113,19 @@ MonoBehaviour:
               m_StringArgument: Show
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 31301304}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.BackgroundMusicPlayer,
+              Audio
+            m_MethodName: PlayGameMusic
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - Delay: 0.5
       Actions:
         m_PersistentCalls:
@@ -2131,18 +2143,6 @@ MonoBehaviour:
               m_StringArgument: Show
               m_BoolArgument: 0
             m_CallState: 2
---- !u!114 &1524436267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524436263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4bfd75f58c89db469eed296398d47cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1533257441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490678196267720985, guid: 35d19cd2f7297bb43ac28ba0ff995089, type: 3}
