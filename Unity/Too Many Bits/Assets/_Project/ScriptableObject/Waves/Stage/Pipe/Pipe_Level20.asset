@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4fd8bde47d87124fa397dd89c642cfd, type: 3}
-  m_Name: Pipe_Level19
+  m_Name: Pipe_Level20
   m_EditorClassIdentifier: 
   Targets:
   - {fileID: 11400000, guid: b03f7743d0bf27d4c842e54a07ee7701, type: 2}
@@ -24,4 +24,4 @@ MonoBehaviour:
       Weight: 10
     - Object: {fileID: 11400000, guid: 81bf9399ace6aac4ba6f4027776d2be1, type: 2}
       Weight: 10
-  SpawnRate: 50
+  SpawnRate: 100

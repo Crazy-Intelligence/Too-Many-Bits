@@ -56,3 +56,30 @@ MonoBehaviour:
   - configurations:
     - {fileID: 11400000, guid: b79652746725f4f4e9a47e6664db6828, type: 2}
     Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: dd4ffd2271a7aed4c8af6621dcf7b908, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 387132a98c0770d43b36d2c82d18b5bf, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: b10af314a51ab35439c09d5ac7cb0876, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 3957825efa4d8e54a8f8fc139e8f5161, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: ce66cb2ea8819fa47ac17b5aea5afb8b, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: 2c314e9f07fe27843a426c8fd5698b7b, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: aeeb5a19d45f24f41ab83483b870f948, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: b8112493ab403054996fc6300df0ea8f, type: 2}
+    Duration: 30
+  - configurations:
+    - {fileID: 11400000, guid: cc2bb14eea2bd48488462c7e440a4cda, type: 2}
+    Duration: 30
