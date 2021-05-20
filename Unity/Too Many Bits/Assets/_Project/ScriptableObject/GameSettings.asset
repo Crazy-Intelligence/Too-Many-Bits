@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   MasterVolume: 1
-  MusicVolume: 0
+  MusicVolume: 0.5
   SoundVolume: 1
