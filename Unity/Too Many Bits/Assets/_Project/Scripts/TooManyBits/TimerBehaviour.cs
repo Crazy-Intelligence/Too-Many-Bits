@@ -15,7 +15,7 @@ namespace CrazyIntelligence.TooManyBits
 
 		private Timer _timer;
 
-		private void Start()
+		private void Awake()
 		{
 			_timer = new Timer(duration, loop);
 			_timer.OnTimerEnd += InvokeOnTimerEnd;
@@ -44,7 +44,11 @@ namespace CrazyIntelligence.TooManyBits
 		public void StopTimer() => _enabled = false;
 
 		[ContextMenu("Reset Timer")]
-		public void ResetTimer() => _timer.Reset();
+		public void ResetTimer()
+		{
+			if (_timer is null) return;
+			_timer.Reset();
+		}
 
 		private void InvokeOnTimerEnd() => OnTimerEnd?.Invoke();
 	}
