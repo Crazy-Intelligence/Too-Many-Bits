@@ -125,9 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: e68e12266f13cd640ad26157e5aea00c, type: 2}
-  OnSpawnEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &7578723220855590470
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,21 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Config: {fileID: 11400000, guid: 446481d06b2f28d41996b299bd951e97, type: 2}
-  OnSpawnEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3737387378992774163}
-        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Schwein, Boss
-        m_MethodName: Spit
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Spit
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &7578723221055783812
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +313,7 @@ GameObject:
   - component: {fileID: 9061638043241464363}
   - component: {fileID: 3737387378992774163}
   - component: {fileID: 7242760465868854259}
+  - component: {fileID: 6374197854807762858}
   - component: {fileID: 3194536880966626383}
   m_Layer: 7
   m_Name: Schwein
@@ -862,6 +845,19 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 6374197854807762858}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimerBehaviour,
+              TooManyBits
+            m_MethodName: StartTimer
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   DespawnSequence:
     sequence:
     - Delay: 0
@@ -872,6 +868,19 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.SchweinMovement,
               Boss
             m_MethodName: MoveToOrigin
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 6374197854807762858}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.TimerBehaviour,
+              TooManyBits
+            m_MethodName: StopTimer
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -1066,6 +1075,23 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+    - Delay: 0.2
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 7578723220855590468}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Bits.Spawner,
+              Bits
+            m_MethodName: SpawnObject
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   ScreamSequence:
     sequence:
     - Delay: 0
@@ -1189,6 +1215,37 @@ MonoBehaviour:
   - {x: -3.5, y: 2.5, z: 0}
   - {x: 3.5, y: 2.5, z: 0}
   originPosition: {x: 1.25, y: 1, z: 0}
+--- !u!114 &6374197854807762858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7578723221765083101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f18eb462f385743ae92c3571e5aa80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 5
+  loop: 1
+  useUnscaledTime: 0
+  enableOnStart: 0
+  OnTimerEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3737387378992774163}
+        m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Boss.Schwein, Boss
+        m_MethodName: Spit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3194536880966626383
 MonoBehaviour:
   m_ObjectHideFlags: 0

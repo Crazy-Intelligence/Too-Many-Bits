@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
     List:
-    - Object: {fileID: 11400000, guid: 75454c27b363d8a40bc9ae950d823e73, type: 2}
+    - Object: {fileID: 11400000, guid: eff21501f725665469421d315a629f63, type: 2}
       Weight: 1

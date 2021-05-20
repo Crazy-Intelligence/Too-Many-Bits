@@ -22,10 +22,10 @@ namespace CrazyIntelligence.TooManyBits.Boss
 
 		private void Awake()
 		{
-			_spawnTimer = new Timer(timeUntilSpawn);
+			_spawnTimer = new Timer(timeUntilSpawn, true);
 			_spawnTimer.OnTimerEnd += Spawn;
 
-			_despawnTimer = new Timer(GetActiveTime());
+			_despawnTimer = new Timer(GetActiveTime(), true);
 			_despawnTimer.OnTimerEnd += Despawn;
 		}
 

@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {
 	public class Spawner : MonoBehaviour
 	{
 		public SpawnerConfig Config;
-		public UnityEvent OnSpawnEvent;
 
 		private Timer _timer;
 
@@ -31,6 +29,25 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 			_timer.Tick(Time.deltaTime);
 		}
+
+		public void SpawnObject()
+		{
+			var newObject = ObjectPool.Spawn(Config.Prefab);
+
+			newObject.transform.position = transform.position;
+
+			var bit = newObject.GetComponent<Bit>();
+			bit.Config = Config.Bits.GetRandom();
+
+			newObject.SetActive(true);
+
+			var rb = newObject.GetComponent<Rigidbody2D>();
+			ApplySpawnForce(rb);
+
+			var sprite = newObject.GetComponent<SpriteRenderer>();
+			sprite.sortingLayerName = Config.StartLayer;
+		}
+
 		private void OnConfigsUpdated()
 		{
 			ResetTimer();
@@ -48,26 +65,6 @@ namespace CrazyIntelligence.TooManyBits.Bits
 			}
 
 			ResetTimer();
-		}
-
-		private void SpawnObject()
-		{
-			var newObject = ObjectPool.Spawn(Config.Prefab);
-
-			newObject.transform.position = transform.position;
-
-			var bit = newObject.GetComponent<Bit>();
-			bit.Config = Config.Bits.GetRandom();
-
-			newObject.SetActive(true);
-
-			var rb = newObject.GetComponent<Rigidbody2D>();
-			ApplySpawnForce(rb);
-
-			var sprite = newObject.GetComponent<SpriteRenderer>();
-			sprite.sortingLayerName = Config.StartLayer;
-
-			OnSpawnEvent?.Invoke();
 		}
 
 		private void ApplySpawnForce(Rigidbody2D rb)
