@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbf76a6206f9cd4cab12417e457857e, type: 3}
   m_Name: Destroy
   m_EditorClassIdentifier: 
-  scoreMultiplier: -5
-  moneyMultiplier: -5
+  scoreMultiplier: 0
+  moneyMultiplier: 0
   behaviour: 1
