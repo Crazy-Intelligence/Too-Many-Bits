@@ -1477,6 +1477,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1524436265}
     m_Modifications:
+    - target: {fileID: 6984846380302816474, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0060562096
+      objectReference: {fileID: 0}
     - target: {fileID: 6984846380714698600, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -1513,6 +1517,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.5292094
       objectReference: {fileID: 0}
+    - target: {fileID: 6984846381894960758, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0060562096
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984846382133074837, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0060562096
+      objectReference: {fileID: 0}
     - target: {fileID: 7578723221055783547, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.026216967
@@ -1530,10 +1542,6 @@ PrefabInstance:
       value: -0.0489643
       objectReference: {fileID: 0}
     - target: {fileID: 7578723221376810454, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7578723221765083088, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
@@ -1592,6 +1600,10 @@ PrefabInstance:
     - target: {fileID: 7578723222455907161, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578723222556941512, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.0060562096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25bfc4564abb6784491865f9a83ef939, type: 3}
@@ -1824,6 +1836,7 @@ GameObject:
   - component: {fileID: 1524436265}
   - component: {fileID: 1524436266}
   - component: {fileID: 1524436264}
+  - component: {fileID: 1524436267}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -1987,17 +2000,16 @@ MonoBehaviour:
       Actions:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 475439849}
-            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
-              Waves
-            m_MethodName: Disable
-            m_Mode: 1
+          - m_Target: {fileID: 709143331}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: ResetTrigger
+            m_Mode: 5
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
-              m_StringArgument: 
+              m_StringArgument: Show
               m_BoolArgument: 0
             m_CallState: 2
           - m_Target: {fileID: 709143331}
@@ -2010,6 +2022,19 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: Hide
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 475439849}
+            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
+              Waves
+            m_MethodName: Disable
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
           - m_Target: {fileID: 31301304}
@@ -2089,7 +2114,7 @@ MonoBehaviour:
               m_StringArgument: Show
               m_BoolArgument: 0
             m_CallState: 2
-    - Delay: 2
+    - Delay: 0.5
       Actions:
         m_PersistentCalls:
           m_Calls:
@@ -2106,6 +2131,18 @@ MonoBehaviour:
               m_StringArgument: Show
               m_BoolArgument: 0
             m_CallState: 2
+--- !u!114 &1524436267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524436263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4bfd75f58c89db469eed296398d47cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1533257441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5490678196267720985, guid: 35d19cd2f7297bb43ac28ba0ff995089, type: 3}

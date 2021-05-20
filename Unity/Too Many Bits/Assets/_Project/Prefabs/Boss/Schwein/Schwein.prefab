@@ -558,7 +558,7 @@ PlatformEffector2D:
   m_RotationalOffset: 180
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 70
+  m_SurfaceArc: 90
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
@@ -761,6 +761,30 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+          - m_Target: {fileID: 7242760465868854259}
+            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+            m_MethodName: set_enabled
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 4254058528515940840}
+            m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+            m_MethodName: set_volume
+            m_Mode: 4
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 1
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
           - m_Target: {fileID: 4539420029193251350}
             m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
               Audio
@@ -770,18 +794,6 @@ MonoBehaviour:
               m_ObjectArgument: {fileID: 11400000, guid: c0afcca9b3a68cf4ea98d50ac911b258, type: 2}
               m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
                 Audio
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-          - m_Target: {fileID: 7242760465868854259}
-            m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-            m_MethodName: set_enabled
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
@@ -833,7 +845,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
-    - Delay: 5
+    - Delay: 1
       Actions:
         m_PersistentCalls:
           m_Calls:
@@ -869,6 +881,10 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
+    - Delay: 2
+      Actions:
+        m_PersistentCalls:
+          m_Calls:
           - m_Target: {fileID: 9061638043241464363}
             m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Waves.WaveManager,
               Waves
@@ -882,21 +898,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 4539420029193251350}
-            m_TargetAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.AudioPlayer,
-              Audio
-            m_MethodName: Play
-            m_Mode: 2
-            m_Arguments:
-              m_ObjectArgument: {fileID: 11400000, guid: 76b5a915b8728484eb2cc2fb65d053ec, type: 2}
-              m_ObjectArgumentAssemblyTypeName: CrazyIntelligence.TooManyBits.Audio.ConfiguredAudioClip,
-                Audio
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - Delay: 3
+    - Delay: 1
       Actions:
         m_PersistentCalls:
           m_Calls:
@@ -1014,6 +1016,18 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 7578723221765083090}
+            m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+            m_MethodName: ResetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Despawn
               m_BoolArgument: 0
             m_CallState: 2
   SpitSequence:

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbf76a6206f9cd4cab12417e457857e, type: 3}
   m_Name: SecurityVacuum
   m_EditorClassIdentifier: 
-  scoreMultiplier: -10
-  moneyMultiplier: -10
+  scoreMultiplier: -1
+  moneyMultiplier: -1
   behaviour: 0

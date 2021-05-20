@@ -148,7 +148,7 @@ namespace CrazyIntelligence.TooManyBits.Bits
 
 		private IEnumerator ChangeSortingLayerRoutine()
 		{
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(2f);
 
 			_spriteRenderer.sortingLayerName = "Bits";
 		}

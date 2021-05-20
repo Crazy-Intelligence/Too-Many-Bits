@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Schwein_Pipe mirrored
   m_EditorClassIdentifier: 
   Prefab: {fileID: 5142541770011555780, guid: 7d681a837b728d0438668b168c3a1771, type: 3}
-  StartLayer: Boss
+  StartLayer: Bits
   SpawnForce: 75
   SpawnAngelRange: 28.5
   SpawnAngelOffset: 135.3
