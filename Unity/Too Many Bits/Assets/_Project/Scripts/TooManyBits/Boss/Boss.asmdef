@@ -2,7 +2,8 @@
     "name": "Boss",
     "rootNamespace": "CrazyIntelligence.TooManyBits.Boss",
     "references": [
-        "GUID:6dbcdaf6322f63348b4c277fff7de260"
+        "GUID:6dbcdaf6322f63348b4c277fff7de260",
+        "GUID:f4556b1fd27a6fb4580c7756659c2946"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

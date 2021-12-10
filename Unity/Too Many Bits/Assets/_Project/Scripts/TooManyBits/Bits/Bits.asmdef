@@ -3,7 +3,8 @@
     "rootNamespace": "CrazyIntelligence.TooManyBits.Bits",
     "references": [
         "GUID:6dbcdaf6322f63348b4c277fff7de260",
-        "GUID:b8d702d5fdf1afe4ea2ac81fe2036c0a"
+        "GUID:b8d702d5fdf1afe4ea2ac81fe2036c0a",
+        "GUID:f4556b1fd27a6fb4580c7756659c2946"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

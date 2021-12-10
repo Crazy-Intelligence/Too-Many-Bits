@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using CI.Utilities;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {

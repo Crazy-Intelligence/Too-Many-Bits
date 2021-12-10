@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using CI.Utilities;
+using CI.Audio;
 
 namespace CrazyIntelligence.TooManyBits.Audio
 {

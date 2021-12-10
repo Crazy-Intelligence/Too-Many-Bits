@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using CI.Utilities;
 
 namespace CrazyIntelligence.TooManyBits.Bits
 {

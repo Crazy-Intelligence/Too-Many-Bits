@@ -1,3 +1,4 @@
+using CI.Audio;
 using UnityEngine;
 
 namespace CrazyIntelligence.TooManyBits.Audio
