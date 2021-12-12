@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.crazyintelligence.audio": "file:C:/Users/Jasch/Projects/Unity/_Mero Packages/CrazyIntelligence/UnityTools/Audio",
+    "com.crazyintelligence.collections": "file:C:/Users/Jasch/Projects/Unity/_Mero Packages/CrazyIntelligence/UnityTools/Collections",
     "com.crazyintelligence.utilities": "file:C:/Users/Jasch/Projects/Unity/_Mero Packages/CrazyIntelligence/UnityTools/Utilities",
     "com.unity.2d.animation": "5.0.6",
     "com.unity.2d.psdimporter": "4.1.0",

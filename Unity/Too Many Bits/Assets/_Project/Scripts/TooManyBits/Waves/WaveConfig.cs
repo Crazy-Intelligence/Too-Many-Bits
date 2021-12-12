@@ -1,6 +1,6 @@
 using CrazyIntelligence.TooManyBits.Bits;
 using UnityEngine;
-using CI.Utilities;
+using CI.Collections;
 
 namespace CrazyIntelligence.TooManyBits.Waves
 {

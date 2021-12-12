@@ -6,6 +6,12 @@
       "source": "local",
       "dependencies": {}
     },
+    "com.crazyintelligence.collections": {
+      "version": "file:C:/Users/Jasch/Projects/Unity/_Mero Packages/CrazyIntelligence/UnityTools/Collections",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.crazyintelligence.utilities": {
       "version": "file:C:/Users/Jasch/Projects/Unity/_Mero Packages/CrazyIntelligence/UnityTools/Utilities",
       "depth": 0,
